@@ -6,16 +6,15 @@ import styles from './styles.css';
 export default class Header extends React.Component {
   render() {
     return (
-      <div className={classNames(styles.background, "uk-height-1-1 uk-cover-background")}>
-        <top className="uk-width-large-1-5 uk-width-5-6 uk-container-center uk-position-top uk-text-center uk-block">
-          <img src={require('./images/logo.png')} />
-        </top>
-
-        <bottom className="uk-position-bottom uk-container-center uk-width-large-2-3 uk-width-5-6 uk-block uk-margin-large">
-          <h1 className="uk-text-center uk-contrast uk-position-bottom uk-heading-large">
-            A phrase to enlighten the world.
+      <div className={classNames(styles.background, "uk-height-1-1 uk-cover-background uk-vertical-align")}>
+        <middle className="uk-width-1-1 uk-vertical-align-middle uk-text-center">
+          <picture className="uk-width-large-1-5 uk-width-5-6 ">
+            <img src={require('./images/logo.png')} />
+          </picture>
+          <h1 className="uk-text-center uk-contrast uk-heading-large">
+            Coming soon.
           </h1>
-        </bottom>
+        </middle>
       </div>
     );
   }
