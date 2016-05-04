@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-uikit-boilerplate",
+  "name": "jaws-app",
   "version": "0.0.1",
-  "description": "React Webpack UIKit SCSS Heroku-ready boilerplate app with a test index page",
+  "description": "Jaws App",
   "engines": {
     "node": "4.3.1",
     "npm": "3.8.1"
@@ -9,7 +9,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sebabouche/webpack-react-uikit.git"
+    "url": "https://bitbucket.org/sebabouche/jaws.git"
   },
   "keywords": [
     "react",
@@ -23,10 +23,7 @@
   ],
   "author": "Sébastien Nicolaïdis",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sebabouche/webpack-react-uikit/issues"
-  },
-  "homepage": "https://github.com/sebabouche/webpack-react-uikit",
+  "homepage": "https://www.jaws.paris",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch",
