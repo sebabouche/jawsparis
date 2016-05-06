@@ -13,7 +13,7 @@ export default class Header extends React.Component {
 
         <bottom className="uk-position-bottom uk-container-center uk-width-large-2-3 uk-width-5-6 uk-block uk-margin-large">
           <h1 className="uk-text-center uk-contrast uk-position-bottom uk-heading-large">
-            A phrase to enlighten the world.
+            { this.props.title || "A phrase to enlighten the world."}
           </h1>
         </bottom>
       </div>

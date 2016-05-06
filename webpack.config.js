@@ -48,7 +48,10 @@ module.exports = {
       },
       {
         test: /\.(ico|jpe?g|png|gif)$/,
-        loader: 'file?name=[path][name].[ext]'
+        loaders: [
+          'file?name=[path][name].[ext]',
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
       },
       {
          test: /\.(woff|woff2|ttf|otf|eot\?#.+|svg#.+)$/,
