@@ -16,6 +16,10 @@ export const data = {
         {
           "id": 2,
           "imageUrl": require('./images/4-illustration-2.jpg')
+        },
+        {
+          "id": 3,
+          "imageUrl": require('./images/4-illustration-3.jpg')
         }
       ],
       "problem": {
