@@ -5,17 +5,36 @@ import styles from './styles.css';
 
 export default class Header extends React.Component {
   render() {
+    const illustrations = this.props.illustrations.map((illustration) => {
+      const illusStyle = {
+        backgroundImage: 'url(' + illustration.imageUrl + ')',
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover'
+      };
+
+      return(
+        <li
+          key={illustration.id}
+          style={illusStyle}
+        >
+        </li>
+      )
+    })
     return (
-      <div className={classNames(styles.background, "uk-height-1-1 uk-cover-background")}>
-        <top className="uk-width-large-1-5 uk-width-5-6 uk-container-center uk-position-top uk-text-center uk-block">
+      <div className="uk-height-1-1 uk-cover-background">
+        <top className="uk-width-large-1-5 uk-width-5-6 uk-container-center uk-position-top uk-text-center uk-block" style={{zIndex: '1200'}}>
           <img className="imageTest" src={require('./images/logo.png')} />
         </top>
 
-        <bottom className="uk-position-bottom uk-container-center uk-width-large-2-3 uk-width-5-6 uk-block uk-margin-large">
+        <bottom className="uk-position-bottom uk-container-center uk-width-large-2-3 uk-width-5-6 uk-block uk-margin-large" style={{zIndex: '1200'}}>
           <h1 className="uk-text-center uk-contrast uk-position-bottom uk-heading-large">
-            { this.props.title || "A phrase to enlighten the world."}
+            A phrase to enlighten the world.
           </h1>
         </bottom>
+
+        <ul className="uk-slideshow uk-slideshow-fullscreen" data-uk-slideshow="{autoplay: true}">
+          {illustrations}
+        </ul>
       </div>
     );
   }
