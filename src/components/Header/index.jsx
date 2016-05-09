@@ -3,6 +3,8 @@ import classNames from 'classnames';
 
 import styles from './styles.css';
 
+import SignUpForm from '../SignUpForm';
+
 export default class Header extends React.Component {
   render() {
     const illustrations = this.props.illustrations.map((illustration) => {
@@ -26,10 +28,11 @@ export default class Header extends React.Component {
           <img className="imageTest" src={require('./images/logo.png')} />
         </top>
 
-        <bottom className="uk-position-bottom uk-container-center uk-width-large-2-3 uk-width-5-6 uk-block uk-margin-large" style={{zIndex: '1200'}}>
-          <h1 className="uk-text-center uk-contrast uk-position-bottom uk-heading-large">
-            A phrase to enlighten the world.
+        <bottom className="uk-position-bottom uk-container-center uk-text-center uk-width-large-2-3 uk-width-5-6 uk-block uk-margin-large" style={{zIndex: '1200'}}>
+          <h1 className="uk-contrast uk-heading-large">
+            {this.props.title}
           </h1>
+          <SignUpForm />
         </bottom>
 
         <ul className="uk-slideshow uk-slideshow-fullscreen" data-uk-slideshow="{autoplay: true}">

@@ -8,9 +8,11 @@ export default class SignUp extends React.Component{
   render() {
     return(
       <section className="uk-block uk-block-muted" id="section3">
-        <div className="uk-height-viewport">
+        <div className="uk-container uk-container-center">
           <h2 className="uk-text-center">S'inscrire</h2>
-          <SignUpForm />
+          <div className="uk-text-center">
+            <SignUpForm />
+          </div>
         </div>
       </section>
     );

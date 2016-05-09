@@ -2,8 +2,8 @@ export const data = {
   landings: [
     {
       "id": 4,
-      "name": "coupe-file",
-      "title": "Les meilleurs artisans de Paris sans faire la queue !",
+      "name": "pas-plus-cher",
+      "title": "Les artisans ne coûtent pas plus cher et JAWS vous les livre sur un plateau.",
       "illustrations": [
         {
           "id": 0,
@@ -19,27 +19,27 @@ export const data = {
         }
       ],
       "problem": {
-        "title": "C’est mission impossible de bien manger quand on n’a pas le temps d’aller chez les bons artisans",
+        "title": "Mais pourquoi en 2016 on va encore au supermarché???",
         "arguments":[
           {
             "id": 0,
-            "content": "Passer chez le maraîcher, le boucher, le charcutier et le boulanger, ça prend du temps !",
+            "content": "Au supermarché on achète mille fois trop.",
             "imageUrl": require('./images/4-problem-0.png')
           },
           {
             "id": 1,
-            "content": "Et encore faudrait-il qu’ils soient ouverts quand on sort du boulot !",
+            "content": "C’est fou ce qu’on finit par jeter !",
             "imageUrl": require('./images/4-problem-1.png')
           },
           {
             "id": 2,
-            "content": "Du coup on finit à la supérette.",
+            "content": "Le maraîcher super bon et pas trop cher, il est rarement en bas de la rue.",
             "imageUrl": require('./images/4-problem-2.png')
           }
         ],
       },
       "solution": {
-        "title": "JAWS passe chez les meilleurs artisans de Paris et les livre chez vous en une seule fois.",
+        "title": "Avec JAWS, en quelques clics, redécouvrez les bons produits de vos artisans",
         "arguments": [
           {
             "id": 0,
@@ -48,12 +48,12 @@ export const data = {
           },
           {
             "id": 1,
-            "content": "vous choisissez où et quand vous voulez être livré",
+            "content": "pour les quantités, c’est trop facile : les portions sont par personne",
             "imageUrl": require('./images/4-solution-1.png')
           },
           {
             "id": 2,
-            "content": "du coup, vous avez tout le temps de cuisiner !",
+            "content": "vous choisissez où et quand vous voulez être livré",
             "imageUrl": require('./images/4-solution-2.png')
           }
         ]

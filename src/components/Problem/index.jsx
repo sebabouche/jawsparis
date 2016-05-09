@@ -16,7 +16,7 @@ export default class Problem extends React.Component{
     });
 
   return(
-    <section className="uk-block uk-block-muted" id="section1">
+    <section className="uk-block jw-background1" id="section1">
       <div className="uk-container uk-container-center uk-block">
         <h1 className="uk-text-center">
           {title}
