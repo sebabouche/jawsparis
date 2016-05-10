@@ -3,12 +3,17 @@ const webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const buildDirectory = './dist/';
+
 module.exports = {
   entry: [
     './src/index.jsx'
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.resolve(buildDirectory),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -35,13 +40,14 @@ module.exports = {
         ]
       },
       {
+          test: /\.svg$/,
+          loader: 'file?name=[path][name].[ext]'
+      },
+      {
         test: /\.(woff|woff2|ttf|otf|eot\?#.+|svg#.+)$/,
         loader: "file?name=[path][name].[ext]"
       }
     ]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
   },
   plugins: [
     new ExtractTextPlugin("styles.css"),

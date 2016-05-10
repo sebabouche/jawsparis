@@ -23,16 +23,18 @@ export default class Header extends React.Component {
     })
     return (
       <div className="uk-height-1-1 uk-cover-background">
-        <top className="uk-width-large-1-5 uk-width-5-6 uk-container-center uk-position-top uk-text-center uk-block" style={{zIndex: '1200'}}>
-          <img className="imageTest" src={require('./images/logo.png')} />
-        </top>
-
-        <bottom className="uk-position-bottom uk-container-center uk-text-center uk-width-large-2-3 uk-width-5-6 uk-block uk-margin-large" style={{zIndex: '1200'}}>
+        <top className="uk-width-5-6 uk-width-medium-2-3 uk-large-1-2 uk-container-center uk-position-bottom uk-text-center uk-block" style={{zIndex: '1200'}}>
+          <img className="uk-width-1-2 uk-width-small-1-4 uk-width-medium-1-2 uk-width-large-1-4" src={require('./images/logo-transp-cartouche.svg')} />
           <h1 className="uk-contrast uk-heading-large">
             {this.props.title}
           </h1>
-          <button className="uk-button uk-button-success uk-button-large">Je m'inscris !</button>
-        </bottom>
+          <a
+            href="#section3"
+            className="uk-button uk-button-success uk-button-large ja-font-special ja-button-special"
+            data-uk-smooth-scroll>
+            Je m'inscris !
+          </a>
+        </top>
 
         <ul
           className="uk-slideshow uk-slideshow-fullscreen"

@@ -9,16 +9,16 @@ export default class Solution extends React.Component{
     const solutions = solution_data.arguments.map(solution => {
       return(
         <div key={solution.id} className="uk-block uk-text-center">
-          <img src={solution.imageUrl} className="uk-width-1-2" />
-          <h2 className="uk-text-contrast">{solution.content}</h2>
+          <img src={solution.imageUrl} className="uk-width-2-3" />
+          <h2>{solution.content}</h2>
         </div>
       )
     });
 
   return(
-    <section className={classNames("uk-block", styles.jwBackground2)} id="section2">
+    <section className="uk-block" id="section2">
       <div className="uk-container uk-container-center uk-block">
-        <h1 className="uk-text-center uk-text-contrast">
+        <h1 className="uk-text-center">
           {title}
         </h1>
         <div className="uk-grid uk-grid-width-medium-1-3">

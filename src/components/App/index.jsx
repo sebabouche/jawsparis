@@ -44,16 +44,16 @@ export default class App extends React.Component{
 
     return (
       <div className="uk-height-1-1">
-        <nav className="uk-navbar">
-          <a href="" className="uk-navbar-brand">Admin</a>
-          <ul className="uk-navbar-nav">
-              <li><a onClick={this.clear.bind(this)} href="">Effacter le cookie and recharger la page</a></li>
-              <li><a onClick={this.choose.bind(this)} href="">Choisir une autre variante</a></li>
-          </ul>
-        </nav>
         <Experiment ref="exLanding" onChoice={this.choice} name="landing">
           { landing_variants }
         </Experiment>
+        <div className="uk-container uk-container-center">
+          <div className="uk-text-center">
+            <button onClick={this.clear.bind(this)} href="" className="uk-button uk-button-mini uk-button-primary">Effacer cookie et recharger</button>
+            <button onClick={this.choose.bind(this)} href=""  className="uk-button uk-button-mini uk-button-success">Autre variante</button>
+          </div>
+        </div>
+
       </div>
     );
   }
