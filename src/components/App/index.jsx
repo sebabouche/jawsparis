@@ -47,8 +47,8 @@ export default class App extends React.Component{
         <nav className="uk-navbar">
           <a href="" className="uk-navbar-brand">Admin</a>
           <ul className="uk-navbar-nav">
-              <li role="presentation"><a onClick={this.clear} href="#">Effacter le cookie and recharger la page</a></li>
-              <li role="presentation"><a onClick={this.choose} href="#">Choisir une autre variante</a></li>
+              <li><a onClick={this.clear.bind(this)} href="">Effacter le cookie and recharger la page</a></li>
+              <li><a onClick={this.choose.bind(this)} href="">Choisir une autre variante</a></li>
           </ul>
         </nav>
         <Experiment ref="exLanding" onChoice={this.choice} name="landing">
