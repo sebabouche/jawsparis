@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import styles from './styles.css';
 
 import SignUpForm from '../SignUpForm';
@@ -32,10 +31,17 @@ export default class Header extends React.Component {
           <h1 className="uk-contrast uk-heading-large">
             {this.props.title}
           </h1>
-          <SignUpForm />
+          <button className="uk-button uk-button-success uk-button-large">Je m'inscris !</button>
         </bottom>
 
-        <ul className="uk-slideshow uk-slideshow-fullscreen" data-uk-slideshow="{autoplay: true}">
+        <ul
+          className="uk-slideshow uk-slideshow-fullscreen"
+          data-uk-slideshow="{
+            autoplay: true,
+            duration: 1000,
+            pauseOnHover: false,
+            autoplayInterval: 5000,
+            animation: 'scale'}">
           {illustrations}
         </ul>
       </div>

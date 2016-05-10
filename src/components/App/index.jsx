@@ -12,7 +12,18 @@ import SignUp from '../SignUp';
 import {data} from '../../data/data.js';
 
 export default class App extends React.Component{
-  choice (experiment, variant, index) {
+  clear () {
+    this.refs.exLanding.clearCookie();
+    window.location.reload();
+  }
+
+  choose () {
+    this.refs.exLanding.chooseVariant();
+  }
+
+
+  choice (experiment, variant) {
+    // this is where you want to setup tracking variables.
     mixpanel.register({
       "landing": variant
     });
@@ -33,7 +44,14 @@ export default class App extends React.Component{
 
     return (
       <div className="uk-height-1-1">
-        <Experiment onChoice={this.choice} name="landing">
+        <nav className="uk-navbar">
+          <a href="" className="uk-navbar-brand">Admin</a>
+          <ul className="uk-navbar-nav">
+              <li role="presentation"><a onClick={this.clear} href="#">Effacter le cookie and recharger la page</a></li>
+              <li role="presentation"><a onClick={this.choose} href="#">Choisir une autre variante</a></li>
+          </ul>
+        </nav>
+        <Experiment ref="exLanding" onChoice={this.choice} name="landing">
           { landing_variants }
         </Experiment>
       </div>

@@ -1,6 +1,6 @@
-import styles from './styles.css';
-
 import React from 'react';
+import classNames from 'classnames';
+import styles from './styles.css';
 
 export default class Solution extends React.Component{
   render() {
@@ -16,7 +16,7 @@ export default class Solution extends React.Component{
     });
 
   return(
-    <section className="uk-block uk-block-primary" id="section2">
+    <section className={classNames("uk-block", styles.jwBackground2)} id="section2">
       <div className="uk-container uk-container-center uk-block">
         <h1 className="uk-text-center uk-text-contrast">
           {title}
