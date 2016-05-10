@@ -10,7 +10,7 @@ export default class Solution extends React.Component{
       return(
         <div key={solution.id} className="uk-block uk-text-center">
           <img src={solution.imageUrl} className="uk-width-2-3" />
-          <h2>{solution.content}</h2>
+          <h2 className="ja-font-normal">{solution.content}</h2>
         </div>
       )
     });

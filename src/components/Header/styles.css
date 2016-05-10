@@ -1,0 +1,21 @@
+.overlay {
+  background-color: rgba(0,0,0,0.3);
+}
+
+@media (max-width: 767px) {
+  .header {
+    height: 60%;
+  }
+  .overlay {
+    height: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 75%;
+  }
+  .overlay {
+    height: 25%;
+  }
+}

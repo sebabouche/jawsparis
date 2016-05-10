@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class SignUpForm extends React.Component {
+export default class SignUpFormInline extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,17 +32,17 @@ export default class SignUpForm extends React.Component {
           target="_blank"
           novalidate
         >
-          <div id="mc_embed_signup_scroll">
-            <div className="uk-form-row">
+          <div className="uk-grid uk-grid-small" data-uk-margin>
+            <div className="uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
               <input
                 type="text" name="FNAME"
                 value={this.state.firstnameValue}
                 onChange={this.handleFirstnameChange}
                 className="uk-width-1-1"
-                id="mce-FNAME" placeholder="Prénom" />
+                id="mce-FNAME" placeholder="Mon Prénom" />
             </div>
 
-            <div className="uk-form-row">
+            <div className="uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
               <input
                 type="email" name="EMAIL"
                 value={this.state.emailValue}
@@ -51,9 +51,10 @@ export default class SignUpForm extends React.Component {
                 id="mce-EMAIL" placeholder="Mon Email" />
             </div>
 
-            <div className="uk-form-row">
+            <div className="uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
+
             	<select name="MMERGE3" defaultValue="" className="uk-width-1-1" id="mce-MMERGE3">
-                <option value="" disabled>Arrondissement</option>
+                <option value="" disabled>Mon quartier</option>
               	<option value="Paris 1er">Paris 1er</option>
                 <option value="Paris 2e">Paris 2e</option>
                 <option value="Paris 3e">Paris 3e</option>
@@ -77,33 +78,28 @@ export default class SignUpForm extends React.Component {
   	          </select>
             </div>
 
-            <div className="uk-form-row">
-              <label for="mce-group[3617]-3617-0">
-                <input type="checkbox" value="1" name="group[3617][1]" id="mce-group[3617]-3617-0" /> Envoyez-moi le guide des meilleurs artisans de bouche de mon quartier
-              </label>
-            </div>
-
-            <div className="uk-form-row">
+            <div className="uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
               <button
                 type="submit" name="subscribe"
                 id="mc-embedded-subscribe"
-                className="uk-button uk-button-success uk-button-large uk-width-1-1">
+                className="uk-button uk-button-success uk-width-1-1">
                 M'informer du lancement
               </button>
             </div>
 
-
-            <div id="mce-responses" className="clear">
-              <div className="response uk-hidden" id="mce-error-response"></div>
-              <div className="response uk-hidden" id="mce-success-response"></div>
-            </div>
-            <div aria-hidden="true" className="uk-hidden">
-              <input
-                type="text"
-                name="b_8831ef722a7386b295fb8898c_3d5fc57d9b"
-                tabindex="-1" value="" />
-            </div>
           </div>
+
+          <div id="mce-responses" className="clear">
+            <div className="response uk-hidden" id="mce-error-response"></div>
+            <div className="response uk-hidden" id="mce-success-response"></div>
+          </div>
+          <div aria-hidden="true" className="uk-hidden">
+            <input
+              type="text"
+              name="b_8831ef722a7386b295fb8898c_3d5fc57d9b"
+              tabindex="-1" value="" />
+          </div>
+
         </form>
       </div>
     )

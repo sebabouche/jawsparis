@@ -2,50 +2,37 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.css';
 
-import SignUpForm from '../SignUpForm';
+import SignUpFormInline from '../SignUpFormInline';
 
 export default class Header extends React.Component {
   render() {
-    const illustrations = this.props.illustrations.map((illustration) => {
-      const illusStyle = {
-        backgroundImage: 'url(' + illustration.imageUrl + ')',
-        backgroundPosition: 'center center',
-        backgroundSize: 'cover'
-      };
+    const backgroundStyle = {
+      backgroundImage: 'url(' + this.props.image + ')',
+    }
 
-      return(
-        <li
-          key={illustration.id}
-          style={illusStyle}
-        >
-        </li>
-      )
-    })
     return (
-      <div className="uk-height-1-1 uk-cover-background">
-        <top className="uk-width-5-6 uk-width-medium-2-3 uk-large-1-2 uk-container-center uk-position-bottom uk-text-center uk-block" style={{zIndex: '1200'}}>
-          <img className="uk-width-1-2 uk-width-small-1-4 uk-width-medium-1-2 uk-width-large-1-4" src={require('./images/logo-transp-cartouche.svg')} />
-          <h1 className="uk-contrast uk-heading-large">
-            {this.props.title}
-          </h1>
-          <a
-            href="#section3"
-            className="uk-button uk-button-success uk-button-large ja-font-special ja-button-special"
-            data-uk-smooth-scroll>
-            Je m'inscris !
-          </a>
-        </top>
+      <div className="uk-height-1-1 uk-cover-background" style={backgroundStyle}>
+        <div className={classNames("uk-position-relative", styles.header)}>
+          <div className="uk-position-cover uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+            <div className="uk-width-1-2 uk-container-center uk-text-center">
+              <img className="uk-width-1-2 uk-width-small-1-4 uk-width-medium-1-2 uk-width-large-1-5" src={require('./images/logo-noir-cartouche.svg')} />
+            </div>
+            <h1 className="uk-hidden-small uk-text-center uk-text-contrast uk-width-4-5">{this.props.title}</h1>
+            <h2 className="uk-visible-small uk-text-center uk-text-contrast uk-container">{this.props.title}</h2>
+          </div>
 
-        <ul
-          className="uk-slideshow uk-slideshow-fullscreen"
-          data-uk-slideshow="{
-            autoplay: true,
-            duration: 1000,
-            pauseOnHover: false,
-            autoplayInterval: 5000,
-            animation: 'scale'}">
-          {illustrations}
-        </ul>
+        </div>
+        <div className={classNames("uk-position-relative", styles.overlay)}>
+          <div className="uk-position-cover uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+            <p className="uk-visible-small uk-article-lead uk-text-contrast uk-text-center">
+              Jaws.paris est le nouveau service de livraison de commerces de proximité.
+            </p>
+            <h2 className="uk-hidden-small uk-text-contrast uk-text-center ja-font-normal">
+              Jaws.paris est le nouveau service de livraison de commerces de proximité.
+            </h2>
+            <SignUpFormInline />
+          </div>
+        </div>
       </div>
     );
   }

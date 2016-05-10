@@ -34,7 +34,7 @@ export default class App extends React.Component{
     const landing_variants = landing_data.map(variant => {
       return(
         <Variant key={variant.id} name={variant.name} >
-          <Header title={variant.title} illustrations={variant.illustrations} />
+          <Header title={variant.title} image={variant.imageUrl} />
           <Problem problem={variant.problem} />
           <Solution solution={variant.solution} />
           <SignUp />
