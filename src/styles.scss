@@ -5,6 +5,15 @@ $icon-font-path: "../node_modules/uikit/dist/fonts";
 
 @import url(https://fonts.googleapis.com/css?family=Caudex:700italic,700|Lato:100|Lobster+Two:700italic);
 $base-body-font-family: "Lato", Helvetica, Arial, sans-serif;
+$base-body-font-weight: 100;
+$base-body-font-size: 18px;
+$base-body-line-height: 22px;
+
+$button-font-size: 2rem;
+$button-success-background: #d5d78e;
+$button-success-hover-background: #b2b558;
+
+
 $base-heading-font-family: "Caudex", serif;
 $base-heading-font-weight: 700;
 
