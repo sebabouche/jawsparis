@@ -19,11 +19,13 @@ $base-heading-font-weight: 400;
 @import "../node_modules/uikit/dist/scss/components/slideshow";
 
 .ja-font-special {
-  font-family: "Lobster Two";
+  font-family: "Lobster Two", cursive;
+  font-style: italic;
 }
 
 .ja-font-normal {
   font-family: "Lato";
+  font-style: normal;
 }
 
 .ja-button-special {
