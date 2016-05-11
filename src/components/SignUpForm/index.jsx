@@ -38,7 +38,7 @@ export default class SignUpForm extends React.Component {
                 type="text" name="FNAME"
                 value={this.state.firstnameValue}
                 onChange={this.handleFirstnameChange}
-                className="uk-width-1-1"
+                className="uk-form-large uk-width-1-1"
                 id="mce-FNAME" placeholder="Prénom" />
             </div>
 
@@ -47,12 +47,12 @@ export default class SignUpForm extends React.Component {
                 type="email" name="EMAIL"
                 value={this.state.emailValue}
                 onChange={this.handleEmailChange}
-                className="uk-width-1-1"
+                className="uk-form-large uk-width-1-1"
                 id="mce-EMAIL" placeholder="Mon Email" />
             </div>
 
             <div className="uk-form-row">
-            	<select name="MMERGE3" defaultValue="" className="uk-width-1-1" id="mce-MMERGE3">
+            	<select name="MMERGE3" defaultValue="" className="uk-form-large uk-width-1-1" id="mce-MMERGE3">
                 <option value="" disabled>Arrondissement</option>
               	<option value="Paris 1er">Paris 1er</option>
                 <option value="Paris 2e">Paris 2e</option>
@@ -75,12 +75,6 @@ export default class SignUpForm extends React.Component {
                 <option value="Paris 19e">Paris 19e</option>
                 <option value="Paris 20e">Paris 20e</option>
   	          </select>
-            </div>
-
-            <div className="uk-form-row">
-              <label for="mce-group[3617]-3617-0">
-                <input type="checkbox" value="1" name="group[3617][1]" id="mce-group[3617]-3617-0" /> Envoyez-moi le guide des meilleurs artisans de bouche de mon quartier
-              </label>
             </div>
 
             <div className="uk-form-row">
