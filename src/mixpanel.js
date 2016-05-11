@@ -1,7 +1,15 @@
 const mixpanel = require('mixpanel-browser');
 
-const token = process.env.mixpanel_token || '28bd70982351b1692070b35096235acb';
+let token = "";
+
+if (process.env.NODE_ENV == 'production') {
+  token = "6ecc9cfd86674de43751d9b80b747dda";
+} else {
+  token = "28bd70982351b1692070b35096235acb";
+}
 
 mixpanel.init(token);
+
+console.log(token);
 
 module.exports = mixpanel;

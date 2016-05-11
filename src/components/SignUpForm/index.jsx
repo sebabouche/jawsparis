@@ -1,4 +1,5 @@
 import React from 'react';
+import mixpanel from '../../mixpanel';
 
 export default class SignUpForm extends React.Component {
   constructor(props) {
