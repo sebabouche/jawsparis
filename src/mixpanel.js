@@ -10,6 +10,8 @@ if (process.env.NODE_ENV == 'production') {
   token = "7bc9e9c4643bcf2ae9d74dbfd43632bc";
 }
 
+console.log(token);
+
 mixpanel.init(token);
 
 module.exports = mixpanel;
