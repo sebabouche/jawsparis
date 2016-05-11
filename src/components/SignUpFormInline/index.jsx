@@ -38,7 +38,7 @@ export default class SignUpFormInline extends React.Component {
                 type="text" name="FNAME"
                 value={this.state.firstnameValue}
                 onChange={this.handleFirstnameChange}
-                className="uk-width-1-1"
+                className="uk-form-large uk-width-1-1"
                 id="mce-FNAME" placeholder="Mon Prénom" />
             </div>
 
@@ -47,13 +47,13 @@ export default class SignUpFormInline extends React.Component {
                 type="email" name="EMAIL"
                 value={this.state.emailValue}
                 onChange={this.handleEmailChange}
-                className="uk-width-1-1"
+                className="uk-form-large uk-width-1-1"
                 id="mce-EMAIL" placeholder="Mon Email" />
             </div>
 
             <div className="uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
 
-            	<select name="MMERGE3" defaultValue="" className="uk-width-1-1" id="mce-MMERGE3">
+            	<select name="MMERGE3" defaultValue="" className="uk-form-large uk-width-1-1" id="mce-MMERGE3">
                 <option value="" disabled>Mon quartier</option>
               	<option value="Paris 1er">Paris 1er</option>
                 <option value="Paris 2e">Paris 2e</option>
@@ -82,7 +82,7 @@ export default class SignUpFormInline extends React.Component {
               <button
                 type="submit" name="subscribe"
                 id="mc-embedded-subscribe"
-                className="uk-button uk-button-success uk-width-1-1">
+                className="uk-button uk-button-success uk-button-large uk-width-1-1">
                 M'informer du lancement
               </button>
             </div>
