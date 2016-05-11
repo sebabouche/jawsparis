@@ -4,10 +4,10 @@
 
 @media (max-width: 767px) {
   .header {
-    height: 60%;
+    height: 55%;
   }
   .overlay {
-    height: 40%;
+    height: 45%;
   }
 }
 

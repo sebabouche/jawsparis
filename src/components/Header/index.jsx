@@ -23,7 +23,7 @@ export default class Header extends React.Component {
 
         </div>
         <div className={classNames("uk-position-relative", styles.overlay)}>
-          <div className="uk-position-cover uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+          <div className="uk-flex uk-flex-column uk-flex-middle">
             <p className="uk-visible-small uk-article-lead uk-text-contrast uk-text-center">
               Jaws.paris est le nouveau service de livraison de commerces de proximité.
             </p>

@@ -22,7 +22,7 @@ export default class SignUpFormInline extends React.Component {
 
   render() {
     return (
-      <div id="mc_embed_signup">
+      <div className="uk-width-1-1 uk-container uk-container-center" id="mc_embed_signup">
         <form
           action="//paris.us13.list-manage.com/subscribe/post?u=33f520f8f7f8fdb1663eedeaf&amp;id=92e07b5a4b"
           method="post"
