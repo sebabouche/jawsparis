@@ -1,5 +1,5 @@
 import React from 'react';
-import mixpanel from '../../mixpanel';
+
 
 export default class SignUpFormInline extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ export default class SignUpFormInline extends React.Component {
   }
 
   handleClick(event) {
-    mixpanel.track("Regular Form Clicked");
+    mixpanel.track("Top Form Clicked");
     mixpanel.identify(this.state.emailValue);
     mixpanel.people.set({
       "$email": this.state.emailValue,

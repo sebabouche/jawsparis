@@ -38,7 +38,6 @@ export default class App extends React.Component{
       return(
         <Variant key={variant.id} name={variant.name} >
           <Header title={variant.title} image={variant.imageUrl} />
-          <Navbar />
           <Problem problem={variant.problem} />
           <Solution solution={variant.solution} />
           <SignUp />

@@ -1,5 +1,4 @@
 import React from 'react';
-import mixpanel from '../../mixpanel';
 
 export default class SignUpForm extends React.Component {
   constructor(props) {
@@ -29,7 +28,7 @@ export default class SignUpForm extends React.Component {
   }
 
   handleClick(event) {
-    mixpanel.track("Regular Form Clicked", {
+    mixpanel.track("Bottom Form Clicked", {
       "Email": this.state.emailValue,
       "Firstname": this.state.firstnameValue,
       "Location": this.state.locationValue
