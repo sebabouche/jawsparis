@@ -10,6 +10,4 @@ if (process.env.NODE_ENV == 'production') {
 
 mixpanel.init(token);
 
-console.log(token);
-
 module.exports = mixpanel;

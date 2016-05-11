@@ -50,12 +50,6 @@ export default class App extends React.Component{
         <Experiment ref="exLanding" onChoice={this.choice} name="landing">
           { landing_variants }
         </Experiment>
-        <div className="uk-container uk-container-center">
-          <div className="uk-text-center">
-            <button onClick={this.clear.bind(this)} href="" className="uk-button uk-button-mini uk-button-primary">Effacer cookie et recharger</button>
-            <button onClick={this.choose.bind(this)} href=""  className="uk-button uk-button-mini uk-button-success">Autre variante</button>
-          </div>
-        </div>
       </div>
     );
   }

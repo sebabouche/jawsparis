@@ -191,7 +191,7 @@ export const data = {
     {
       id: 4,
       name: "pas-plus-cher",
-      title: "Faire ses courses chez les artisans ne coûtent pas plus cher et JAWS vous les livre sur un plateau",
+      title: "Faire ses courses chez les artisans ne coûte pas plus cher et JAWS vous les livre sur un plateau",
       imageUrl: require('./images/landing/pas-plus-cher.jpg'),
       problem: {
         title: "Mais pourquoi en 2016 on va encore au supermarché  ???",
