@@ -1,7 +1,7 @@
 {
-  "name": "jaws-app",
+  "name": "react-webpack-uikit-boilerplate",
   "version": "0.0.1",
-  "description": "Jaws App",
+  "description": "React Webpack UIKit SCSS Heroku-ready boilerplate app with a test index page",
   "engines": {
     "node": "4.3.1",
     "npm": "3.8.1"
@@ -9,7 +9,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/sebabouche/jaws.git"
+    "url": "https://github.com/sebabouche/webpack-react-uikit.git"
   },
   "keywords": [
     "react",
@@ -23,9 +23,12 @@
   ],
   "author": "Sébastien Nicolaïdis",
   "license": "MIT",
-  "homepage": "https://www.jaws.paris",
+  "bugs": {
+    "url": "https://github.com/sebabouche/webpack-react-uikit/issues"
+  },
+  "homepage": "https://github.com/sebabouche/webpack-react-uikit",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\"",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "start": "node server",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
@@ -45,9 +48,11 @@
     "chai": "^3.5.0",
     "chai-immutable": "^1.5.4",
     "css-loader": "^0.23.1",
+    "enzyme": "^2.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.16.0",
+    "ignore-styles": "^1.2.0",
     "image-webpack-loader": "^1.8.0",
     "jsdom": "^8.4.0",
     "mocha": "^2.4.5",
@@ -61,10 +66,15 @@
   },
   "dependencies": {
     "classnames": "^2.2.3",
+    "css-modules-require-hook": "^4.0.0",
     "express": "^4.13.4",
     "immutable": "^3.8.1",
     "jquery": "^2.2.3",
+    "md5": "^2.1.0",
+    "mixpanel-browser": "^2.7.2",
     "react": "^15.0.1",
+    "react-ab": "^0.4.5",
+    "react-addons-test-utils": "^15.0.2",
     "react-dom": "^15.0.1",
     "uikit": "^2.26.2"
   }

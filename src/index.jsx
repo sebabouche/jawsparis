@@ -9,6 +9,7 @@ window.$ = $;
 
 require('uikit/dist/js/uikit.min.js');
 require('uikit/dist/js/components/sticky.js');
+require('uikit/dist/js/components/slideshow.js');
 
 require('./styles.scss');
 
