@@ -1,15 +1,19 @@
 import React from 'react';
+import mixpanel from '../../mixpanel';
 
 export default class SignUpFormInline extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       emailValue: "",
-      firstnameValue: ""
+      firstnameValue: "",
+      locationValue: ""
     };
 
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handleFirstnameChange = this.handleFirstnameChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleEmailChange(event) {
@@ -18,6 +22,20 @@ export default class SignUpFormInline extends React.Component {
 
   handleFirstnameChange(event) {
     this.setState({firstnameValue: event.target.value});
+  }
+
+  handleLocationChange(event) {
+    this.setState({locationValue: event.target.value});
+  }
+
+  handleClick(event) {
+    mixpanel.track("Regular Form Clicked");
+    mixpanel.identify(this.state.emailValue);
+    mixpanel.people.set({
+      "$email": this.state.emailValue,
+      "$first_name": this.state.firstnameValue,
+      "location": this.state.locationValue
+    });
   }
 
   render() {
@@ -53,7 +71,12 @@ export default class SignUpFormInline extends React.Component {
 
             <div className="uk-width-1-1 uk-width-small-1-2 uk-width-large-1-4">
 
-            	<select name="MMERGE3" defaultValue="" className="uk-form-large uk-width-1-1" id="mce-MMERGE3">
+            <select
+              name="MMERGE3"
+              className="uk-form-large uk-width-1-1"
+              id="mce-MMERGE3"
+              onChange={this.handleLocationChange}
+              value={this.state.locationValue}>
                 <option value="" disabled>Mon quartier</option>
               	<option value="Paris 1er">Paris 1er</option>
                 <option value="Paris 2e">Paris 2e</option>
@@ -82,7 +105,9 @@ export default class SignUpFormInline extends React.Component {
               <button
                 type="submit" name="subscribe"
                 id="mc-embedded-subscribe"
+                onClick={this.handleClick}
                 className="uk-button uk-button-success uk-button-large uk-width-1-1">
+
                 M'informer du lancement
               </button>
             </div>

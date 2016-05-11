@@ -9,7 +9,9 @@ import Problem from '../Problem';
 import Solution from '../Solution';
 import SignUp from '../SignUp';
 
-import {data} from '../../data/data.js';
+import {data} from '../../data/data';
+
+import mixpanel from '../../mixpanel';
 
 export default class App extends React.Component{
   clear () {
@@ -23,10 +25,11 @@ export default class App extends React.Component{
 
 
   choice (experiment, variant) {
-    // this is where you want to setup tracking variables.
     mixpanel.register({
       "landing": variant
     });
+    mixpanel.track(`Landing displayed`);
+
   }
 
   render () {
@@ -35,6 +38,7 @@ export default class App extends React.Component{
       return(
         <Variant key={variant.id} name={variant.name} >
           <Header title={variant.title} image={variant.imageUrl} />
+          <Navbar />
           <Problem problem={variant.problem} />
           <Solution solution={variant.solution} />
           <SignUp />

@@ -25,6 +25,8 @@ export default class Problem extends React.Component{
           {problems}
         </div>
       </div>
+      <span id="#spy-section1" data-uk-scrollspy></span>
     </section>
+
   )};
 };
