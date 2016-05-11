@@ -11,17 +11,17 @@ export const data = {
           {
             "id": 0,
             "content": "Dénicher les bons produits ça prend du temps",
-            "imageUrl": require('./images/4-problem-0.png')
+            "imageUrl": require('./images/prob-directions.png')
           },
           {
             "id": 1,
             "content": "Les bons produits, c’est jamais quand on a envie",
-            "imageUrl": require('./images/4-problem-1.png')
+            "imageUrl": require('./images/prob-closed.png')
           },
           {
             "id": 2,
             "content": "Du coup on finit souvent avec de mauvais produits",
-            "imageUrl": require('./images/4-problem-2.png')
+            "imageUrl": require('./images/prob-ravioli.png')
           }
         ],
       },
@@ -31,17 +31,17 @@ export const data = {
           {
             "id": 0,
             "content": "vous choisissez vos bons produits dans notre sélection quotidienne",
-            "imageUrl": require('./images/4-solution-0.png')
+            "imageUrl": require('./images/sol-smartphone.png')
           },
           {
             "id": 1,
             "content": "vous choisissez où et quand vous voulez être livré",
-            "imageUrl": require('./images/4-solution-1.png')
+            "imageUrl": require('./images/sol-bicycle.png')
           },
           {
             "id": 2,
             "content": "c’est tellement simple qu’il n’y a pas de petit trois",
-            "imageUrl": require('./images/4-solution-2.png')
+            "imageUrl": require('./images/sol-unicorn.png')
           }
         ]
       }
@@ -58,17 +58,17 @@ export const data = {
           {
             "id": 0,
             "content": "Passer chez le maraîcher, le boucher et le boulanger, ça prend du temps",
-            "imageUrl": require('./images/4-problem-0.png')
+            "imageUrl": require('./images/prob-directions.png')
           },
           {
             "id": 1,
             "content": "Sans compter qu'ils sont souvent fermés quand on sort du boulot",
-            "imageUrl": require('./images/4-problem-1.png')
+            "imageUrl": require('./images/prob-closed.png')
           },
           {
             "id": 2,
             "content": "Du coup on finit à la supérette, pas chouette",
-            "imageUrl": require('./images/4-problem-2.png')
+            "imageUrl": require('./images/prob-ravioli.png')
           }
         ],
       },
@@ -78,17 +78,17 @@ export const data = {
           {
             "id": 0,
             "content": "Vous choisissez vos bons produits dans notre sélection quotidienne",
-            "imageUrl": require('./images/4-solution-0.png')
+            "imageUrl": require('./images/sol-smartphone.png')
           },
           {
             "id": 1,
             "content": "Vous choisissez où et quand vous voulez être livré",
-            "imageUrl": require('./images/4-solution-1.png')
+            "imageUrl": require('./images/sol-bicycle.png')
           },
           {
             "id": 2,
             "content": "Du coup, vous avez tout le temps de cuisiner",
-            "imageUrl": require('./images/4-solution-2.png')
+            "imageUrl": require('./images/sol-cloche.png')
           }
         ]
       }
@@ -105,17 +105,17 @@ export const data = {
           {
             "id": 0,
             "content": "On ne sait plus quoi répondre à “Qu’est-ce qu’on mange ce soir ?”",
-            "imageUrl": require('./images/4-problem-0.png')
+            "imageUrl": require('./images/prob-directions.png')
           },
           {
             "id": 1,
             "content": "On n’a plus le temps de dénicher les bons produits",
-            "imageUrl": require('./images/4-problem-1.png')
+            "imageUrl": require('./images/prob-closed.png')
           },
           {
             "id": 2,
             "content": "Du coup on finit à la supérette, trop chouette",
-            "imageUrl": require('./images/4-problem-2.png')
+            "imageUrl": require('./images/prob-ravioli.png')
           }
         ],
       },
@@ -125,17 +125,17 @@ export const data = {
           {
             "id": 0,
             "content": "Chaque jour, de nouvelles idées pour votre dîner",
-            "imageUrl": require('./images/4-solution-0.png')
+            "imageUrl": require('./images/sol-idea.png')
           },
           {
             "id": 1,
             "content": "Cuisiner avec de bons produits, c’est un jeu d’enfant",
-            "imageUrl": require('./images/4-solution-1.png')
+            "imageUrl": require('./images/sol-cloche.png')
           },
           {
             "id": 2,
             "content": "Et votre table retrouve le smile",
-            "imageUrl": require('./images/4-solution-2.png')
+            "imageUrl": require('./images/sol-table.png')
           }
         ]
       }
@@ -152,17 +152,17 @@ export const data = {
           {
             "id": 0,
             "content": "Le bon maraîcher, le bon boucher et le bon boulanger, c’est rarement la porte à côté",
-            "imageUrl": require('./images/4-problem-0.png')
+            "imageUrl": require('./images/prob-directions.png')
           },
           {
             "id": 1,
             "content": "Sans compter qu'ils sont souvent fermés quand on sort du boulot",
-            "imageUrl": require('./images/4-problem-1.png')
+            "imageUrl": require('./images/prob-closed.png')
           },
           {
             "id": 2,
             "content": "Du coup on finit à la supérette et on mange toujours la même chose",
-            "imageUrl": require('./images/4-problem-2.png')
+            "imageUrl": require('./images/prob-ravioli.png')
           }
         ],
       },
@@ -172,17 +172,17 @@ export const data = {
           {
             "id": 0,
             "content": "Vous choisissez vos bons produits dans notre sélection quotidienne",
-            "imageUrl": require('./images/4-solution-0.png')
+            "imageUrl": require('./images/sol-smartphone.png')
           },
           {
             "id": 1,
             "content": "Vous choisissez où et quand vous voulez être livré",
-            "imageUrl": require('./images/4-solution-1.png')
+            "imageUrl": require('./images/sol-bicycle.png')
           },
           {
             "id": 2,
             "content": "C’est tellement simple qu’il n’y a pas de petit trois",
-            "imageUrl": require('./images/4-solution-2.png')
+            "imageUrl": require('./images/sol-unicorn.png')
           }
         ]
       }
@@ -199,17 +199,17 @@ export const data = {
           {
             "id": 0,
             "content": "Au supermarché, on achète mille fois trop",
-            "imageUrl": require('./images/4-problem-0.png')
+            "imageUrl": require('./images/prob-caddie.png')
           },
           {
             "id": 1,
             "content": "Et c’est fou ce qu’on finit par jeter !",
-            "imageUrl": require('./images/4-problem-1.png')
+            "imageUrl": require('./images/prob-garbage.png')
           },
           {
             "id": 2,
             "content": "Et le maraîcher super bon et pas trop cher, il est rarement en bas de la rue",
-            "imageUrl": require('./images/4-problem-2.png')
+            "imageUrl": require('./images/prob-directions.png')
           }
         ],
       },
@@ -219,17 +219,17 @@ export const data = {
           {
             "id": 0,
             "content": "Vous choisissez vos bons produits dans notre sélection quotidienne",
-            "imageUrl": require('./images/4-solution-0.png')
+            "imageUrl": require('./images/sol-smartphone.png')
           },
           {
             "id": 1,
             "content": "Pour les quantités, c’est trop facile : les portions sont par personne",
-            "imageUrl": require('./images/4-solution-1.png')
+            "imageUrl": require('./images/sol-balance.png')
           },
           {
             "id": 2,
             "content": "Vous choisissez où et quand vous voulez être livré",
-            "imageUrl": require('./images/4-solution-2.png')
+            "imageUrl": require('./images/sol-bicycle.png')
           }
         ]
       }
