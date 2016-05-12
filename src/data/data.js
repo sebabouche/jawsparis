@@ -1,4 +1,380 @@
 export const data = {
+  days:
+    {
+      "monday":
+        {
+          "id":0,
+          "entree":[
+            {
+              "id":0,
+              "name":"Radis de Chine",
+              "img":require('./images/products/radis.png'),
+              "desc":"Cultivés dans le Val d'Oise.",
+              "conseil":"à couper en fines tranches avec du beurre",
+              "prix": 150,
+              "people":1,
+              "portion":"portion de 300g"
+            },
+            {
+              "id":1,
+              "name":"Carottes Multicolores",
+              "img":"",
+              "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
+              "conseil":"en batonnets ou râpées",
+              "prix": 100,
+              "people":1,
+              "portion":"portion de 240g"
+            }
+          ],
+          "plat":[
+            {
+              "id":0,
+              "name":"Poireaux Bio",
+              "img":"",
+              "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
+              "conseil":"fondue de poireaux ou vinaigrette",
+              "prix": 180,
+              "people":1,
+              "portion":"portion de 450g"
+            },
+            {
+              "id":1,
+              "name":"Coquilles Saint Jacques",
+              "img":"",
+              "desc":"Pêchées dans les Iles Chausey(50)",
+              "conseil":"faites les revenir dans un beurre noisette",
+              "prix": 720,
+              "people":1,
+              "portion":"lot de 2 pièces"
+            },
+            {
+              "id":2,
+              "name":"Steack Hache",
+              "img":"",
+              "desc":"Jeune vache Charolaise de 3 ans élevée dans le 71. Viande 1 mois de maturation. Agriculture vertueuse.",
+              "conseil":"à la poêle, en boulette, en bolognaise...",
+              "prix": 280,
+              "people":1,
+              "portion":"portion de 130g"
+            }
+          ],
+          "frommage":[
+            {
+              "id":0,
+              "name":"Chevre Cendre",
+              "img":"",
+              "desc":"Lait de chèvre, Charentes-Poitou",
+              "conseil":"",
+              "prix": 400,
+              "people":2,
+              "portion":"A la pièce"
+            },
+            {
+              "id":1,
+              "name":"Compté 24 mois",
+              "img":"",
+              "desc":"Origine Franche Compté, lait de vache cru, pâte cuite.",
+              "conseil":"à sortir du frigo 20 min avant dégustation",
+              "prix": 430,
+              "people":4,
+              "portion":"A la pièce (200g)"
+
+            }
+          ],
+          "pain":[
+            {
+              "id":0,
+              "name":"Pain du Nil Bio",
+              "img":"",
+              "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
+              "conseil":"",
+              "prix": 250,
+              "people":3,
+              "portion":"A la pièce (1/2 miche) env. 230g"
+            },
+            {
+              "id":1,
+              "name":"Baguette Bio",
+              "img":"",
+              "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
+              "conseil":"",
+              "prix": 120,
+              "people":3,
+              "portion":"A la pièce"
+
+            }
+          ],
+          "dessert":[
+            {
+              "id":0,
+              "name":"Pommes Bio Jubile",
+              "img":"",
+              "desc":"Bio, cultivées en Seine et Marne (77)",
+              "conseil":"",
+              "prix": 200,
+              "people":4,
+              "portion":"4 pommes, portion de 650g"
+            },
+            {
+              "id":1,
+              "name":"Fromage Blanc Frais",
+              "img":"",
+              "desc":"Fromage de lait battu, battu, 40% de M.G.",
+              "conseil":"",
+              "prix": 180,
+              "people":1,
+              "portion":"portion de 250g"
+            },
+            {
+              "id":2,
+              "name":"Barre Pralinée Noire",
+              "img":"",
+              "desc":"Délicieuse barre de chocolat noir au praliné fondant et croustillant.",
+              "conseil":"",
+              "prix": 500,
+              "people":1,
+              "portion":"A la pièce"
+            }
+          ]
+
+
+        },
+      "sunday":
+      {
+        "id":0,
+        "a partager":[
+          {
+            "id":0,
+            "name":"Plateau de charcuterie",
+            "img":"",
+            "desc":"Assortiment de 200g de charcuterie.",
+            "conseil":"à sortir du frigo 20 min avant dégustation",
+            "prix": 800,
+            "people":4,
+            "portion":"A la pièce"
+          },
+          {
+            "id":1,
+            "name":"Mini Chou Fleur Bio",
+            "img":"",
+            "desc":"Bio, cultivés dans le Finistère.",
+            "conseil":"à déguster cru à l'apéro avec une vinaigrette",
+            "prix": 190,
+            "people":4,
+            "portion":"A la pièce, 300g environ"
+          }
+        ],
+        "entree":[
+          {
+            "id":0,
+            "name":"Radis de Chine",
+            "img":"",
+            "desc":"Cultivés dans le Val d'Oise.",
+            "conseil":"à couper en fines tranches avec du beurre",
+            "prix": 150,
+            "people":1,
+            "portion":"portion de 300g"
+
+          },
+          {
+            "id":1,
+            "name":"Carottes Multicolores",
+            "img":"",
+            "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
+            "conseil":"en batonnets ou râpées",
+            "prix": 100,
+            "people":1,
+            "portion":"portion de 240g"
+
+          }
+
+
+        ],
+        "plat":[
+          {
+            "id":0,
+            "name":"Poireaux Bio",
+            "img":"",
+            "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
+            "conseil":"fondue de poireaux ou vinaigrette",
+            "prix": 180,
+            "people":1,
+            "portion":"portion de 450g"
+          },
+          {
+            "id":1,
+            "name":"Coquilles Saint Jacques",
+            "img":"",
+            "desc":"Pêchées dans les Iles Chausey(50)",
+            "conseil":"faites les revenir dans un beurre noisette",
+            "prix": 720,
+            "people":1,
+            "portion":"lot de 2 pièces"
+          },
+          {
+            "id":2,
+            "name":"Parmesan",
+            "img":"",
+            "desc":"Parmiggiano Regiano en copeaux",
+            "conseil":"parfait sur une poëlée de champignons",
+            "prix": 190,
+            "people":1,
+            "portion":"portion de 50g"
+          },
+          {
+            "id":3,
+            "name":"Salade de feuille de Chêne",
+            "img":"",
+            "desc":"Cultivés dans le Va d'Oise. Agriculture raisonnée",
+            "conseil":"parfait sur une poëlée de champignons",
+            "prix": 190,
+            "people":1,
+            "portion":"portion de 50g"
+          },
+          {
+            "id":4,
+            "name":"Pommes de terre charlotte",
+            "img":"",
+            "desc":"Cultivées dans le Val d'Oise. Agriculture raisonnée. Accompagnées d'une gousse d'ail et de branche de romarin",
+            "conseil":"Vapeur ou sautées, c'est toujours un régal",
+            "prix": 220,
+            "people":2,
+            "portion":"portion de 500g"
+          },
+          {
+            "id":5,
+            "name":"Steack Hache",
+            "img":"",
+            "desc":"Jeune vache Charolaise de 3 ans élevée dans le 71. Viande 1 mois de maturation. Agriculture vertueuse.",
+            "conseil":"à la poêle, en boulette, en bolognaise...",
+            "prix": 280,
+            "people":1,
+            "portion":"portion de 130g"
+          },
+          {
+            "id":6,
+            "name":"Champignons de Paris Roses",
+            "img":"",
+            "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
+            "conseil":"Aussi bons crus que cuits",
+            "prix": 130,
+            "people":1,
+            "portion":"portion de 250g"
+          },
+          {
+            "id":7,
+            "name":"Bavette Charolaise",
+            "img":"",
+            "desc":"Jeune vache Charolaise de 3 ans élevée dans la Saône-et-Loire. Viande 1 mois de maturation. Agriculture vertueuse.",
+            "conseil":"à faire griller sur poêle très chaude",
+            "prix": 740,
+            "people":1,
+            "portion":"portion de 195g"
+          }
+        ],
+        "frommage":[
+          {
+            "id":0,
+            "name":"Chevre Cendre",
+            "img":"",
+            "desc":"Lait de chèvre, Charentes-Poitou",
+            "conseil":"",
+            "prix": 400,
+            "people":2,
+            "portion":"A la pièce"
+          },
+          {
+            "id":1,
+            "name":"Compté 24 mois",
+            "img":"",
+            "desc":"Origine Franche Compté, lait de vache cru, pâte cuite.",
+            "conseil":"à sortir du frigo 20 min avant dégustation",
+            "prix": 430,
+            "people":4,
+            "portion":"A la pièce (200g)"
+
+          },
+          {
+            "id":2,
+            "name":"Saint Marcelin",
+            "img":"",
+            "desc":"Lait de vache, Fabriqué dans le Dauphiné.",
+            "conseil":"à sortir du frigo 20 min avant dégustation",
+            "prix": 200,
+            "people":3,
+            "portion":"A la pièce"
+          },
+          {
+            "id":3,
+            "name":"Saint Nectaire Fermier",
+            "img":"",
+            "desc":"Origine Jura, lait de vache.",
+            "conseil":"à sortir du frigo 20 min avant dégustation",
+            "prix": 450,
+            "people":4,
+            "portion":"A la pièce (220g)"
+
+          }
+        ],
+        "pain":[
+          {
+            "id":0,
+            "name":"Pain du Nil Bio",
+            "img":"",
+            "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
+            "conseil":"",
+            "prix": 250,
+            "people":3,
+            "portion":"A la pièce (1/2 miche) env. 230g"
+          },
+          {
+            "id":1,
+            "name":"Baguette Bio",
+            "img":"",
+            "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
+            "conseil":"",
+            "prix": 120,
+            "people":3,
+            "portion":"A la pièce"
+
+          }
+        ],
+        "dessert":[
+          {
+            "id":0,
+            "name":"Pommes Bio Jubile",
+            "img":"",
+            "desc":"Bio, cultivées en Seine et Marne (77)",
+            "conseil":"",
+            "prix": 200,
+            "people":4,
+            "portion":"4 pommes, portion de 650g"
+          },
+          {
+            "id":1,
+            "name":"Fromage Blanc Frais",
+            "img":"",
+            "desc":"Fromage de lait battu, battu, 40% de M.G.",
+            "conseil":"",
+            "prix": 180,
+            "people":1,
+            "portion":"portion de 250g"
+          },
+          {
+            "id":2,
+            "name":"Barre Pralinée Noire",
+            "img":"",
+            "desc":"Délicieuse barre de chocolat noir au praliné fondant et croustillant.",
+            "conseil":"",
+            "prix": 500,
+            "people":1,
+            "portion":"A la pièce"
+          }
+        ]
+
+
+      }
+    },
   landings: [
     {
       id: 0,
