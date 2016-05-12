@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-uikit-boilerplate",
+  "name": "jaws-paris-app",
   "version": "0.0.1",
-  "description": "React Webpack UIKit SCSS Heroku-ready boilerplate app with a test index page",
+  "description": "Jaws.paris App",
   "engines": {
     "node": "4.3.1",
     "npm": "3.8.1"
@@ -31,7 +31,7 @@
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "start": "node server",
-    "build": "webpack --config ./webpack.prod.config.js --staging --progress --colors",
+    "build:staging": "webpack --config ./webpack.prod.config.js --staging --progress --colors",
     "build:prod": "webpack --config ./webpack.prod.config.js --production --progress --colors",
     "clean": "rm -rf dist/*"
   },
