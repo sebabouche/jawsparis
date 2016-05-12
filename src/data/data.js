@@ -264,7 +264,7 @@ export const data = {
           {
             "id":7,
             "name":"Bavette Charolaise",
-            "img":require('./images/products/bavette.jpg'),,
+            "img":require('./images/products/bavette.jpg'),
             "desc":"Jeune vache Charolaise de 3 ans élevée dans la Saône-et-Loire. Viande 1 mois de maturation. Agriculture vertueuse.",
             "conseil":"à faire griller sur poêle très chaude",
             "prix": 740,
@@ -320,7 +320,7 @@ export const data = {
           {
             "id":0,
             "name":"Pain du Nil Bio",
-            "img":require('./images/products/pain_nil.jpg'),,
+            "img":require('./images/products/pain_nil.jpg'),
             "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
             "conseil":"",
             "prix": 250,
