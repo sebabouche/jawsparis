@@ -1,5 +1,5 @@
 import React from 'react';
-import mixpanel from '../../mixpanel';
+import mixpanel from '../../services/mixpanel';
 
 export default class SignUpForm extends React.Component {
   constructor(props) {
@@ -29,18 +29,29 @@ export default class SignUpForm extends React.Component {
   }
 
   handleClick(event) {
-    mixpanel.track("Bottom Form Clicked", {
-      "Email": this.state.emailValue,
-      "Firstname": this.state.firstnameValue,
-      "Location": this.state.locationValue
+    mixpanel.track("Form Sent", {
+      "layout position": "bottom of page"
+    });
+    mixpanel.identify(this.state.emailValue);
+    mixpanel.people.set({
+      "$email": this.state.emailValue,
+      "$first_name": this.state.firstnameValue,
+      "location": this.state.locationValue
     });
   }
 
   render() {
+    let mailChimpUrl = "";
+    if (__PROD__) {
+      mailChimpUrl = "//paris.us13.list-manage.com/subscribe/post?u=33f520f8f7f8fdb1663eedeaf&amp;id=92e07b5a4b";
+    } else {
+      mailChimpUrl = "//paris.us13.list-manage.com/subscribe/post?u=33f520f8f7f8fdb1663eedeaf&amp;id=d67dd4f5f4";
+    }
+
     return (
       <div id="mc_embed_signup">
         <form
-          action="//paris.us13.list-manage.com/subscribe/post?u=33f520f8f7f8fdb1663eedeaf&amp;id=92e07b5a4b"
+          action={mailChimpUrl}
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"

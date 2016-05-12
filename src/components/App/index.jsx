@@ -11,7 +11,7 @@ import SignUp from '../SignUp';
 
 import {data} from '../../data/data';
 
-import mixpanel from '../../mixpanel';
+import mixpanel from '../../services/mixpanel';
 
 export default class App extends React.Component{
   clear () {
@@ -25,10 +25,10 @@ export default class App extends React.Component{
 
 
   choice (experiment, variant) {
-    mixpanel.register({
+    mixpanel.register_once({
       "landing": variant
     });
-    mixpanel.track(`Landing displayed`);
+    mixpanel.track(`Landing Page Loaded`);
 
   }
 
