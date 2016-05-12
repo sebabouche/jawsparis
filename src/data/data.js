@@ -8,7 +8,7 @@ export const data = {
             {
               "id":0,
               "name":"Radis de Chine",
-              "img":require('./images/products/radis.png'),
+              "img":require('./images/products/radis.jpg'),
               "desc":"Cultivés dans le Val d'Oise.",
               "conseil":"à couper en fines tranches avec du beurre",
               "prix": 150,
@@ -18,7 +18,7 @@ export const data = {
             {
               "id":1,
               "name":"Carottes Multicolores",
-              "img":"",
+              "img":require('./images/products/carottes.jpg'),
               "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
               "conseil":"en batonnets ou râpées",
               "prix": 100,
@@ -30,7 +30,7 @@ export const data = {
             {
               "id":0,
               "name":"Poireaux Bio",
-              "img":"",
+              "img":require('./images/products/poireaux.jpg'),
               "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
               "conseil":"fondue de poireaux ou vinaigrette",
               "prix": 180,
@@ -40,7 +40,7 @@ export const data = {
             {
               "id":1,
               "name":"Coquilles Saint Jacques",
-              "img":"",
+              "img":require('./images/products/saint_jacques.jpg'),
               "desc":"Pêchées dans les Iles Chausey(50)",
               "conseil":"faites les revenir dans un beurre noisette",
               "prix": 720,
@@ -50,7 +50,7 @@ export const data = {
             {
               "id":2,
               "name":"Steack Hache",
-              "img":"",
+              "img":require('./images/products/steak.jpg'),
               "desc":"Jeune vache Charolaise de 3 ans élevée dans le 71. Viande 1 mois de maturation. Agriculture vertueuse.",
               "conseil":"à la poêle, en boulette, en bolognaise...",
               "prix": 280,
@@ -62,7 +62,7 @@ export const data = {
             {
               "id":0,
               "name":"Chevre Cendre",
-              "img":"",
+              "img":require('./images/products/chevre_cendre.jpg'),
               "desc":"Lait de chèvre, Charentes-Poitou",
               "conseil":"",
               "prix": 400,
@@ -72,7 +72,7 @@ export const data = {
             {
               "id":1,
               "name":"Compté 24 mois",
-              "img":"",
+              "img":require('./images/products/compte.jpg'),
               "desc":"Origine Franche Compté, lait de vache cru, pâte cuite.",
               "conseil":"à sortir du frigo 20 min avant dégustation",
               "prix": 430,
@@ -85,7 +85,7 @@ export const data = {
             {
               "id":0,
               "name":"Pain du Nil Bio",
-              "img":"",
+              "img":require('./images/products/pain_nil.jpg'),
               "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
               "conseil":"",
               "prix": 250,
@@ -95,7 +95,7 @@ export const data = {
             {
               "id":1,
               "name":"Baguette Bio",
-              "img":"",
+              "img":require('./images/products/baguette.jpg'),
               "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
               "conseil":"",
               "prix": 120,
@@ -108,7 +108,7 @@ export const data = {
             {
               "id":0,
               "name":"Pommes Bio Jubile",
-              "img":"",
+              "img":require('./images/products/pommes.jpg'),
               "desc":"Bio, cultivées en Seine et Marne (77)",
               "conseil":"",
               "prix": 200,
@@ -118,7 +118,7 @@ export const data = {
             {
               "id":1,
               "name":"Fromage Blanc Frais",
-              "img":"",
+              "img":require('./images/products/fromage_blanc.jpg'),
               "desc":"Fromage de lait battu, battu, 40% de M.G.",
               "conseil":"",
               "prix": 180,
@@ -128,7 +128,7 @@ export const data = {
             {
               "id":2,
               "name":"Barre Pralinée Noire",
-              "img":"",
+              "img":require('./images/products/chocolat.jpg'),
               "desc":"Délicieuse barre de chocolat noir au praliné fondant et croustillant.",
               "conseil":"",
               "prix": 500,
@@ -146,7 +146,7 @@ export const data = {
           {
             "id":0,
             "name":"Plateau de charcuterie",
-            "img":"",
+            "img":require('./images/products/plateau.jpg'),
             "desc":"Assortiment de 200g de charcuterie.",
             "conseil":"à sortir du frigo 20 min avant dégustation",
             "prix": 800,
@@ -156,7 +156,7 @@ export const data = {
           {
             "id":1,
             "name":"Mini Chou Fleur Bio",
-            "img":"",
+            "img":require('./images/products/chou_fleur.jpg'),
             "desc":"Bio, cultivés dans le Finistère.",
             "conseil":"à déguster cru à l'apéro avec une vinaigrette",
             "prix": 190,
@@ -168,7 +168,7 @@ export const data = {
           {
             "id":0,
             "name":"Radis de Chine",
-            "img":"",
+            "img":require('./images/products/radis.jpg'),
             "desc":"Cultivés dans le Val d'Oise.",
             "conseil":"à couper en fines tranches avec du beurre",
             "prix": 150,
@@ -179,7 +179,7 @@ export const data = {
           {
             "id":1,
             "name":"Carottes Multicolores",
-            "img":"",
+            "img":require('./images/products/carottes.jpg'),
             "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
             "conseil":"en batonnets ou râpées",
             "prix": 100,
@@ -194,7 +194,7 @@ export const data = {
           {
             "id":0,
             "name":"Poireaux Bio",
-            "img":"",
+            "img":require('./images/products/poireaux.jpg'),
             "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
             "conseil":"fondue de poireaux ou vinaigrette",
             "prix": 180,
@@ -204,7 +204,7 @@ export const data = {
           {
             "id":1,
             "name":"Coquilles Saint Jacques",
-            "img":"",
+            "img":require('./images/products/saint_jacques.jpg'),
             "desc":"Pêchées dans les Iles Chausey(50)",
             "conseil":"faites les revenir dans un beurre noisette",
             "prix": 720,
@@ -214,7 +214,7 @@ export const data = {
           {
             "id":2,
             "name":"Parmesan",
-            "img":"",
+            "img":require('./images/products/parmesan.jpg'),
             "desc":"Parmiggiano Regiano en copeaux",
             "conseil":"parfait sur une poëlée de champignons",
             "prix": 190,
@@ -224,7 +224,7 @@ export const data = {
           {
             "id":3,
             "name":"Salade de feuille de Chêne",
-            "img":"",
+            "img":require('./images/products/salade.jpg'),
             "desc":"Cultivés dans le Va d'Oise. Agriculture raisonnée",
             "conseil":"parfait sur une poëlée de champignons",
             "prix": 190,
@@ -234,7 +234,7 @@ export const data = {
           {
             "id":4,
             "name":"Pommes de terre charlotte",
-            "img":"",
+            "img":require('./images/products/PDT.jpg'),
             "desc":"Cultivées dans le Val d'Oise. Agriculture raisonnée. Accompagnées d'une gousse d'ail et de branche de romarin",
             "conseil":"Vapeur ou sautées, c'est toujours un régal",
             "prix": 220,
@@ -244,7 +244,7 @@ export const data = {
           {
             "id":5,
             "name":"Steack Hache",
-            "img":"",
+            "img":require('./images/products/steak.jpg'),
             "desc":"Jeune vache Charolaise de 3 ans élevée dans le 71. Viande 1 mois de maturation. Agriculture vertueuse.",
             "conseil":"à la poêle, en boulette, en bolognaise...",
             "prix": 280,
@@ -254,7 +254,7 @@ export const data = {
           {
             "id":6,
             "name":"Champignons de Paris Roses",
-            "img":"",
+            "img":require('./images/products/champignons.jpg'),
             "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
             "conseil":"Aussi bons crus que cuits",
             "prix": 130,
@@ -264,7 +264,7 @@ export const data = {
           {
             "id":7,
             "name":"Bavette Charolaise",
-            "img":"",
+            "img":require('./images/products/bavette.jpg'),,
             "desc":"Jeune vache Charolaise de 3 ans élevée dans la Saône-et-Loire. Viande 1 mois de maturation. Agriculture vertueuse.",
             "conseil":"à faire griller sur poêle très chaude",
             "prix": 740,
@@ -276,7 +276,7 @@ export const data = {
           {
             "id":0,
             "name":"Chevre Cendre",
-            "img":"",
+            "img":require('./images/products/chevre_cendre.jpg'),
             "desc":"Lait de chèvre, Charentes-Poitou",
             "conseil":"",
             "prix": 400,
@@ -286,7 +286,7 @@ export const data = {
           {
             "id":1,
             "name":"Compté 24 mois",
-            "img":"",
+            "img":require('./images/products/compte.jpg'),
             "desc":"Origine Franche Compté, lait de vache cru, pâte cuite.",
             "conseil":"à sortir du frigo 20 min avant dégustation",
             "prix": 430,
@@ -297,7 +297,7 @@ export const data = {
           {
             "id":2,
             "name":"Saint Marcelin",
-            "img":"",
+            "img":require('./images/products/saint_marcelin.jpg'),
             "desc":"Lait de vache, Fabriqué dans le Dauphiné.",
             "conseil":"à sortir du frigo 20 min avant dégustation",
             "prix": 200,
@@ -307,7 +307,7 @@ export const data = {
           {
             "id":3,
             "name":"Saint Nectaire Fermier",
-            "img":"",
+            "img":require('./images/products/saint_nectaire.jpg'),
             "desc":"Origine Jura, lait de vache.",
             "conseil":"à sortir du frigo 20 min avant dégustation",
             "prix": 450,
@@ -320,7 +320,7 @@ export const data = {
           {
             "id":0,
             "name":"Pain du Nil Bio",
-            "img":"",
+            "img":require('./images/products/pain_nil.jpg'),,
             "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
             "conseil":"",
             "prix": 250,
@@ -330,7 +330,7 @@ export const data = {
           {
             "id":1,
             "name":"Baguette Bio",
-            "img":"",
+            "img":require('./images/products/baguette.jpg'),
             "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
             "conseil":"",
             "prix": 120,
@@ -343,7 +343,7 @@ export const data = {
           {
             "id":0,
             "name":"Pommes Bio Jubile",
-            "img":"",
+            "img":require('./images/products/pommes.jpg'),
             "desc":"Bio, cultivées en Seine et Marne (77)",
             "conseil":"",
             "prix": 200,
@@ -353,7 +353,7 @@ export const data = {
           {
             "id":1,
             "name":"Fromage Blanc Frais",
-            "img":"",
+            "img":require('./images/products/fromage_blanc.jpg'),
             "desc":"Fromage de lait battu, battu, 40% de M.G.",
             "conseil":"",
             "prix": 180,
@@ -363,7 +363,7 @@ export const data = {
           {
             "id":2,
             "name":"Barre Pralinée Noire",
-            "img":"",
+            "img":require('./images/products/chocolat.jpg'),
             "desc":"Délicieuse barre de chocolat noir au praliné fondant et croustillant.",
             "conseil":"",
             "prix": 500,
