@@ -33,8 +33,8 @@ export default class App extends React.Component{
   }
 
   render () {
-    const landing_data = data.landings;
-    const landing_variants = landing_data.map(variant => {
+    const landingData = data.landings;
+    const landingVariants = landingData.map(variant => {
       return(
         <Variant key={variant.id} name={variant.name} >
           <Header title={variant.title} image={variant.imageUrl} />
@@ -45,11 +45,25 @@ export default class App extends React.Component{
       )
     });
 
+    const adminButtons = () => {
+      if (!__PROD__) {
+        return (
+          <div className="uk-container uk-container-center">
+          <div className="uk-text-center">
+            <button onClick={this.clear.bind(this)} href="" className="uk-button uk-button-mini uk-button-primary">Effacer cookie et recharger</button>
+            <button onClick={this.choose.bind(this)} href=""  className="uk-button uk-button-mini uk-button-success">Autre variante</button>
+          </div>
+        </div>
+      )
+      }
+    };
+
     return (
       <div className="uk-height-1-1">
         <Experiment ref="exLanding" onChoice={this.choice} name="landing">
-          { landing_variants }
+          { landingVariants }
         </Experiment>
+        { adminButtons() }
       </div>
     );
   }
