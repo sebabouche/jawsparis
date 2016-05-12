@@ -6,7 +6,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const production = process.argv.indexOf("--production") > -1
 const staging = process.argv.indexOf("--staging") > -1
 const definePlugin = new webpack.DefinePlugin({
-  __PROD__: production
+  __PROD__: production,
   __STAGING__: staging
 });
 
@@ -58,7 +58,7 @@ module.exports = {
     ]
   },
   plugins: [
-    DefinePlugin,
+    definePlugin,
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html'

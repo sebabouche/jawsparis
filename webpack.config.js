@@ -3,6 +3,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const production = process.argv.indexOf("--production") > -1
+const staging = process.argv.indexOf("--staging") > -1
+const definePlugin = new webpack.DefinePlugin({
+  __PROD__: production,
+  __STAGING__: staging
+});
+
 const buildDirectory = './dist/';
 
 module.exports = {
@@ -64,6 +71,7 @@ module.exports = {
     ]
   },
   plugins: [
+    definePlugin,
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
