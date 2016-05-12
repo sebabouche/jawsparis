@@ -1,7 +1,15 @@
 const path = require('path')
 const webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const production = process.argv.indexOf("--production") > -1
+const staging = process.argv.indexOf("--staging") > -1
+const definePlugin = new webpack.DefinePlugin({
+  __PROD__: production
+  __STAGING__: staging
+});
+
 
 const buildDirectory = './dist/';
 
@@ -50,6 +58,7 @@ module.exports = {
     ]
   },
   plugins: [
+    DefinePlugin,
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html'
@@ -59,11 +68,6 @@ module.exports = {
       minimize: true,
       compress: {
         warnings: false
-      }
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
       }
     })
   ]

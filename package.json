@@ -31,7 +31,8 @@
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "start": "node server",
-    "build": "webpack --config ./webpack.prod.config.js --progress --colors",
+    "build": "webpack --config ./webpack.prod.config.js --staging --progress --colors",
+    "build:prod": "webpack --config ./webpack.prod.config.js --production --progress --colors",
     "clean": "rm -rf dist/*"
   },
   "babel": {
