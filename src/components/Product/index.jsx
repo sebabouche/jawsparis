@@ -15,6 +15,11 @@ export default class Product extends React.Component {
           <img src={product.img} alt={product.name}/>
         </div>
         <h3 class="uk-panel-title">{product.name}</h3>
+        <p>{product.desc}</p>
+        <p>{product.conseil}</p>
+        <p>{product.prix}</p>
+        <p>{product.people}</p>
+        <p>{product.portion}</p>
       </a>
     </div>
 

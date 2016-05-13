@@ -95,7 +95,7 @@ export const data = {
         },
         {
           "id": 3,
-          "title": "Pains",
+          "title": "Pain",
           "products":[
             {
               "id":0,
