@@ -9,13 +9,15 @@ export default class Product extends React.Component {
 
 
 
-    <div className="uk-width-1-2">
+    <div className="uk-width-1-1 uk-width-medium-1-2">
       <a href="" className="uk-panel uk-panel-box uk-panel-hover uk-panel-box-hover">
         <div className="uk-panel-teaser">
           <img src={product.img} alt={product.name}/>
         </div>
-        <h3 class="uk-panel-title">{product.name}</h3>
-        
+        <div className="uk-float-left"><img className="uk-border-circle" src={product.commercant.img} alt={product.commercant.name}/></div>
+        <div className="uk-float-left"><h4>{product.commercant.name}</h4>
+        <h3 className="uk-panel-title">{product.name}</h3></div>
+
       </a>
     </div>
 

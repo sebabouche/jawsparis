@@ -15,6 +15,10 @@ export const data = {
                 "desc":"Cultivés dans le Val d'Oise.",
                 "conseil":"à couper en fines tranches avec du beurre",
                 "prix": 150,
+                "commercant":{
+                  "name":"Jean Michel",
+                  "img":require('./images/commercant/michel.jpg')
+                },
                 "people":1,
                 "portion":"portion de 300g"
               },
@@ -25,6 +29,10 @@ export const data = {
                 "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
                 "conseil":"en batonnets ou râpées",
                 "prix": 100,
+                "commercant":{
+                  "name":"Jean Michel",
+                  "img":require('./images/commercant/michel.jpg')
+                },
                 "people":1,
                 "portion":"portion de 240g"
               }
@@ -41,6 +49,10 @@ export const data = {
                 "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
                 "conseil":"fondue de poireaux ou vinaigrette",
                 "prix": 180,
+                "commercant":{
+                  "name":"Jean Michel",
+                  "img":require('./images/commercant/michel.jpg')
+                },
                 "people":1,
                 "portion":"portion de 450g"
               },
@@ -51,6 +63,10 @@ export const data = {
                 "desc":"Pêchées dans les Iles Chausey(50)",
                 "conseil":"faites les revenir dans un beurre noisette",
                 "prix": 720,
+                "commercant":{
+                  "name":"Jean Michel",
+                  "img":require('./images/commercant/michel.jpg')
+                },
                 "people":1,
                 "portion":"lot de 2 pièces"
               },
@@ -61,6 +77,10 @@ export const data = {
                 "desc":"Jeune vache Charolaise de 3 ans élevée dans le 71. Viande 1 mois de maturation. Agriculture vertueuse.",
                 "conseil":"à la poêle, en boulette, en bolognaise...",
                 "prix": 280,
+                "commercant":{
+                  "name":"Jean Michel",
+                  "img":require('./images/commercant/michel.jpg')
+                },
                 "people":1,
                 "portion":"portion de 130g"
               }
@@ -68,7 +88,7 @@ export const data = {
         },
         {
           "id": 2,
-          "title": "Fromages",
+          "title": "Fromages/Pain",
           "products": [
             {
               "id":0,
@@ -77,6 +97,10 @@ export const data = {
               "desc":"Lait de chèvre, Charentes-Poitou",
               "conseil":"",
               "prix": 400,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":2,
               "portion":"A la pièce"
             },
@@ -87,33 +111,39 @@ export const data = {
               "desc":"Origine Franche Compté, lait de vache cru, pâte cuite.",
               "conseil":"à sortir du frigo 20 min avant dégustation",
               "prix": 430,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":4,
               "portion":"A la pièce (200g)"
 
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "title": "Pain",
-          "products":[
+            },
             {
-              "id":0,
+              "id":2,
               "name":"Pain du Nil Bio",
               "img":require('./images/products/pain_nil.jpg'),
               "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
               "conseil":"",
               "prix": 250,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":3,
               "portion":"A la pièce (1/2 miche) env. 230g"
             },
             {
-              "id":1,
+              "id":3,
               "name":"Baguette Bio",
               "img":require('./images/products/baguette.jpg'),
               "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
               "conseil":"",
               "prix": 120,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":3,
               "portion":"A la pièce"
 
@@ -121,7 +151,7 @@ export const data = {
           ]
         },
         {
-          "id":4,
+          "id":3,
           "title": "Desserts",
           "products":[
             {
@@ -131,6 +161,10 @@ export const data = {
               "desc":"Bio, cultivées en Seine et Marne (77)",
               "conseil":"",
               "prix": 200,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":4,
               "portion":"4 pommes, portion de 650g"
             },
@@ -141,6 +175,10 @@ export const data = {
               "desc":"Fromage de lait battu, battu, 40% de M.G.",
               "conseil":"",
               "prix": 180,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 250g"
             },
@@ -151,6 +189,10 @@ export const data = {
               "desc":"Délicieuse barre de chocolat noir au praliné fondant et croustillant.",
               "conseil":"",
               "prix": 500,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"A la pièce"
             }
@@ -173,6 +215,10 @@ export const data = {
               "desc":"Assortiment de 200g de charcuterie.",
               "conseil":"à sortir du frigo 20 min avant dégustation",
               "prix": 800,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":4,
               "portion":"A la pièce"
             },
@@ -183,6 +229,10 @@ export const data = {
               "desc":"Bio, cultivés dans le Finistère.",
               "conseil":"à déguster cru à l'apéro avec une vinaigrette",
               "prix": 190,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":4,
               "portion":"A la pièce, 300g environ"
             }
@@ -198,6 +248,10 @@ export const data = {
               "desc":"Cultivés dans le Val d'Oise.",
               "conseil":"à couper en fines tranches avec du beurre",
               "prix": 150,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 300g"
 
@@ -209,6 +263,10 @@ export const data = {
               "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
               "conseil":"en batonnets ou râpées",
               "prix": 100,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 240g"
 
@@ -226,6 +284,10 @@ export const data = {
               "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
               "conseil":"fondue de poireaux ou vinaigrette",
               "prix": 180,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 450g"
             },
@@ -236,6 +298,10 @@ export const data = {
               "desc":"Pêchées dans les Iles Chausey(50)",
               "conseil":"faites les revenir dans un beurre noisette",
               "prix": 720,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"lot de 2 pièces"
             },
@@ -246,6 +312,10 @@ export const data = {
               "desc":"Parmiggiano Regiano en copeaux",
               "conseil":"parfait sur une poëlée de champignons",
               "prix": 190,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 50g"
             },
@@ -256,6 +326,10 @@ export const data = {
               "desc":"Cultivés dans le Va d'Oise. Agriculture raisonnée",
               "conseil":"parfait sur une poëlée de champignons",
               "prix": 190,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 50g"
             },
@@ -266,6 +340,10 @@ export const data = {
               "desc":"Cultivées dans le Val d'Oise. Agriculture raisonnée. Accompagnées d'une gousse d'ail et de branche de romarin",
               "conseil":"Vapeur ou sautées, c'est toujours un régal",
               "prix": 220,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":2,
               "portion":"portion de 500g"
             },
@@ -276,6 +354,10 @@ export const data = {
               "desc":"Jeune vache Charolaise de 3 ans élevée dans le 71. Viande 1 mois de maturation. Agriculture vertueuse.",
               "conseil":"à la poêle, en boulette, en bolognaise...",
               "prix": 280,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 130g"
             },
@@ -286,6 +368,10 @@ export const data = {
               "desc":"Cultivés dans le Val d'Oise. Agriculture raisonnée",
               "conseil":"Aussi bons crus que cuits",
               "prix": 130,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 250g"
             },
@@ -296,12 +382,16 @@ export const data = {
               "desc":"Jeune vache Charolaise de 3 ans élevée dans la Saône-et-Loire. Viande 1 mois de maturation. Agriculture vertueuse.",
               "conseil":"à faire griller sur poêle très chaude",
               "prix": 740,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 195g"
             }
           ]},{
             "id":3,
-            "title": "Fromages",
+            "title": "Fromages/Pains",
             "products":[
             {
               "id":0,
@@ -310,6 +400,10 @@ export const data = {
               "desc":"Lait de chèvre, Charentes-Poitou",
               "conseil":"",
               "prix": 400,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":2,
               "portion":"A la pièce"
             },
@@ -320,6 +414,10 @@ export const data = {
               "desc":"Origine Franche Compté, lait de vache cru, pâte cuite.",
               "conseil":"à sortir du frigo 20 min avant dégustation",
               "prix": 430,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":4,
               "portion":"A la pièce (200g)"
 
@@ -331,6 +429,10 @@ export const data = {
               "desc":"Lait de vache, Fabriqué dans le Dauphiné.",
               "conseil":"à sortir du frigo 20 min avant dégustation",
               "prix": 200,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":3,
               "portion":"A la pièce"
             },
@@ -341,37 +443,45 @@ export const data = {
               "desc":"Origine Jura, lait de vache.",
               "conseil":"à sortir du frigo 20 min avant dégustation",
               "prix": 450,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":4,
               "portion":"A la pièce (220g)"
 
-            }
-          ]},{
-            "id":4,
-            "title": "Pains",
-            "products":[
+            },
             {
-              "id":0,
+              "id":4,
               "name":"Pain du Nil Bio",
               "img":require('./images/products/pain_nil.jpg'),
               "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
               "conseil":"",
               "prix": 250,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":3,
               "portion":"A la pièce (1/2 miche) env. 230g"
             },
             {
-              "id":1,
+              "id":5,
               "name":"Baguette Bio",
               "img":require('./images/products/baguette.jpg'),
               "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
               "conseil":"",
               "prix": 120,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":3,
               "portion":"A la pièce"
 
             }
           ]},{
-            "id":5,
+            "id":4,
             "title": "Desserts",
             "products":[
             {
@@ -381,6 +491,10 @@ export const data = {
               "desc":"Bio, cultivées en Seine et Marne (77)",
               "conseil":"",
               "prix": 200,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":4,
               "portion":"4 pommes, portion de 650g"
             },
@@ -391,6 +505,10 @@ export const data = {
               "desc":"Fromage de lait battu, battu, 40% de M.G.",
               "conseil":"",
               "prix": 180,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"portion de 250g"
             },
@@ -401,6 +519,10 @@ export const data = {
               "desc":"Délicieuse barre de chocolat noir au praliné fondant et croustillant.",
               "conseil":"",
               "prix": 500,
+              "commercant":{
+                "name":"Jean Michel",
+                "img":require('./images/commercant/michel.jpg')
+              },
               "people":1,
               "portion":"A la pièce"
             }
