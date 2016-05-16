@@ -5,7 +5,7 @@ import ProductCard from '../ProductCard';
 export default class Category extends React.Component {
   render() {
     const products = this.props.category.products.map(product => {
-      return(<ProductCard key={product.id} product={product}/>)
+      return(<ProductCard key={product.id} product={product} category={this.props.category.id}/>)
     });
 
     return (
