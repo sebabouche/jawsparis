@@ -5,7 +5,7 @@ import Product from '../Product';
 export default class Category extends React.Component {
   render() {
     const products = this.props.category.products.map(product => {
-      return(<Product key={product.id} product={product}/>)
+      return(<Product key={product.id} product={product} category={this.props.category.id}/>)
     });
 
     return (
