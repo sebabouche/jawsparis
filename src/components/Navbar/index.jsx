@@ -17,15 +17,20 @@ export default class Navbar extends React.Component {
             <li><a href="#section2">Les commerçants</a></li>
           </ul>
 
-          <div className="uk-navbar-flip">
+          <div className="uk-navbar-content uk-navbar-flip uk-hidden-large">
             <ul className="uk-navbar-nav">
-              <li className="uk-visible-large"><a href="#">Mon Compte</a></li>
-              <li className="uk-visible-large"><a href="#rightMenu" data-uk-offcanvas>Panier</a></li>
-              <li className="uk-hidden-large">
+              <li>
                 <a href="#rightMenu" data-uk-offcanvas>
                   <i className="uk-icon-shopping-cart"></i>
                 </a>
               </li>
+            </ul>
+          </div>
+
+          <div className="uk-navbar-content uk-navbar-flip uk-visible-large">
+            <ul className="uk-navbar-nav">
+              <li className="uk-visible-large"><a href="#">Mon Compte</a></li>
+              <li className="uk-visible-large"><a href="#rightMenu" data-uk-offcanvas>Panier</a></li>
             </ul>
           </div>
 
