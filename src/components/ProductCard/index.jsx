@@ -31,7 +31,7 @@ export default class ProductCard extends React.Component {
           <p className="uk-panel-title uk-margin-remove">{product.name}</p>
           <p className="uk-margin-remove"><em>{product.portion}</em></p>
           </div>
-          <div className="uk-grid"><button className="uk-button uk-button-success uk-width-1-2 uk-container-center" type="button">Ajouter</button></div>
+          <div className="uk-grid"><button style={{zIndex: "3000"}} className="uk-button uk-button-success uk-width-1-2 uk-container-center" type="button">Ajouter</button></div>
           </a>
       </div>
     )

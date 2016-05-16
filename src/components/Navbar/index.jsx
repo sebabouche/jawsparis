@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './styles.css';
 
+import ShoppingBag from '../ShoppingBag'
+
 export default class Navbar extends React.Component {
   render () {
     return (
@@ -17,20 +19,20 @@ export default class Navbar extends React.Component {
             <li><a href="#section2">Les commerçants</a></li>
           </ul>
 
-          <div className="uk-navbar-content uk-navbar-flip uk-hidden-large">
+          <div className="uk-navbar-flip uk-hidden-large">
             <ul className="uk-navbar-nav">
               <li>
                 <a href="#rightMenu" data-uk-offcanvas>
-                  <i className="uk-icon-shopping-cart"></i>
+                  <i className="uk-icon-shopping-bag"></i>
                 </a>
               </li>
             </ul>
           </div>
 
-          <div className="uk-navbar-content uk-navbar-flip uk-visible-large">
+          <div className="uk-navbar-flip uk-visible-large">
             <ul className="uk-navbar-nav">
               <li className="uk-visible-large"><a href="#">Mon Compte</a></li>
-              <li className="uk-visible-large"><a href="#rightMenu" data-uk-offcanvas>Panier</a></li>
+              <li className="uk-visible-large"><a href="#rightMenu" data-uk-offcanvas>Mon Panier</a></li>
             </ul>
           </div>
 
@@ -49,10 +51,7 @@ export default class Navbar extends React.Component {
         </div>
         <div id="rightMenu" className="uk-offcanvas">
           <div className="uk-offcanvas-bar uk-offcanvas-bar-flip">
-            <div className="uk-panel">
-              <h3 className="uk-panel-title">Mon panier</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+            <ShoppingBag />
           </div>
         </div>
       </div>

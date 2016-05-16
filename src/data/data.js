@@ -1,4 +1,66 @@
 export const data = {
+  shoppingBag: {
+    categories: [
+      {
+        id:0,
+        title: "Entrées",
+        products: [
+          {
+            id:0,
+            name:"Radis de Chine",
+            img:require('./images/products/radis.jpg'),
+            prix: 150,
+            portion:"portion de 300g",
+            quantity: 3
+          }
+        ]
+      },
+      {
+        id:1,
+        title: "Plats",
+        products: [
+          {
+            id:0,
+            name:"Poireaux Bio",
+            img:require('./images/products/poireaux.jpg'),
+            prix: 180,
+            portion:"portion de 450g",
+            quantity: 3
+          },
+          {
+            id:1,
+            name:"Coquilles Saint Jacques",
+            img:require('./images/products/saint_jacques.jpg'),
+            prix: 720,
+            portion:"lot de 2 pièces",
+            quantity: 3
+          },
+        ]
+      },
+      {
+        id:2,
+        title: "Fromages/Pain",
+        products: [
+          {
+            id:0,
+            name:"Chevre Cendre",
+            img:require('./images/products/chevre_cendre.jpg'),
+            prix: 400,
+            portion:"A la pièce",
+            quantity: 1
+          },
+          {
+            id:2,
+            name:"Pain du Nil Bio",
+            img:require('./images/products/pain_nil.jpg'),
+            prix: 250,
+            portion:"A la pièce (1/2 miche) env. 230g",
+            quantity: 2
+          },
+        ]
+      }
+    ]   
+  },
   days: [
       {
         id:0,
