@@ -59,7 +59,7 @@ export const data = {
           },
         ]
       }
-    ]   
+    ]
   },
   days: [
       {
@@ -80,7 +80,7 @@ export const data = {
                 conservation:"2 à 3 jours",
                 prix: 150,
                 commercant:{
-                  name:"Jean Michel",
+                  name:"Terroir d'Avenir",
                   img:require('./images/commercant/michel.jpg')
                 },
                 people:1,
@@ -95,7 +95,7 @@ export const data = {
                 conservation:"2 à 3 jours",
                 prix: 100,
                 commercant:{
-                  name:"Jean Michel",
+                  name:"Terroir d'Avenir",
                   img:require('./images/commercant/michel.jpg')
                 },
                 people:1,
@@ -116,7 +116,7 @@ export const data = {
                 conservation:"2 à 3 jours",
                 prix: 180,
                 commercant:{
-                  name:"Jean Michel",
+                  name:"Terroir d'Avenir",
                   img:require('./images/commercant/michel.jpg')
                 },
                 people:1,
@@ -131,7 +131,7 @@ export const data = {
                 conservation:"2 à 3 jours",
                 prix: 720,
                 commercant:{
-                  name:"Jean Michel",
+                  name:"Terroir d'Avenir",
                   img:require('./images/commercant/michel.jpg')
                 },
                 people:1,
@@ -146,7 +146,7 @@ export const data = {
                 conservation:"2 à 3 jours",
                 prix: 280,
                 commercant:{
-                  name:"Jean Michel",
+                  name:"Terroir d'Avenir",
                   img:require('./images/commercant/michel.jpg')
                 },
                 people:1,
@@ -166,7 +166,7 @@ export const data = {
               conseil:"",
               prix: 400,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:2,
@@ -180,7 +180,7 @@ export const data = {
               conseil:"à sortir du frigo 20 min avant dégustation",
               prix: 430,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:4,
@@ -195,7 +195,7 @@ export const data = {
               conseil:"",
               prix: 250,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:3,
@@ -209,7 +209,7 @@ export const data = {
               conseil:"",
               prix: 120,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:3,
@@ -230,7 +230,7 @@ export const data = {
               conseil:"",
               prix: 200,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:4,
@@ -244,7 +244,7 @@ export const data = {
               conseil:"",
               prix: 180,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -258,7 +258,7 @@ export const data = {
               conseil:"",
               prix: 500,
               commercant:{
-                name:"Jean Michel",
+                name:"La Mère de Famille",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -285,7 +285,7 @@ export const data = {
               conseil:"à sortir du frigo 20 min avant dégustation",
               prix: 800,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:4,
@@ -300,7 +300,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 190,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:4,
@@ -320,7 +320,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 150,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -336,7 +336,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 100,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -358,7 +358,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 180,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -373,7 +373,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 720,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -388,7 +388,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 190,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -403,7 +403,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 190,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -418,7 +418,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 220,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:2,
@@ -433,7 +433,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 280,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -448,7 +448,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 130,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -463,7 +463,7 @@ export const data = {
                 conservation:"2 à 3 jours",
               prix: 740,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -481,7 +481,7 @@ export const data = {
               conseil:"",
               prix: 400,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:2,
@@ -495,7 +495,7 @@ export const data = {
               conseil:"à sortir du frigo 20 min avant dégustation",
               prix: 430,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:4,
@@ -510,7 +510,7 @@ export const data = {
               conseil:"à sortir du frigo 20 min avant dégustation",
               prix: 200,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:3,
@@ -524,7 +524,7 @@ export const data = {
               conseil:"à sortir du frigo 20 min avant dégustation",
               prix: 450,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:4,
@@ -539,7 +539,7 @@ export const data = {
               conseil:"",
               prix: 250,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:3,
@@ -553,7 +553,7 @@ export const data = {
               conseil:"",
               prix: 120,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:3,
@@ -572,7 +572,7 @@ export const data = {
               conseil:"",
               prix: 200,
               commercant:{
-                name:"Jean Michel",
+                name:"Terroirs d'avenir",
                 img:require('./images/commercant/michel.jpg')
               },
               people:4,
@@ -586,7 +586,7 @@ export const data = {
               conseil:"",
               prix: 180,
               commercant:{
-                name:"Jean Michel",
+                name:"La Fermette",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
@@ -600,15 +600,13 @@ export const data = {
               conseil:"",
               prix: 500,
               commercant:{
-                name:"Jean Michel",
+                name:"La Mère de Famille",
                 img:require('./images/commercant/michel.jpg')
               },
               people:1,
               portion:"A la pièce"
             }
           ]
-
-
         }
 
     ]}],

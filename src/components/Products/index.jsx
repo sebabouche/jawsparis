@@ -32,7 +32,6 @@ export default class Products extends React.Component {
         <Navbar />
 
         <div className="uk-container uk-container-center">
-          <h1 className="uk-text-center">{day.title}</h1>
           {categories}
         </div>
       </div>

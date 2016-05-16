@@ -10,29 +10,62 @@ export default class ProductCard extends React.Component {
 
     return (
       <div className="uk-width-1-1 uk-width-medium-1-2">
-        <a className="uk-panel uk-panel-box uk-panel-hover uk-panel-box-hover" data-uk-toggle={productTargetTag}>
-        <div className="uk-panel-badge" ><img className="uk-border-circle" src={product.commercant.img} alt={product.commercant.name}/></div>
-          <div className="uk-panel-teaser">
-          <figure className="uk-overlay">
-            <img src={product.img} alt={product.name}/>
-            <figcaption id={productTag} style={{zIndex: "1000"}} className="uk-overlay-panel uk-overlay-background uk-hidden" aria-hidden="true" >
-            <p><strong>Description du produit:</strong> {product.desc}</p>
-            <p><strong>Detail sur la portion:</strong> {product.portion}</p>
-            <p><strong>Conseil de cuisine:</strong> {product.conseil}</p>
-            <p><strong>Conservation: </strong>1 a 3 ans</p>
-            </figcaption>
-          </figure>
-          </div>
-          <div className="uk-align-right">
-          <p className="uk-margin-remove"><em>{priceProduct}</em></p>
+         <div className="uk-panel uk-panel-box">
 
+          <div className="uk-panel-teaser">
+            <a data-uk-toggle={productTargetTag}>
+              <div className="uk-panel-badge">
+                <i className="uk-icon-info-circle uk-text-contrast"></i>
+              </div>
+              <figure className="uk-overlay">
+                <img src={product.img} alt={product.name}/>
+                <figcaption id={productTag} className="uk-overlay-panel uk-overlay-background uk-hidden" aria-hidden="true" >
+                  <p>
+                    <i className="uk-icon-justify uk-icon-info-circle"></i>
+                    <br />
+                    {product.desc}
+                  </p>
+                  <p>
+                    <i className="uk-icon-justify uk-icon-cutlery"></i>
+                    <br/>
+                    {product.conseil}
+                  </p>
+                  <p>
+                    <i className="uk-icon-justify uk-icon-calendar-o"></i>
+                    <br/>
+                    {product.conservation}
+                  </p>
+                </figcaption>
+              </figure>
+            </a>
           </div>
-          <div><h4 className="uk-margin-remove">{product.commercant.name}</h4>
-          <p className="uk-panel-title uk-margin-remove">{product.name}</p>
-          <p className="uk-margin-remove"><em>{product.portion}</em></p>
+
+          <div className="uk-grid uk-grid-small">
+            <div className="uk-width-4-5">
+              <h3>{product.name}</h3>
+            </div>
+            <div className="uk-width-1-5">
+              <h4 className="uk-text-right">{priceProduct}</h4>
+            </div>
           </div>
-          <div className="uk-grid"><button style={{zIndex: "3000"}} className="uk-button uk-button-success uk-width-1-2 uk-container-center" type="button">Ajouter</button></div>
-          </a>
+
+          <p className="uk-margin-top-remove">{product.portion} - pour {product.people} pers.</p>
+
+          <div className="uk-grid uk-margin" >
+            <div className="uk-width-1-5">
+              <img className="uk-border-circle" src={product.commercant.img} alt={product.commercant.name}/>
+            </div>
+            <div className="uk-width-4-5">
+              <h4 className="uk-margin-remove">{product.commercant.name}</h4>
+            </div>
+          </div>
+
+          <button
+            className="uk-button uk-button-success uk-width-1-1 uk-container-center"
+            type="button">
+              Ajouter
+          </button>
+        </div>
       </div>
     )
   }

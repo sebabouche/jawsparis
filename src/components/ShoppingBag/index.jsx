@@ -11,9 +11,9 @@ export default class ShoppingBag extends React.Component {
           <div className="uk-grid" key={product.id}>
             <div className="uk-width-1-2">{product.name}</div>
             <div className="uk-width-1-2">
-              <button className="uk-button"><i className="icon-plus-sign"></i></button>
+              <button className="uk-button"><i className="uk-icon-plus"></i></button>
               {product.quantity}
-              <button className="uk-button"><i className="icon-minus-sign"></i></button>
+              <button className="uk-button"><i className="uk-icon-minus"></i></button>
             </div>
           </div>
         )
@@ -31,9 +31,9 @@ export default class ShoppingBag extends React.Component {
       <div className={styles.container}>
         <div className="uk-block">
           <div className="uk-panel">
-            <h2 className="uk-text-center">My Shopping Bag</h2>
+            <h2 className="uk-text-center">Mon cabas</h2>
             {categories}
-            <button className="uk-button uk-button-success uk-width-1-1">Non merci, ce sera tout!</button>
+            <button className="uk-button uk-button-success uk-width-1-1">Merci, ce sera tout!</button>
           </div>
         </div>
 
