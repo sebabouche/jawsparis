@@ -31,33 +31,44 @@ export default class Checkout extends React.Component {
   }
 
   render () {
-    let classeShoppingBagButton = classNames("uk-button uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showDelivery})
-    let classeDeliveryButton = classNames("uk-button uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showPayment})
+    let shoppingBagButtonClass = classNames("uk-button uk-button-large uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showDelivery})
+    let deliveryButtonClass = classNames("uk-button uk-button-large uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showPayment})
 
-    let deliveryscroll = ""
+    let deliveryScroll = ""
     if( this.state.showDelivery){
-      deliveryscroll=<section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
-        <h2 className="uk-text-center">
-          <span className="uk-badge uk-badge-notification">2</span>
-          Livraison
-        </h2>
-        <DeliveryFields />
-        <button
-          className={classeDeliveryButton} onClick={this.handleDeliveryClick}
-          type="button">
-          Valider l'adresse de livraison
-        </button>
-      </section>
+      deliveryScroll =
+        <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
+          <h2 className="uk-text-center">
+            <span className="uk-badge uk-badge-notification">2</span>
+            Livraison
+          </h2>
+          <DeliveryFields />
+          <button
+            className={deliveryButtonClass} onClick={this.handleDeliveryClick}
+            type="button">
+            Suivant
+          </button>
+        </section>
     }
-    let paimentscroll = ""
+
+    let paymentScroll = ""
     if (this.state.showPayment){
-      paimentscroll = <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
+      paymentScroll = <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
       <h2 className="uk-text-center">
         <span className="uk-badge uk-badge-notification">3</span>
         Paiement
       </h2>
-        <PaymentFields />
-      </section>;
+      <PaymentFields />
+      <div className="uk-form-row uk-margin">
+        <a
+          href="/thankyou"
+          className="uk-button uk-button-success uk-width-1-1 uk-container-center uk-button-large"
+          onClick={this.handleDeliveryClick}
+          >
+          Payer ma commande
+        </a>
+      </div>
+      </section>
     }
 
 
@@ -71,16 +82,16 @@ export default class Checkout extends React.Component {
           </h2>
           <ShoppingBagFields />
           <button
-            className={classeShoppingBagButton}
+            className={shoppingBagButtonClass}
             onClick={this.handleShopBagClick}
             type="button">
-            Valider votre cabas
+            Suivant
           </button>
         </section>
         <Element name="test">
-        {deliveryscroll}
+        {deliveryScroll}
         </Element>
-        {paimentscroll}
+        {paymentScroll}
       </div>
     )
   }

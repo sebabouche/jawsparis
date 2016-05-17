@@ -12,10 +12,9 @@ export default class ShoppingBag extends React.Component {
           <div className="uk-panel">
             <h2 className="uk-text-center">Mon cabas</h2>
             <ShoppingBagFields />
-            <button className="uk-button uk-button-success uk-width-1-1">Merci, ce sera tout!</button>
+            <a href="/checkout" className="uk-button uk-button-success uk-width-1-1">Merci, ce sera tout!</a>
           </div>
         </div>
-
       </div>
     )
   }
