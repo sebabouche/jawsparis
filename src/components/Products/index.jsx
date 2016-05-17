@@ -25,7 +25,7 @@ export default class Products extends React.Component {
               <img className="uk-width-1-2 uk-width-small-1-4 uk-width-medium-1-2 uk-width-large-1-5" src={require('../Header/images/logo-noir-cartouche.svg')} />
             </div>
             <h1 className="uk-text-center uk-text-contrast uk-width-4-5">JAWS sélectionne chaque jour des produits différents.</h1>
-            <h2 className="uk-text-contrast">Découvrez la sélection du {today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()}</h2>
+            <h3 className="uk-text-center uk-text-contrast">Sélection du {today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()}</h3>
           </div>
         </div>
 
