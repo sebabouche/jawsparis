@@ -13,7 +13,7 @@ export default class App extends React.Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={Landing} />
-        <Route path="/:index" component={ProductsContainer} />
+        <Route path="days/:index" component={ProductsContainer} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/thankyou" component={Thankyou} />
       </Router>
