@@ -73,6 +73,8 @@
     "jquery": "^2.2.3",
     "md5": "^2.1.0",
     "mixpanel-browser": "^2.7.2",
+    "mongodb": "^2.1.19",
+    "mongoose": "^4.4.17",
     "react": "^15.0.1",
     "react-ab": "^0.4.5",
     "react-addons-test-utils": "^15.0.2",
