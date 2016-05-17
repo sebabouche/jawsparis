@@ -39,7 +39,6 @@ export default class ProductCard extends React.Component {
     </button>;
 
     return (
-      {/* Old version <div className="uk-width-1 uk-width-small-1-2 uk-width-large-1-3"> */}
       <div className="uk-width-1-1 uk-width-medium-1-2">
          <div className="uk-panel uk-panel-box ">
 
@@ -96,3 +95,4 @@ export default class ProductCard extends React.Component {
     )
   }
 }
+/* Old version <div className="uk-width-1 uk-width-small-1-2 uk-width-large-1-3"> */
