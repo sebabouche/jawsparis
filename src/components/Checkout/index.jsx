@@ -1,6 +1,7 @@
 import React from 'react'
-var Scroll = require('react-scroll');
-var scroll = Scroll.animateScroll;
+import Scroll from 'react-scroll'
+import classNames from 'classnames'
+const scroll = Scroll.animateScroll
 
 import ShoppingBagFields from '../ShoppingBagFields'
 import DeliveryFields from '../DeliveryFields'
@@ -11,55 +12,55 @@ export default class Checkout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      delivrery:false,
+      delivery:false,
       paiment:false
     }
     this.handleShopBagClick = this.handleShopBagClick.bind(this);
-    this.handleDelivreryClick = this.handleDelivreryClick.bind(this);
+    this.handleDeliveryClick = this.handleDeliveryClick.bind(this);
   }
 
   handleShopBagClick(event) {
-    this.setState({delivrery:true});
+    this.setState({showDelivery:true});
     scroll.scrollToBottom();
   }
-  handleDelivreryClick(event) {
-    this.setState({paiment:true});
+  handleDeliveryClick(event) {
+    this.setState({showPayment:true});
     scroll.scrollToBottom();
   }
 
   render () {
+    let classeShoppingBagButton = classNames("uk-button uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showDelivery})
+    let classeDeliveryButton = classNames("uk-button uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showPayment})
 
-    var deliveryscroll = this.state.delivrery ? <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
-      <h2 className="uk-text-center">
-        <span className="uk-badge uk-badge-notification">2</span>
-        Livraison
-      </h2>
-      <DeliveryFields />
-    </section>:<button
-      className="uk-button uk-button-success uk-width-1-1 uk-container-center" onClick={this.handleShopBagClick}
-      type="button">
-      Valider votre cabas
-    </button>;
-
-    if (this.state.paiment){
-      var paimentscroll = <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
+    let deliveryscroll = ""
+    if( this.state.showDelivery){
+      deliveryscroll=<section className="uk-block uk-block-large uk-height-1-1 uk-animation-fade uk-animation-3">
+        <h2 className="uk-text-center">
+          <span className="uk-badge uk-badge-notification">2</span>
+          Livraison
+        </h2>
+        <DeliveryFields />
+        <button
+          className={classeDeliveryButton} onClick={this.handleDeliveryClick}
+          type="button">
+          Valider l'adresse de livraison
+        </button>
+      </section>
+    }
+    let paimentscroll = ""
+    if (this.state.showPayment){
+      paimentscroll = <section className="uk-block uk-block-large uk-height-1-1 uk-animation-fade uk-animation-3">
       <h2 className="uk-text-center">
         <span className="uk-badge uk-badge-notification">3</span>
         Paiement
       </h2>
         <PaymentFields />
       </section>;
-    } else if(!this.state.paiment && this.state.delivrery){
-      var paimentscroll = <button
-        className="uk-button uk-button-success uk-width-1-1 uk-container-center" onClick={this.handleDelivreryClick}
-        type="button">
-        Valider l'adresse de livraison
-      </button>;
     }
 
 
     return (
-      <div className="uk-container uk-container-center">
+      <div className="uk-container uk-height-1-1 uk-container-center">
         <section className="uk-block uk-block-large">
           <div className="uk-text-center"></div>
           <h2 className="uk-text-center">
@@ -67,6 +68,12 @@ export default class Checkout extends React.Component {
             Votre cabas
           </h2>
           <ShoppingBagFields />
+          <button
+            className={classeShoppingBagButton}
+            onClick={this.handleShopBagClick}
+            type="button">
+            Valider votre cabas
+          </button>
         </section>
         {deliveryscroll}
         {paimentscroll}
