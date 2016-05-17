@@ -1,16 +1,46 @@
 import React from 'react';
 
+
+
+
+
 export default class ProductCard extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      amount:0
+    }
+    this.handleAddClick = this.handleAddClick.bind(this);
+    this.handleMinusClick = this.handleMinusClick.bind(this);
+  }
+
+  handleAddClick(event) {
+    this.setState({amount:this.state.amount+1});
+  }
+  handleMinusClick(event) {
+    this.setState({amount:this.state.amount-1});
+  }
+
   render() {
     const product = this.props.product;
     const productTag = "overlay-prod-" +this.props.category+"-"+ product.id;
     const productTargetTag = "{target:'#"+productTag+"'}";
     const priceProduct = product.prix/100+"€";
-
+    var resultat = this.state.amount ? <div className= "uk-grid">
+      <div className= "uk-container-center">
+      <button className="uk-button uk-button-danger" onClick={this.handleMinusClick}><i className="uk-icon-minus"></i></button>
+      <span className="uk-margin-small-left uk-margin-small-right">{this.state.amount}</span>
+      <button className="uk-button uk-button-success " onClick={this.handleAddClick}><i className="uk-icon-plus"></i></button>
+    </div></div> : <button
+      className="uk-button uk-button-success uk-width-1-1 uk-container-center" onClick={this.handleAddClick}
+      type="button">
+      Ajouter
+    </button>;
 
     return (
       <div className="uk-width-1-1 uk-width-medium-1-2">
-         <div className="uk-panel uk-panel-box">
+         <div className="uk-panel uk-panel-box ">
 
           <div className="uk-panel-teaser">
             <a data-uk-toggle={productTargetTag}>
@@ -59,12 +89,7 @@ export default class ProductCard extends React.Component {
               <h4 className="uk-margin-remove">{product.commercant.name}</h4>
             </div>
           </div>
-
-          <button
-            className="uk-button uk-button-success uk-width-1-1 uk-container-center"
-            type="button">
-              Ajouter
-          </button>
+          {resultat}
         </div>
       </div>
     )

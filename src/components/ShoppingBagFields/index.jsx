@@ -9,10 +9,12 @@ export default class ShoppingBagFields extends React.Component {
         return (
           <div className="uk-grid" key={product.id}>
             <div className="uk-width-1-2">{product.name}</div>
-            <div className="uk-width-1-2">
-              <button className="uk-button"><i className="uk-icon-plus"></i></button>
-              {product.quantity}
-              <button className="uk-button"><i className="uk-icon-minus"></i></button>
+            <div className="uk-width-1-2 ">
+              <div className="uk-float-right">
+                <button className="uk-button uk-button-danger"><i className="uk-icon-minus"></i></button>
+                <span className="uk-margin-small-left uk-margin-small-right">{product.quantity}</span>
+                <button className="uk-button uk-button-success"><i className="uk-icon-plus"></i></button>
+              </div>
             </div>
           </div>
         )
