@@ -5,23 +5,32 @@ import {data} from '../../data/data'
 export default class ShoppingBagSummary extends React.Component {
   render () {
     const categories = data.shoppingBag.categories.map((category) => {
-      const products = category.products.map((product) => {
+      const product_names = category.products.map((product) => {
         return (
-          <div className="uk-grid" key={product.id}>
-            <div className="uk-width-1-2">{product.name}</div>
-            <div className="uk-width-1-2 ">
-              <div className="uk-float-right">
-                <span className="uk-margin-small-left uk-margin-small-right">{product.quantity}</span>
-              </div>
-            </div>
-          </div>
+          <li key={product.id}>
+            {product.name}
+          </li>
+        )
+      })
+      const product_quantities = category.products.map((product) => {
+        return (
+          <li key={product.id}>
+            <p className="uk-float-right">{product.quantity}</p>
+          </li>
         )
       })
 
       return (
         <div key={category.id}>
-          <h3>{category.title}</h3>
-          <ul className="uk-list">{products}</ul>
+          <h4 className="uk-text-center uk-margin-bottom-remove">{category.title}</h4>
+          <div className="uk-grid">
+            <div className="uk-width-3-4">
+              <ul className="uk-list uk-margin-bottom">{product_names}</ul>
+            </div>
+            <div className="uk-width-1-4">
+              <ul className="uk-list uk-margin-bottom">{product_quantities}</ul>
+            </div>
+          </div>
         </div>
       )
     })

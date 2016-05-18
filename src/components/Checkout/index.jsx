@@ -14,16 +14,15 @@ export default class Checkout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      delivery:false,
-      paiment:false
+      editShoppingBag: false,
+      showPayment:false
     }
     this.handleShopBagClick = this.handleShopBagClick.bind(this);
     this.handleDeliveryClick = this.handleDeliveryClick.bind(this);
   }
 
   handleShopBagClick(event) {
-    this.setState({showDelivery:true});
-    scroller.scrollTo('test');
+    editShoppingBag: true
   }
   handleDeliveryClick(event) {
     this.setState({showPayment:true});
@@ -31,25 +30,8 @@ export default class Checkout extends React.Component {
   }
 
   render () {
-    let shoppingBagButtonClass = classNames("uk-button uk-button-large uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showDelivery})
+    let shoppingBagButtonClass = classNames("uk-button uk-button-small uk-width-1-1 uk-container-center", {'uk-hidden':this.state.editShoppingBag})
     let deliveryButtonClass = classNames("uk-button uk-button-large uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showPayment})
-
-    let deliveryScroll = ""
-    if( this.state.showDelivery){
-      deliveryScroll =
-        <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
-          <h2 className="uk-text-center">
-            <span className="uk-badge uk-badge-notification">2</span>
-            Livraison
-          </h2>
-          <DeliveryFields />
-          <button
-            className={deliveryButtonClass} onClick={this.handleDeliveryClick}
-            type="button">
-            Suivant
-          </button>
-        </section>
-    }
 
     let paymentScroll = ""
     if (this.state.showPayment){
@@ -81,9 +63,22 @@ export default class Checkout extends React.Component {
             Votre cabas
           </h2>
           <ShoppingBagSummary />
+          <button className={shoppingBagButtonClass}>Modifier mon cabas</button>
         </section>
         <Element name="test">
-        {deliveryScroll}
+        <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
+          <h2 className="uk-text-center">
+            <span className="uk-badge uk-badge-notification">2</span>
+            Livraison
+          </h2>
+          <DeliveryFields />
+          <button
+            className={deliveryButtonClass} onClick={this.handleDeliveryClick}
+            type="button">
+            Suivant
+          </button>
+        </section>
+
         </Element>
         {paymentScroll}
       </div>
