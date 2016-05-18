@@ -35,7 +35,7 @@ export default class Checkout extends React.Component {
     let deliveryButtonClass = classNames("uk-button uk-button-large uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showPayment})
 
     let paymentScroll = ""
-    if (this.state.showPayment){
+    if (this.state.showPayment & !this.state.editShoppingBag){
       paymentScroll = <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
       <h2 className="uk-text-center">
         <span className="uk-badge uk-badge-notification">3</span>
@@ -65,7 +65,8 @@ export default class Checkout extends React.Component {
         <button className={shoppingBagButtonClass} onClick={this.handleShopBagClick}>Valider</button>
       </section>
     } else {
-      shopingBagDiv = <section className="uk-block uk-block-large">
+      shopingBagDiv = <section>
+      <section className="uk-block uk-block-large">
         <div className="uk-text-center"></div>
         <h2 className="uk-text-center">
           <span className="uk-badge uk-badge-notification">1</span>
@@ -74,27 +75,25 @@ export default class Checkout extends React.Component {
         <ShoppingBagSummary />
         <button className={shoppingBagButtonClass} onClick={this.handleShopBagClick}>Modifier mon cabas</button>
       </section>
+      <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
+        <h2 className="uk-text-center">
+          <span className="uk-badge uk-badge-notification">2</span>
+          Livraison
+        </h2>
+        <DeliveryFields />
+        <button
+          className={deliveryButtonClass} onClick={this.handleDeliveryClick}
+          type="button">
+          Suivant
+        </button>
+      </section>
+      </section>
     }
 
 
     return (
       <div className="uk-container uk-container-center uk-width-1-1 uk-width-medium-4-5 uk-width-large-3-5">
         {shopingBagDiv}
-        <Element name="test">
-        <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
-          <h2 className="uk-text-center">
-            <span className="uk-badge uk-badge-notification">2</span>
-            Livraison
-          </h2>
-          <DeliveryFields />
-          <button
-            className={deliveryButtonClass} onClick={this.handleDeliveryClick}
-            type="button">
-            Suivant
-          </button>
-        </section>
-
-        </Element>
         {paymentScroll}
       </div>
     )
