@@ -27,7 +27,7 @@ export default class ProductCard extends React.Component {
     const productTag = "overlay-prod-" +this.props.category+"-"+ product.id;
     const productTargetTag = "{target:'#"+productTag+"'}";
     const priceProduct = product.prix/100+"€";
-    var resultat = this.state.amount ? <div className= "uk-grid">
+    var resultat = this.state.amount ? <div className= "uk-grid uk-margin-remove">
       <div className= "uk-container-center">
       <button className="uk-button uk-button-danger" onClick={this.handleMinusClick}><i className="uk-icon-minus"></i></button>
       <span className="uk-margin-small-left uk-margin-small-right">{this.state.amount}</span>
