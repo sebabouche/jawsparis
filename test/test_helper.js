@@ -3,7 +3,7 @@ import chai from 'chai'
 import chaiImmutable from 'chai-immutable'
 
 import register from 'ignore-styles'
-register(['.css', '.sass', '.scss', '.png'])
+register(['.css', '.sass', '.scss', '.png', '.svg'])
 
 const doc = jsdom.jsdom('<!doctype html><html><body></body></html>')
 const win = doc.defaultView
