@@ -5,6 +5,7 @@ import styles from '../Header/styles.css';
 
 import Category from '../Category'
 import Navbar from '../Navbar'
+import LinkToCheckout from '../LinkToCheckout'
 
 export default class Products extends React.Component {
   render() {
@@ -33,6 +34,12 @@ export default class Products extends React.Component {
 
         <div className="uk-container uk-container-center">
           {categories}
+          <div className="uk-block uk-margin-large-bottom">
+            <p className="uk-text-center ja-font-special">
+              Vous désirez autre chose ?
+            </p>
+            <LinkToCheckout />
+          </div>
         </div>
       </div>
     )

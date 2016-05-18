@@ -5,7 +5,7 @@ const scroll = Scroll.animateScroll
 const Element = Scroll.Element;
 const scroller = Scroll.scroller;
 
-import ShoppingBagFields from '../ShoppingBagFields'
+import ShoppingBagSummary from '../ShoppingBagSummary'
 import DeliveryFields from '../DeliveryFields'
 import PaymentFields from '../PaymentFields'
 
@@ -80,13 +80,7 @@ export default class Checkout extends React.Component {
             <span className="uk-badge uk-badge-notification">1</span>
             Votre cabas
           </h2>
-          <ShoppingBagFields />
-          <button
-            className={shoppingBagButtonClass}
-            onClick={this.handleShopBagClick}
-            type="button">
-            Suivant
-          </button>
+          <ShoppingBagSummary />
         </section>
         <Element name="test">
         {deliveryScroll}

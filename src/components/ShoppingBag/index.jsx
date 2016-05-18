@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './styles.css'
 
 import ShoppingBagFields from '../ShoppingBagFields'
+import LinkToCheckout from '../LinkToCheckout'
 
 export default class ShoppingBag extends React.Component {
   render () {
@@ -12,7 +13,7 @@ export default class ShoppingBag extends React.Component {
           <div className="uk-panel">
             <h2 className="uk-text-center">Mon cabas</h2>
             <ShoppingBagFields />
-            <a href="/checkout" className="uk-button uk-button-success uk-width-1-1">Merci, ce sera tout!</a>
+            <LinkToCheckout />
           </div>
         </div>
       </div>
