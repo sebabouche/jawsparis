@@ -55,7 +55,7 @@ export default class Checkout extends React.Component {
 
 
     return (
-      <div className="uk-container uk-container-center">
+      <div className="uk-container uk-container-center uk-width-1-1 uk-width-medium-4-5 uk-width-large-3-5">
         <section className="uk-block uk-block-large">
           <div className="uk-text-center"></div>
           <h2 className="uk-text-center">
