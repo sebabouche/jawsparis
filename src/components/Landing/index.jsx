@@ -9,7 +9,7 @@ import Problem from '../Problem';
 import Solution from '../Solution';
 import SignUp from '../SignUp';
 
-import {data} from '../../data/data';
+import {data} from '../../data/landings';
 
 import mixpanel from '../../services/mixpanel';
 

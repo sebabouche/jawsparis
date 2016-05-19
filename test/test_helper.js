@@ -2,6 +2,8 @@ import jsdom from 'jsdom'
 import chai from 'chai'
 import chaiImmutable from 'chai-immutable'
 
+chai.use(chaiImmutable)
+
 import register from 'ignore-styles'
 register(['.css', '.sass', '.scss', '.png', '.svg', '.jpg'])
 

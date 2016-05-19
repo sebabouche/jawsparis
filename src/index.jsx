@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import createStore from './create-store'
+const store = createStore()
+
 import App from './components/App';
 
 let $ = require('jquery');

@@ -1,43 +1,43 @@
 export const data = {
   categories: [
     {
-      id: 'entrees',
+      id: "14745",
       title: "Les Entrées"
     },
     {
-      id: 'plats',
+      id: "5396",
       title: "Les plats"
     }
   ],
 
   day: [
     {
-      categoryId: 'entrees',
+      categoryId: "14745",
       products: [
         {
-          productId: "carottes",
+          productId: "62763",
           quantity: 2
         }
       ]
     },
     {
-      categoryId: 'plats',
+      categoryId: "5396",
       products: [
         {
-          productId: "steak",
+          productId: "37190",
           quantity: 3
         }
       ]
     }
   ],
-  
+
   products: [
     {
-      id: "carottes",
+      id: "62763",
       title: "Carottes de sable"
     },
     {
-      id: "steak",
+      id: "37190",
       title: "Steak super bon"
     }
   ]
