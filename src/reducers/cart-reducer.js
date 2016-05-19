@@ -9,9 +9,7 @@ export const cartReducer = (state = {}, action) => {
 
     case REMOVE_FROM_CART:
       const newState = Object.assign({}, state)
-      console.log(state)
       newState.cart.splice(newState.cart.indexOf(action.productId),1)
-      console.log(state)
       return { ...newState }
 
     default:

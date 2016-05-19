@@ -1,4 +1,6 @@
-export const data = {
+import {fromJS} from 'immutable'
+
+const raw_data = {
   categories: [
     {
       id: "14745",
@@ -42,3 +44,5 @@ export const data = {
     }
   ]
 }
+
+export const data =  fromJS(raw_data)

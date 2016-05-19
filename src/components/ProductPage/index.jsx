@@ -1,19 +1,20 @@
-import React from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
 
-import classNames from 'classnames';
-import styles from '../Header/styles.css';
+import classNames from 'classnames'
+import styles from '../Header/styles.css'
 
 import Category from '../Category'
 import Navbar from '../Navbar'
 import LinkToCheckout from '../LinkToCheckout'
 
-export default class Products extends React.Component {
+export class ProductPage extends React.Component {
   render() {
-    const day = this.props.day;
+    const day = this.props.day
     var today=new Date()
     const categories = day.categories.map(category => {
       return(<Category key={category.id} category={category}/>)
-    });
+    })
     const backgroundStyle = {
       backgroundImage: 'url(' + day.imageUrl + ')',
     }
@@ -45,3 +46,13 @@ export default class Products extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  console.log("ProductPage State:", state)
+  return {
+    day: state.get('day')
+  }
+}
+
+const ConnectedProductPage = connect(mapStateToProps)(ProductPage)
+export default ConnectedProductPage
