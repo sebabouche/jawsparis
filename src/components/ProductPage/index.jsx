@@ -11,8 +11,9 @@ import LinkToCheckout from '../LinkToCheckout'
 export class ProductPage extends React.Component {
   render() {
     const day = this.props.day
+    console.log("Day :",  day)
     var today=new Date()
-    const categories = day.categories.map(category => {
+    const categories = day.map(category => {
       return(<Category key={category.id} category={category}/>)
     })
     const backgroundStyle = {
@@ -50,7 +51,8 @@ export class ProductPage extends React.Component {
 const mapStateToProps = (state) => {
   console.log("ProductPage State:", state)
   return {
-    day: state.get('day')
+    day: state.get('day'),
+    categories: state.get('categories')
   }
 }
 
