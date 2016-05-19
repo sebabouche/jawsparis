@@ -38,7 +38,8 @@
   "babel": {
     "presets": [
       "es2015",
-      "react"
+      "react",
+      "stage-2"
     ]
   },
   "devDependencies": {
@@ -66,6 +67,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "babel-preset-stage-2": "^6.5.0",
     "classnames": "^2.2.3",
     "css-modules-require-hook": "^4.0.0",
     "express": "^4.13.4",
