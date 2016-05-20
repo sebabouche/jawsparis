@@ -1,7 +1,5 @@
 import React from 'react'
 
-import {data} from '../../data/data'
-
 export default class CartShow extends React.Component {
   render () {
     const categories = data.shoppingBag.categories.map((category) => {

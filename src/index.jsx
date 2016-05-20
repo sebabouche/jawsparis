@@ -3,12 +3,7 @@ import ReactDOM from 'react-dom';
 
 import createStore from './create-store'
 const store = createStore()
-import { data } from './data/data.js'
-
-store.dispatch({
-  type: 'INITIALIZE',
-  data: data}
-)
+store.dispatch(getAllProducts())
 
 console.log("Store state in Index: ", store.getState())
 

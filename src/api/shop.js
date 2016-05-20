@@ -1,7 +1,9 @@
 /**
  * Mocking client-server processing
  */
-import _products from './data.json'
+import _products from './products.json'
+
+console.log(products_of_the_day)
 
 const TIMEOUT = 100
 

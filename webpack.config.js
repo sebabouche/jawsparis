@@ -26,7 +26,7 @@ module.exports = {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.json']
   },
   output: {
     path: path.resolve(buildDirectory),

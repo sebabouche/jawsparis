@@ -7,9 +7,6 @@ import ConnectedProductPage from '../ProductPage'
 import Checkout from '../Checkout'
 import Thankyou from '../Thankyou'
 
-import {data} from '../../data/data'
-
-
 export default class App extends React.Component {
   render() {
     console.log("Store state in App: ", this.props.store.getState())
