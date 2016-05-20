@@ -7,6 +7,9 @@ export const reducer = (state = Map({}), action) => {
     case types.INITIALIZE_DAYS:
       return state.merge(fromJS(action.days))
 
+      case types.INITIALIZE_CART:
+        return state.merge(Map({cart: Map({})}))
+
     case types.ADD_TO_CART:
       return state.merge(Map({cart: state.get('cart').push(action.productId)}))
 

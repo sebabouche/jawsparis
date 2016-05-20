@@ -17,12 +17,24 @@ describe("reducer",() => {
   })
 
   it('handles INITIALIZE_DAYS', () => {
-    const state = Map({})
+    const state = Map({some_data: List.of("some", "things")})
     const action = {type: 'INITIALIZE_DAYS', days: days}
     const nextState = reducer(state, action)
 
-    expect(nextState.size).to.equal(1)
+    expect(nextState.get('some_data')).to.equal(List.of("some", "things"))
+    expect(nextState.size).to.equal(2)
   })
+
+  it('handles INITIALIZE_CART', () => {
+    const state = Map({some_data: List.of("some", "things")})
+    const action = {type: 'INITIALIZE_CART'}
+    const nextState = reducer(state, action)
+
+    expect(nextState.get('some_data')).to.equal(List.of("some", "things"))
+    expect(nextState.get('cart')).to.equal(Map({}))
+    expect(nextState.size).to.equal(2)
+  })
+
 
   it ("handles add to cart",()=>{
     const state = Map({
