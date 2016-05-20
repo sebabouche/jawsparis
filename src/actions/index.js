@@ -4,7 +4,7 @@
 
 export const ADD_TO_CART = "ADD_TO_CART"
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART"
-export const INITIALIZE = "INITIALIZE"
+export const INITIALIZE_DAYS = "INITIALIZE_DAYS"
 export const RECEIVE_DAYS = "RECEIVE_DAYS"
 
 
@@ -26,9 +26,9 @@ export const removeFromCart = (productId) => {
   })
 }
 
-export const initialize = (days) => {
+export const initializeDays = (days) => {
   return({
-    type: INITIALIZE,
+    type: INITIALIZE_DAYS,
     days
   })
 }

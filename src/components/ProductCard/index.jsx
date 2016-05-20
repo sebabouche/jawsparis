@@ -1,22 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux'
 
-
-
-
-
-export default class ProductCard extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      amount:0
-    }
-    this.handleAddClick = this.handleAddClick.bind(this);
-    this.handleMinusClick = this.handleMinusClick.bind(this);
-  }
-
+export class ProductCard extends React.Component {
   handleAddClick(event) {
-    this.setState({amount:this.state.amount+1});
+    console.log('clicked')
   }
   handleMinusClick(event) {
     this.setState({amount:this.state.amount-1});
@@ -31,7 +18,11 @@ export default class ProductCard extends React.Component {
       <div className= "uk-container-center">
       <button className="uk-button uk-button-danger" onClick={this.handleMinusClick}><i className="uk-icon-minus"></i></button>
       <span className="uk-margin-small-left uk-margin-small-right">{this.state.amount}</span>
-      <button className="uk-button uk-button-success " onClick={this.handleAddClick}><i className="uk-icon-plus"></i></button>
+      <button
+        className="uk-button uk-button-success "
+        onClick={() => {this.handleAddClick}}>
+          <i className="uk-icon-plus"></i>
+      </button>
     </div></div> : <button
       className="uk-button uk-button-success uk-width-1-1 uk-container-center" onClick={this.handleAddClick}
       type="button">
@@ -93,4 +84,12 @@ export default class ProductCard extends React.Component {
     )
   }
 }
-/* Old version <div className="uk-width-1 uk-width-small-1-2 uk-width-large-1-3"> */
+
+const mapStateToProps = (state) => {
+  return {
+    cart: state.get('cart')
+  }
+}
+
+const ConnectedProductCard = connect(mapStateToProps)(ProductCard)
+export default ConnectedProductCard

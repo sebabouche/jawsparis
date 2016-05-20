@@ -10,7 +10,6 @@ import { days } from '../../src/api/days.json'
 describe('ProductPage', () => {
   it('shows the products', () => {
     const component = shallow(<ProductPage days={fromJS(days)} />)
-    console.log(component.find('img'))
     expect(component.find('img')).to.have.length(1)
   })
 })

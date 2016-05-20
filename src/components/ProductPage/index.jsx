@@ -15,7 +15,6 @@ export class ProductPage extends React.Component {
   render() {
     const days = this.props.days.toJS()
     const day = days[0]
-    console.log("Day :", JSON.stringify(day, null, 2))
     const categoryData = day['categories']
     const today = new Date()
     const categories = categoryData.map(category => {

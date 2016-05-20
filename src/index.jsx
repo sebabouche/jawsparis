@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import days from './api/days'
-import {initialize} from './actions'
+import {initializeDays} from './actions'
 
 import createStore from './create-store'
 const store = createStore()
-store.dispatch(initialize(days))
+store.dispatch(initializeDays(days))
 
 import App from './components/App';
 

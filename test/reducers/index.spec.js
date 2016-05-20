@@ -16,9 +16,9 @@ describe("reducer",() => {
     expect(nextState).to.equal(state)
   })
 
-  it('handles INITIALIZE', () => {
-    const state = {}
-    const action = {type: 'INITIALIZE', days: days}
+  it('handles INITIALIZE_DAYS', () => {
+    const state = Map({})
+    const action = {type: 'INITIALIZE_DAYS', days: days}
     const nextState = reducer(state, action)
 
     expect(nextState.size).to.equal(1)
