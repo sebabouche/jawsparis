@@ -1,33 +1,40 @@
-import React from 'react';
+import React from 'react'
 import {connect} from 'react-redux'
 
 export class ProductCard extends React.Component {
-  handleAddClick(event) {
-    console.log('clicked')
+  handleAdd (event) {
+    console.log('clicked add')
   }
-  handleMinusClick(event) {
-    this.setState({amount:this.state.amount-1});
+
+  handleMinus (event) {
+    console.log('click remove')
   }
 
   render() {
-    const product = this.props.product;
-    const productTag = "overlay-prod-" +this.props.category+"-"+ product.id;
-    const productTargetTag = "{target:'#"+productTag+"'}";
-    const priceProduct = product.prix/100+"€";
-    var resultat = this.state.amount ? <div className= "uk-grid uk-margin-remove">
+    const product = this.props.product
+    const productTag = "overlay-prod-" +this.props.category+"-"+ product.id
+    const productTargetTag = "{target:'#"+productTag+"'}"
+    const priceProduct = product.prix/100+"€"
+
+    var resultat = this.state.amount ?
+    <div className= "uk-grid uk-margin-remove">
       <div className= "uk-container-center">
-      <button className="uk-button uk-button-danger" onClick={this.handleMinusClick}><i className="uk-icon-minus"></i></button>
-      <span className="uk-margin-small-left uk-margin-small-right">{this.state.amount}</span>
-      <button
-        className="uk-button uk-button-success "
-        onClick={() => {this.handleAddClick}}>
-          <i className="uk-icon-plus"></i>
-      </button>
-    </div></div> : <button
-      className="uk-button uk-button-success uk-width-1-1 uk-container-center" onClick={this.handleAddClick}
+        <button className="uk-button uk-button-danger" onClick={this.handleMinusClick}><i className="uk-icon-minus"></i></button>
+        <span className="uk-margin-small-left uk-margin-small-right">{this.state.amount}</span>
+        <button
+          className="uk-button uk-button-success "
+          onClick={() => {this.handleAdd}}
+          type="button">
+            <i className="uk-icon-plus"></i>
+        </button>
+      </div>
+    </div> :
+    <button
+      className="uk-button uk-button-success uk-width-1-1 uk-container-center"
+      onClick={() => {this.handleRemove}}
       type="button">
-      Ajouter
-    </button>;
+        Ajouter
+    </button>
 
     return (
        <div className="uk-panel uk-panel-box ">

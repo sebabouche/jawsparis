@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { toJS } from 'immutable'
+import { List, toJS } from 'immutable'
 
 export class Cart extends React.Component {
   render () {
-    const cartData = this.props.cart || undefined
+    const cartData = this.props.cart.toJS()
     let categories = undefined
-    if (cartData !== undefined) {
+    if (cartData == []) {
       categories = cartData.categories.map((category) => {
         console.log("category:", category.title)
         const products = category.products.map((product) => {
@@ -32,13 +32,13 @@ export class Cart extends React.Component {
           </div>
         )
       })
-    } else {
-      categories = "<p> Votre cabas est encore vide</p>"
-    }
+      } else {
+        categories = "<p> Votre cabas est encore vide</p>"
+      }
 
     return (
       <div>
-        {categories}
+        {categories || <p>Votre cabas est encore vide</p>}
       </div>
     )
 
@@ -48,7 +48,7 @@ export class Cart extends React.Component {
 const mapStateToProps = (state) => {
   console.log("Cart State:", state)
   return {
-    cart: state.get('cart')
+    products: getCartProducts(state)
   }
 }
 

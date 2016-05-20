@@ -1,4 +1,4 @@
-import {Map, fromJS} from 'immutable'
+import {Map, List, fromJS} from 'immutable'
 
 import * as types from '../actions'
 
@@ -8,7 +8,7 @@ export const reducer = (state = Map({}), action) => {
       return state.merge(fromJS(action.days))
 
       case types.INITIALIZE_CART:
-        return state.merge(Map({cart: Map({})}))
+        return state.merge(Map({cart: List()}))
 
     case types.ADD_TO_CART:
       return state.merge(Map({cart: state.get('cart').push(action.productId)}))

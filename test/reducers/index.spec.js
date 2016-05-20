@@ -31,7 +31,7 @@ describe("reducer",() => {
     const nextState = reducer(state, action)
 
     expect(nextState.get('some_data')).to.equal(List.of("some", "things"))
-    expect(nextState.get('cart')).to.equal(Map({}))
+    expect(nextState.get('cart')).to.equal(List())
     expect(nextState.size).to.equal(2)
   })
 
