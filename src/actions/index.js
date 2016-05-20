@@ -26,9 +26,9 @@ export const removeFromCart = (productId) => {
   })
 }
 
-export const initialize = (data) => {
+export const initialize = (days) => {
   return({
     type: INITIALIZE,
-    data
+    days
   })
 }

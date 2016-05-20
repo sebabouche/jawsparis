@@ -3,7 +3,7 @@ import {expect} from 'chai'
 
 import { reducer } from '../../src/reducers'
 
-import { data } from '../../src/data/data.js'
+import { days } from '../../src/api/days.json'
 
 describe("reducer",() => {
   it ('returns state if unkonw action', () => {
@@ -18,12 +18,10 @@ describe("reducer",() => {
 
   it('handles INITIALIZE', () => {
     const state = {}
-    const action = {type: 'INITIALIZE', data: data}
+    const action = {type: 'INITIALIZE', days: days}
     const nextState = reducer(state, action)
 
-    console.log("nextState::::", nextState.get('categories').size)
-
-    expect(nextState.get('categories').size).to.equal(2)
+    expect(nextState.size).to.equal(1)
   })
 
   it ("handles add to cart",()=>{

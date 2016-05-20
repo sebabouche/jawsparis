@@ -4,11 +4,8 @@ import * as types from '../actions'
 
 export const reducer = (state = Map({}), action) => {
   switch (action.type) {
-    case types.RECEIVE_DAYS:
-      return fromJS(action.days)
-
     case types.INITIALIZE:
-      return fromJS(action.data)
+      return fromJS(action.days)
 
     case types.ADD_TO_CART:
       return  state.merge(Map({cart: state.get('cart').push(action.productId)}))

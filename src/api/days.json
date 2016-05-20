@@ -18,6 +18,7 @@
               "conseil":"à couper en fines tranches avec du beurre",
               "conservation":"2 à 3 jours",
               "prix": 150,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroir d'Avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -33,6 +34,7 @@
               "conseil":"en batonnets ou râpées",
               "conservation":"2 à 3 jours",
               "prix": 100,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroir d'Avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -48,6 +50,7 @@
               "conseil":"en batonnets ou râpées",
               "conservation":"2 à 3 jours",
               "prix": 100,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroir d'Avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -69,6 +72,7 @@
               "conseil":"fondue de poireaux ou vinaigrette",
               "conservation":"2 à 3 jours",
               "prix": 180,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroir d'Avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -84,6 +88,7 @@
               "conseil":"faites les revenir dans un beurre noisette",
               "conservation":"2 à 3 jours",
               "prix": 720,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroir d'Avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -99,6 +104,7 @@
               "conseil":"à la poêle, en boulette, en bolognaise...",
               "conservation":"2 à 3 jours",
               "prix": 280,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroir d'Avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -119,6 +125,7 @@
               "desc":"Lait de chèvre, Charentes-Poitou",
               "conseil":"",
               "prix": 400,
+              "quantity": 2,
               "commercant":{
                 "name":"La Fermette",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -133,6 +140,7 @@
               "desc":"Origine Franche Compté, lait de vache cru, pâte cuite.",
               "conseil":"à sortir du frigo 20 min avant dégustation",
               "prix": 430,
+              "quantity": 2,
               "commercant":{
                 "name":"La Fermette",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -148,6 +156,7 @@
               "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
               "conseil":"",
               "prix": 250,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroirs d'avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -162,6 +171,7 @@
               "desc":"Pain avec des farines françaises biologiques issues de semences paysannes et adaptées au terroir de culture. Elles proviennent de moulins artisanaux qui utilisent des meules de pierre Astrié afin de ne pas altérer le grain et ses qualités nutritives.",
               "conseil":"",
               "prix": 120,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroirs d'avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -183,6 +193,7 @@
               "desc":"Bio, cultivées en Seine et Marne (77)",
               "conseil":"",
               "prix": 200,
+              "quantity": 2,
               "commercant":{
                 "name":"Terroirs d'avenir",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -197,6 +208,7 @@
               "desc":"Fromage de lait battu, battu, 40% de M.G.",
               "conseil":"",
               "prix": 180,
+              "quantity": 2,
               "commercant":{
                 "name":"La Fermette",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
@@ -211,6 +223,7 @@
               "desc":"Délicieuse barre de chocolat noir au praliné fondant et croustillant.",
               "conseil":"",
               "prix": 500,
+              "quantity": 2,
               "commercant":{
                 "name":"La Mère de Famille",
                 "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
