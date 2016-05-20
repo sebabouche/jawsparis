@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './styles.css'
 
-import ShoppingBagFields from '../ShoppingBagFields'
+import Cart from '../Cart'
 import LinkToCheckout from '../LinkToCheckout'
 
-export default class ShoppingBag extends React.Component {
+export default class CartEdit extends React.Component {
   render () {
 
     return (
@@ -12,7 +12,7 @@ export default class ShoppingBag extends React.Component {
         <div className="uk-block">
           <div className="uk-panel">
             <h2 className="uk-text-center">Mon cabas</h2>
-            <ShoppingBagFields />
+            <Cart />
             <LinkToCheckout />
           </div>
         </div>

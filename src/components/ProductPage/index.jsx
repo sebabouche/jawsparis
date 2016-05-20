@@ -8,12 +8,15 @@ import Category from '../Category'
 import Navbar from '../Navbar'
 import LinkToCheckout from '../LinkToCheckout'
 
+import {toJS} from 'immutable'
+
 export class ProductPage extends React.Component {
   render() {
-    const day = this.props.day
-    console.log("Day :",  day)
-    var today=new Date()
-    const categories = day.map(category => {
+    const day = this.props.day.toJS()
+    console.log("Day :", JSON.stringify(day, null, 2))
+    const categoryData = day['categories']
+    const today = new Date()
+    const categories = categoryData.map(category => {
       return(<Category key={category.id} category={category}/>)
     })
     const backgroundStyle = {

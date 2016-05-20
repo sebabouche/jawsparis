@@ -5,17 +5,17 @@ const scroll = Scroll.animateScroll
 const Element = Scroll.Element;
 const scroller = Scroll.scroller;
 
-import ShoppingBagSummary from '../ShoppingBagSummary'
-import ShoppingBagFields from '../ShoppingBagFields'
+import CartShow from '../CartShow'
+import Cart from '../Cart'
 import DeliveryFields from '../DeliveryFields'
 import PaymentFields from '../PaymentFields'
 
-export default class Checkout extends React.Component {
+export class Checkout extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      editShoppingBag: false,
+      editCart: false,
       showPayment:false
     }
     this.handleShopBagClick = this.handleShopBagClick.bind(this);
@@ -23,7 +23,7 @@ export default class Checkout extends React.Component {
   }
 
   handleShopBagClick(event) {
-    this.setState({editShoppingBag:!this.state.editShoppingBag});
+    this.setState({editCart:!this.state.editCart});
   }
   handleDeliveryClick(event) {
     this.setState({showPayment:true});
@@ -35,7 +35,7 @@ export default class Checkout extends React.Component {
     let deliveryButtonClass = classNames("uk-button uk-button-large uk-button-success uk-width-1-1 uk-container-center", {'uk-hidden':this.state.showPayment})
 
     let paymentScroll = ""
-    if (this.state.showPayment & !this.state.editShoppingBag){
+    if (this.state.showPayment & !this.state.editCart){
       paymentScroll = <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">
       <h2 className="uk-text-center">
         <span className="uk-badge uk-badge-notification">3</span>
@@ -53,15 +53,16 @@ export default class Checkout extends React.Component {
       </div>
       </section>
     }
+
     let shopingBagDiv =""
-    if (this.state.editShoppingBag){
+    if (this.state.editCart){
       shopingBagDiv = <section className="uk-block uk-block-large">
         <div className="uk-text-center"></div>
         <h2 className="uk-text-center">
           <span className="uk-badge uk-badge-notification">1</span>
           Votre cabas
         </h2>
-        <ShoppingBagFields />
+        <Cart />
         <button className={shoppingBagButtonClass} onClick={this.handleShopBagClick}>Valider</button>
       </section>
     } else {
@@ -72,7 +73,7 @@ export default class Checkout extends React.Component {
           <span className="uk-badge uk-badge-notification">1</span>
           Votre cabas
         </h2>
-        <ShoppingBagSummary />
+        <CartShow />
         <button className={shoppingBagButtonClass} onClick={this.handleShopBagClick}>Modifier mon cabas</button>
       </section>
       <section className="uk-block uk-block-large uk-animation-fade uk-animation-3">

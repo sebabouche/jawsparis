@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.css';
 
-import ShoppingBag from '../ShoppingBag'
+import CartEdit from '../CartEdit'
 
 export default class Navbar extends React.Component {
   render () {
@@ -51,7 +51,7 @@ export default class Navbar extends React.Component {
         </div>
         <div id="rightMenu" className="uk-offcanvas">
           <div className="uk-offcanvas-bar uk-offcanvas-bar-flip">
-            <ShoppingBag />
+            <CartEdit />
           </div>
         </div>
       </div>
