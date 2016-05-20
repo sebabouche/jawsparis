@@ -22,3 +22,11 @@ export const reducer = (state = Map({}), action) => {
       return state
   }
 }
+
+export function getDays(state, id) {
+  return state.byId[id]
+}
+
+export function getVisibleDays(state) {
+  return state.visibleIds.map(id => getDays(state, id))
+}

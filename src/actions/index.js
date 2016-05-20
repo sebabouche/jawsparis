@@ -5,6 +5,8 @@
 export const ADD_TO_CART = "ADD_TO_CART"
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART"
 export const INITIALIZE = "INITIALIZE"
+export const RECEIVE_DAYS = "RECEIVE_DAYS"
+
 
 /*
  * ACTION CREATORS
@@ -24,7 +26,7 @@ export const removeFromCart = (productId) => {
   })
 }
 
-export const initiatize = (data) => {
+export const initialize = (data) => {
   return({
     type: INITIALIZE,
     data

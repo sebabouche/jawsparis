@@ -4,7 +4,7 @@ import { toJS } from 'immutable'
 
 export class Cart extends React.Component {
   render () {
-    const cartData = this.props.cart.toJS() || undefined
+    const cartData = this.props.cart || undefined
     let categories = undefined
     if (cartData !== undefined) {
       categories = cartData.categories.map((category) => {

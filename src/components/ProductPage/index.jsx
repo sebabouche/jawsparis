@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addToCart } from '../../actions'
 
 import classNames from 'classnames'
 import styles from '../Header/styles.css'
@@ -12,7 +13,8 @@ import {toJS} from 'immutable'
 
 export class ProductPage extends React.Component {
   render() {
-    const day = this.props.day.toJS()
+    const days = this.props.days.toJS()
+    const day = days[0]
     console.log("Day :", JSON.stringify(day, null, 2))
     const categoryData = day['categories']
     const today = new Date()
@@ -52,9 +54,8 @@ export class ProductPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("ProductPage State:", state)
   return {
-    day: state.get('day'),
+    days: state.get('days'),
     categories: state.get('categories')
   }
 }

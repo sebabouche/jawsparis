@@ -57,6 +57,7 @@
     "ignore-styles": "^1.2.0",
     "image-webpack-loader": "^1.8.0",
     "jsdom": "^8.4.0",
+    "json-loader": "^0.5.4",
     "mocha": "^2.4.5",
     "node-sass": "^3.5.3",
     "postcss-loader": "^0.8.2",
@@ -86,6 +87,7 @@
     "react-router": "^2.4.0",
     "react-scroll": "^1.0.16",
     "redux": "^3.5.2",
+    "redux-immutable": "^3.0.6",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",
     "uikit": "^2.26.2"

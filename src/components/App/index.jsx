@@ -9,7 +9,6 @@ import Thankyou from '../Thankyou'
 
 export default class App extends React.Component {
   render() {
-    console.log("Store state in App: ", this.props.store.getState())
     return (
       <Provider store={this.props.store}>
         <Router history={browserHistory}>
