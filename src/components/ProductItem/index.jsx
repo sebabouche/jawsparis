@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 
+import QuantitySelector from '../QuantitySelector'
+
 export default class ProductItem extends Component {
   render() {
-    const { addedIds, product, cartProductsQuantity } = this.props
+    const { addedIds, product, cartProductsQuantity,
+      onAddToCartClicked, onRemoveFromCartClicked } = this.props
 
     console.log("addedIds", addedIds)
     console.log("cartProductsQuantity", cartProductsQuantity)
@@ -18,38 +21,18 @@ export default class ProductItem extends Component {
     const cartModule = () => {
       if ((addedIds).indexOf(product.id) !== -1 ) {
         return (
-          <div className= "uk-grid uk-grid-collapse">
-              <div className="uk-width-1-3">
-                <button
-                  className="uk-button uk-button-success uk-width-1-1"
-                  onClick={this.props.onAddToCartClicked}
-                  type="button">
-                    <i className="uk-icon-plus"></i>
-                </button>
-              </div>
-
-              <div className="uk-width-1-3">
-                <p className="uk-text-center cartProductQuantity">
-                  {cartProductsQuantity[product.id]}
-                </p>
-              </div>
-
-              <div className="uk-width-1-3">
-                <button
-                  className="uk-button uk-button-success uk-width-1-1"
-                  onClick={this.props.onRemoveFromCartClicked}
-                  type="button">
-                    <i className="uk-icon-minus"></i>
-                </button>
-              </div>
-          </div>
-        )
+          <QuantitySelector
+            productId={product.id}
+            cartProductsQuantity={cartProductsQuantity}
+            onAddToCartClicked={onAddToCartClicked}
+            onRemoveFromCartClicked={onRemoveFromCartClicked} />
+          )
       } else {
         return (
           <div className= "uk-grid uk-grid-collapse">
             <button
               className="uk-button uk-button-success uk-width-1-1 uk-container-center"
-              onClick={this.props.onAddToCartClicked}
+              onClick={onAddToCartClicked}
               type="button">
                 Ajouter
             </button>

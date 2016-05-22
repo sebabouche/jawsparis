@@ -10,19 +10,15 @@ export default class Cart extends Component {
     const hasProducts = products.length > 0
     const nodes = !hasProducts ?
       <em>Please add some products to cart.</em> :
-      products.map(product =>
-        <CartProduct
-          title={product.title}
-          price={product.price}
-          quantity={product.quantity}
-          key={product.id}/>
-    )
+      this.props.children
 
     return (
       <div>
-        <h3>Your Cart</h3>
-        <div>{nodes}</div>
-        <p>Total: &#36;{total}</p>
+        <div>
+        {this.props.children}
+        </div>
+        <p>Livraison: 3€</p>
+        <p>Total: {total/100 + 3}€</p>
         <LinkToCheckout disabled={hasProducts ? '' : 'disabled'} onClick={this.props.onCheckoutClicked}/>
       </div>
     )
@@ -32,5 +28,6 @@ export default class Cart extends Component {
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
-  onCheckoutClicked: PropTypes.func
+  onCheckoutClicked: PropTypes.func,
+  children: PropTypes.node,
 }

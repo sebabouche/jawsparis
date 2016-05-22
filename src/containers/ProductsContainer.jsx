@@ -10,7 +10,10 @@ import ProductItem from '../components/ProductItem'
 
 class ProductsContainer extends Component {
   render() {
-    const { addedIds, products, cartProductsQuantity } = this.props
+    const {
+      addedIds, products,
+      cartProductsQuantity,
+      addToCart, removeFromCart } = this.props
 
     return (
       <ProductsList title="Products">
@@ -20,8 +23,8 @@ class ProductsContainer extends Component {
             addedIds={addedIds}
             product={product}
             cartProductsQuantity={cartProductsQuantity}
-            onAddToCartClicked={() => this.props.addToCart(product.id)}
-            onRemoveFromCartClicked={() => this.props.removeFromCart(product.id)} />
+            onAddToCartClicked={() => addToCart(product.id)}
+            onRemoveFromCartClicked={() => removeFromCart(product.id)} />
         )}
       </ProductsList>
     )
