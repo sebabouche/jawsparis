@@ -1,24 +1,43 @@
-import {Map, List, fromJS} from 'immutable'
+import { combineReducers } from 'redux'
+import cart, * as fromCart from './cart'
+import products, * as fromProducts from './products'
 
-import * as types from '../actions'
+export default combineReducers({
+  cart,
+  products
+})
 
-export const reducer = (state = Map({}), action) => {
-  switch (action.type) {
-    case types.INITIALIZE_DAYS:
-      return state.merge(fromJS(action.days))
+export function getAddedIds(state) {
+  return fromCart.getAddedIds(state.cart)
+}
 
-      case types.INITIALIZE_CART:
-        return state.merge(Map({cart: List()}))
+function getQuantity(state, id) {
+  return fromCart.getQuantity(state.cart, id)
+}
 
-    case types.ADD_TO_CART:
-      return state.merge(Map({cart: state.get('cart').push(action.productId)}))
+function getProduct(state, id) {
+  return fromProducts.getProduct(state.products, id)
+}
 
-    case types.REMOVE_FROM_CART:
-      const newState = Object.assign({}, state)
-      newState.cart.splice(newState.cart.indexOf(action.productId),1)
-      return { ...newState }
+export function getTotal(state) {
+  return getAddedIds(state).reduce((total, id) =>
+    total + getProduct(state, id).price * getQuantity(state, id),
+    0
+  ).toFixed(2)
+}
 
-    default:
-      return state
-  }
+export function getCartProducts(state) {
+  return getAddedIds(state).map(id => Object.assign(
+    {},
+    getProduct(state, id),
+    {
+      quantity: getQuantity(state, id)
+    }
+  ))
+}
+
+export function getCartProductsQuantity(state) {
+  let quantityObj = {}
+  getAddedIds(state).map(id => quantityObj[id] = getQuantity(state, id))
+  return quantityObj
 }

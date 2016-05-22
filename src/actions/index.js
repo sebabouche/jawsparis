@@ -1,41 +1,61 @@
-/*
- * ACTION TYPES
- */
+import shop from '../api/shop'
+import * as types from '../constants/ActionTypes'
 
-export const INITIALIZE_DAYS = "INITIALIZE_DAYS"
-export const INITIALIZE_CART = "INITIALIZE_CART"
-export const ADD_TO_CART = "ADD_TO_CART"
-export const REMOVE_FROM_CART = "REMOVE_FROM_CART"
-export const RECEIVE_DAYS = "RECEIVE_DAYS"
-
-
-/*
- * ACTION CREATORS
- */
-
- export const initializeDays = (days) => {
-   return({
-     type: INITIALIZE_DAYS,
-     days
-   })
- }
-
- export const initializeCart = () => {
-   return({
-     type: INITIALIZE_CART,
-   })
- }
-
-export const addToCart = (productId) => {
-  return({
-    type:ADD_TO_CART,
-    productId
-  })
+function receiveProducts(products) {
+  return {
+    type: types.RECEIVE_PRODUCTS,
+    products: products
+  }
 }
 
-export const removeFromCart = (productId) => {
-  return({
-    type:REMOVE_FROM_CART,
+export function getAllProducts() {
+  return dispatch => {
+    shop.getProducts(products => {
+      dispatch(receiveProducts(products))
+    })
+  }
+}
+
+function addToCartUnsafe(productId) {
+  return {
+    type: types.ADD_TO_CART,
     productId
-  })
+  }
+}
+
+export function addToCart(productId) {
+  return (dispatch, getState) => {
+    dispatch(addToCartUnsafe(productId))
+  }
+}
+
+function removeFromCartUnsafe(productId) {
+  return {
+    type: types.REMOVE_FROM_CART,
+    productId
+  }
+}
+
+export function removeFromCart(productId) {
+  return (dispatch, getState) => {
+    dispatch(removeFromCartUnsafe(productId))
+  }
+}
+
+export function checkout(products) {
+  return (dispatch, getState) => {
+    const cart = getState().cart
+
+    dispatch({
+      type: types.CHECKOUT_REQUEST
+    })
+    shop.buyProducts(products, () => {
+      dispatch({
+        type: types.CHECKOUT_SUCCESS,
+        cart
+      })
+      // Replace the line above with line below to rollback on failure:
+      // dispatch({ type: types.CHECKOUT_FAILURE, cart })
+    })
+  }
 }

@@ -1,8 +1,6 @@
 import jsdom from 'jsdom'
-import chai from 'chai'
-import chaiImmutable from 'chai-immutable'
-
-chai.use(chaiImmutable)
+import expect from 'expect'
+import { shallow, mount } from 'enzyme'
 
 import register from 'ignore-styles'
 register(['.css', '.sass', '.scss', '.png', '.svg', '.jpg'])
