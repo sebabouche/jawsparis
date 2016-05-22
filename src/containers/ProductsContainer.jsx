@@ -4,7 +4,6 @@ import { addToCart, removeFromCart } from '../actions'
 import { getVisibleProducts } from '../reducers/products'
 import { getAddedIds, getCartProductsQuantity } from '../reducers'
 
-import ProductPage from '../components/ProductPage'
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 
