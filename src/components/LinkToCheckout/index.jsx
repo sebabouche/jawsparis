@@ -3,7 +3,13 @@ import React from 'react'
 export default class LinkToCheckout extends React.Component {
   render () {
     return (
-      <a href="/checkout" className="uk-button uk-button-success uk-width-1-1">Merci, ce sera tout!</a>
+      <button
+        href="/checkout"
+        className="uk-button uk-button-success uk-width-1-1"
+        disabled={this.props.disabled}
+        onClick={this.props.onClick}>
+          Merci, ce sera tout!
+      </button>
     )
   }
 }

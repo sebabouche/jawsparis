@@ -51,7 +51,14 @@ export default class Navbar extends React.Component {
         </div>
         <div id="rightMenu" className="uk-offcanvas">
           <div className="uk-offcanvas-bar uk-offcanvas-bar-flip">
-            <CartContainer />
+            <div className={styles.container}>
+              <div className="uk-block">
+                <div className="uk-panel">
+                  <h2 className="uk-text-center">Mon cabas</h2>
+                  <CartContainer />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
+
 import CartProduct from './CartProduct'
+import LinkToCheckout from './LinkToCheckout'
 
 export default class Cart extends Component {
   render() {
@@ -21,10 +23,7 @@ export default class Cart extends Component {
         <h3>Your Cart</h3>
         <div>{nodes}</div>
         <p>Total: &#36;{total}</p>
-        <button onClick={onCheckoutClicked}
-          disabled={hasProducts ? '' : 'disabled'}>
-          Checkout
-        </button>
+        <LinkToCheckout disabled={hasProducts ? '' : 'disabled'} onClick={this.props.onCheckoutClicked}/>
       </div>
     )
   }

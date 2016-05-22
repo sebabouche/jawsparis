@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import Product from '../Product'
 
 export default class ProductItem extends Component {
   render() {
@@ -16,52 +15,45 @@ export default class ProductItem extends Component {
       return <span className="cartProductQuantity">{cartProductsQuantity[product.id]}</span> || ""
     }
 
-    const removeButton = () => {
-      if ((addedIds).indexOf(product.id) !== -1 ) {
-        return (
-          <button
-            className="removeButton"
-            onClick={this.props.onRemoveFromCartClicked}>
-              Remove from cart
-          </button>
-        )
-      }
-      return <div></div>
-    }
-
     const cartModule = () => {
       if ((addedIds).indexOf(product.id) !== -1 ) {
         return (
-          <div className= "uk-grid uk-margin-remove">
-            <div className= "uk-container-center">
-              <button
-                className="uk-button uk-button-success "
-                onClick={this.props.onAddToCartClicked}
-                type="button">
-                  <i className="uk-icon-plus"></i>
-              </button>
+          <div className= "uk-grid uk-grid-collapse">
+              <div className="uk-width-1-3">
+                <button
+                  className="uk-button uk-button-success uk-width-1-1"
+                  onClick={this.props.onAddToCartClicked}
+                  type="button">
+                    <i className="uk-icon-plus"></i>
+                </button>
+              </div>
 
-              <span className="uk-margin-small-left uk-margin-small-right">
-                {productQuantity()}
-              </span>
+              <div className="uk-width-1-3">
+                <p className="uk-text-center cartProductQuantity">
+                  {cartProductsQuantity[product.id]}
+                </p>
+              </div>
 
-              <button
-                className="uk-button uk-button-danger"
-                onClick={this.props.onRemoveFromCartClicked}
-                type="button">
-                  <i className="uk-icon-minus"></i>
-              </button>
-            </div>
+              <div className="uk-width-1-3">
+                <button
+                  className="uk-button uk-button-success uk-width-1-1"
+                  onClick={this.props.onRemoveFromCartClicked}
+                  type="button">
+                    <i className="uk-icon-minus"></i>
+                </button>
+              </div>
           </div>
         )
       } else {
         return (
-          <button
-            className="uk-button uk-button-success uk-width-1-1 uk-container-center"
-            onClick={this.props.onAddToCartClicked}
-            type="button">
-              Ajouter
-          </button>
+          <div className= "uk-grid uk-grid-collapse">
+            <button
+              className="uk-button uk-button-success uk-width-1-1 uk-container-center"
+              onClick={this.props.onAddToCartClicked}
+              type="button">
+                Ajouter
+            </button>
+          </div>
         )
       }
     }
