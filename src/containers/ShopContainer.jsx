@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
 
-export default class App extends Component {
+export default class ShopContainer extends Component {
   render() {
     return (
       <div>
@@ -13,5 +14,5 @@ export default class App extends Component {
         <CartContainer />
       </div>
     )
-  }
+  }  
 }

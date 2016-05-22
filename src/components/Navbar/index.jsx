@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.css';
 
-import CartEdit from '../CartEdit'
+import Cart from '../Cart'
 
 export default class Navbar extends React.Component {
   render () {

@@ -1,24 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 
-import days from './api/days'
-import {initializeDays, initializeCart} from './actions'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
+import reducer from './reducers'
+import { getAllProducts } from './actions'
 
-import createStore from './create-store'
-const store = createStore()
-store.dispatch(initializeDays(days))
-store.dispatch(initializeCart())
+import App from './containers/App'
 
-import App from './components/App';
-
+/*
+ * jQuery & styles
+ */
 let $ = require('jquery');
 window.jQuery = $;
 window.$ = $;
-
 require('uikit/dist/js/uikit.min.js');
 require('uikit/dist/js/components/sticky.js');
 require('uikit/dist/js/components/slideshow.js');
-
 require('./styles.scss');
 
-ReactDOM.render(<App store={store} />, document.getElementById("app"));
+/*
+ * Redux store creation and hydration
+ */
+const middleware = process.env.NODE_ENV === 'production' ?
+  [ thunk ] :
+  [ thunk, logger() ]
+const store = createStore(
+  reducer,
+  applyMiddleware(...middleware))
+store.dispatch(getAllProducts())
+
+render(<App store={store} />, document.getElementById("app"))
