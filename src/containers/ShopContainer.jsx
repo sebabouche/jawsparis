@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 
+import Shop from '../components/Shop'
+import Navbar from '../components/Navbar'
 import ProductsContainer from './ProductsContainer'
-import CartContainer from './CartContainer'
 
 export default class ShopContainer extends Component {
   render() {
     return (
-      <div>
-        <h2>Shopping Cart Example</h2>
-        <hr/>
-        <ProductsContainer />
-        <hr/>
-        <CartContainer />
+      <div className="uk-height-1-1">
+        <Shop>
+          <Navbar />
+          <ProductsContainer />
+        </Shop>
       </div>
     )
-  }  
+  }
 }

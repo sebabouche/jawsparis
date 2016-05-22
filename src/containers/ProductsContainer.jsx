@@ -3,8 +3,11 @@ import { connect } from 'react-redux'
 import { addToCart, removeFromCart } from '../actions'
 import { getVisibleProducts } from '../reducers/products'
 import { getAddedIds, getCartProductsQuantity } from '../reducers'
-import ProductItem from '../components/ProductItem'
+
+import ProductPage from '../components/ProductPage'
 import ProductsList from '../components/ProductsList'
+import ProductItem from '../components/ProductItem'
+
 
 class ProductsContainer extends Component {
   render() {
@@ -29,7 +32,7 @@ class ProductsContainer extends Component {
 ProductsContainer.propTypes = {
   addedIds: PropTypes.array.isRequired,
   products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired
   })).isRequired,
