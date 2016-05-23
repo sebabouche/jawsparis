@@ -1,0 +1,58 @@
+@import "../node_modules/uikit/dist/scss/uikit-mixins";
+
+// your custom code goes here, e.g. mixins, variables
+$icon-font-path: "../node_modules/uikit/dist/fonts";
+
+@import url(https://fonts.googleapis.com/css?family=Caudex:400|Lato:300,700|Lobster+Two:700italic);
+$base-body-font-family: "Lato", Helvetica, Arial, sans-serif;
+$base-body-font-weight: 300;
+$base-body-line-height: 22px;
+
+$button-success-color: #222;
+$button-success-background: #d5dfc7;
+$button-success-hover-background: #b3dd72;
+
+
+$base-heading-font-family: "Caudex", serif;
+$base-heading-font-weight: 400;
+
+@import "../node_modules/uikit/dist/scss/uikit";
+@import "../node_modules/uikit/dist/scss/components/slideshow";
+
+.ja-font-special {
+  font-family: "Lobster Two", cursive;
+  font-style: italic;
+}
+
+.ja-font-normal {
+  font-family: "Lato";
+  font-style: normal;
+}
+
+.ja-button-special {
+
+  @media (max-width: 479px) {
+    padding: 15px 40px;
+    font-size: 1.5em;
+  }
+
+  @media (min-width: 480px) and (max-width: 767px) {
+    font-size: 1.5em;
+  }
+
+  @media (min-width: 768px) and (max-width: 959px) {
+    padding: 15px 40px;
+    font-size: 1.8em;
+  }
+
+  @media (min-width: 960px) and (max-width: 1199px) {
+    padding: 15px 40px;
+    font-size: 1.5em;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 15px 40px;
+    font-size: 2em;
+  }
+
+}
