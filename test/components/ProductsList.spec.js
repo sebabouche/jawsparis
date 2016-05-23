@@ -1,7 +1,7 @@
 import expect from 'expect'
 import React from 'react'
 import { shallow } from 'enzyme'
-import ProductsList from '../../src/components/ProductsList'
+import ProductsList from '../../universal/components/ProductsList'
 
 function setup(props) {
   const component = shallow(

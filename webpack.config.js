@@ -14,7 +14,7 @@ const buildDirectory = './dist/';
 
 module.exports = {
   entry: [
-    './src/index.jsx'
+    './universal/index.jsx'
   ],
   devServer: {
     hot: true,
@@ -79,7 +79,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
-      template: './src/index.tpl.html'
+      template: './universal/index.tpl.html'
     })
   ]
 };
