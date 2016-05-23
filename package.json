@@ -70,6 +70,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.9.0",
     "classnames": "^2.2.3",
     "css-modules-require-hook": "^4.0.0",
     "express": "^4.13.4",

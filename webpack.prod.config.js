@@ -33,6 +33,10 @@ module.exports = {
         loader: 'babel'
       },
       {
+        test: /\.json$/,
+        loader: "json-loader"
+      },
+      {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('css-loader?modules&importLoaders=1&localIdentName=[path][name]__[local]___[hash:base64:5]')
       },
