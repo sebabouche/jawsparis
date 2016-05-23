@@ -7,9 +7,6 @@ export default class ProductItem extends Component {
     const { addedIds, product, cartProductsQuantity,
       onAddToCartClicked, onRemoveFromCartClicked } = this.props
 
-    console.log("addedIds", addedIds)
-    console.log("cartProductsQuantity", cartProductsQuantity)
-
     const productTag = "overlay-prod-" +this.props.category+"-"+ product.id
     const productTargetTag = "{target:'#"+productTag+"'}"
     const productPrice = product.price/100+"€"

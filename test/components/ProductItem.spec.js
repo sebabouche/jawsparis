@@ -1,7 +1,6 @@
 import expect from 'expect'
 import React from 'react'
 import { shallow } from 'enzyme'
-import Product from '../../src/components/Product'
 import ProductItem from '../../src/components/ProductItem'
 
 function setup(product) {
@@ -20,7 +19,6 @@ function setup(product) {
     addButton: component.find('button.addButton'),
     removeButton: component.find('button.removeButton'),
     cartProductQuantity: component.find('.cartProductQuantity'),
-    product: component.find(Product)
   }
 }
 

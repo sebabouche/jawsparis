@@ -19,7 +19,7 @@ export default class Cart extends Component {
         </div>
         <p>Livraison: 3€</p>
         <p>Total: {total/100 + 3}€</p>
-        <LinkToCheckout disabled={hasProducts ? '' : 'disabled'} onClick={this.props.onCheckoutClicked}/>
+        <LinkToCheckout disabled={hasProducts ? '' : 'disabled'} />
       </div>
     )
   }
@@ -28,6 +28,5 @@ export default class Cart extends Component {
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
-  onCheckoutClicked: PropTypes.func,
   children: PropTypes.node,
 }

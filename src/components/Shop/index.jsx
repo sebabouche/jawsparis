@@ -28,12 +28,6 @@ export default class Shop extends Component {
 
         <div className="uk-container uk-container-center">
           {this.props.children[1]} {/* ProductContainer */}
-          <div className="uk-block uk-margin-large-bottom">
-            <p className="uk-text-center ja-font-special">
-              Vous désirez autre chose ?
-              <LinkToCheckout />
-            </p>
-          </div>
         </div>
       </div>
     )

@@ -3,33 +3,21 @@ import { connect } from 'react-redux'
 import { addToCart, removeFromCart, checkout } from '../actions'
 import { getAddedIds, getTotal, getCartProducts, getCartProductsQuantity } from '../reducers'
 
-import Cart from '../components/Cart'
-import CartProduct from '../components/CartProduct'
+import Checkout from '../components/Checkout'
+import CartContainer from './CartContainer'
 
-class CartContainer extends Component {
+class CheckoutContainer extends Component {
   render() {
     const { addedIds, products, cartProductsQuantity, total, addToCart, removeFromCart, checkout } = this.props
 
     return (
-      <Cart total={total} products={products} >
-        {products.map(product =>
-          <CartProduct
-            key={product.id}
-            productId={product.id}
-            title={product.title}
-            price={product.price}
-            quantity={product.quantity}
-            addedIds={addedIds}
-            cartProductsQuantity={cartProductsQuantity}
-            onAddToCartClicked={() => addToCart(product.id)}
-            onRemoveFromCartClicked={() => removeFromCart(product.id)} />
-        )}
-      </Cart>
+      <Checkout />
     )
   }
 }
 
-CartContainer.propTypes = {
+CheckoutContainer.propTypes = {
+  addedIds: PropTypes.array.isRequired,
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -53,4 +41,4 @@ const mapStateToProps = (state) => {
 export default connect(
   mapStateToProps,
   { addToCart, removeFromCart }
-)(CartContainer)
+)(CheckoutContainer)

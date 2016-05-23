@@ -2,7 +2,10 @@ import 'babel-polyfill'
 import React from 'react';
 import {render} from 'react-dom';
 
-import { createStore, applyMiddleware } from 'redux'
+import { browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
@@ -33,4 +36,6 @@ const store = createStore(
   applyMiddleware(...middleware))
 store.dispatch(getAllProducts())
 
-render(<App store={store} />, document.getElementById("app"))
+const history = syncHistoryWithStore(browserHistory, store)
+
+render(<App store={store} history={history} />, document.getElementById("app"))

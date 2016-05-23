@@ -16,7 +16,7 @@ class ProductsContainer extends Component {
       addToCart, removeFromCart } = this.props
 
     return (
-      <ProductsList title="Products">
+      <ProductsList title="Products" addedIds={addedIds.length > 0}>
         {products.map(product =>
           <ProductItem
             key={product.id}
