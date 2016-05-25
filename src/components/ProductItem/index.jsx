@@ -49,7 +49,7 @@ export default class ProductItem extends Component {
              </div>
              <figure className="uk-overlay">
                <img src={product.img} alt={product.title}/>
-               <figcaption id={productTag} className="uk-overlay-panel uk-overlay-background uk-hidden" aria-hidden="true" >
+               <figcaption id={productTag} className="uk-overlay-panel uk-overlay-background uk-hidden uk-scrollable-text" aria-hidden="true" >
                  <p>
                    <i className="uk-icon-justify uk-icon-info-circle"></i>
                    <br />

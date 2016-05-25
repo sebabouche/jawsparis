@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Shop from '../components/Shop'
-import Navbar from '../components/Navbar'
+import NavbarContainer from './NavbarContainer'
 import ProductsContainer from './ProductsContainer'
 
 export default class ShopContainer extends Component {
@@ -9,7 +9,7 @@ export default class ShopContainer extends Component {
     return (
       <div className="uk-height-1-1">
         <Shop>
-          <Navbar />
+          <NavbarContainer />
           <ProductsContainer />
         </Shop>
       </div>
