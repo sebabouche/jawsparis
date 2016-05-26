@@ -26,7 +26,7 @@ export default class ProductItem extends Component {
           )
       } else {
         return (
-          <div className= "uk-grid uk-grid-collapse">
+          <div className= "uk-grid uk-grid-collapse uk-margin-top-remove">
             <button
               className="uk-button uk-button-success uk-width-1-1 uk-container-center"
               onClick={onAddToCartClicked}
