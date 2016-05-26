@@ -6,7 +6,7 @@ import Problem from '../components/Landing/Problem'
 import Solution from '../components/Landing/Solution'
 import SignUp from '../components/Landing/SignUp'
 
-import {data} from '../data/landings'
+import {data} from '../static/landings'
 
 import mixpanel from '../services/mixpanel'
 

@@ -1,5 +1,5 @@
 import expect from 'expect'
-import { getTotal, getCartProducts, getCartProductsQuantity } from '../../src/reducers'
+import { getTotal, getCartProducts, getCartProductsQuantity } from '../../universal/reducers'
 
 describe('selectors', () => {
   describe('getTotal', () => {

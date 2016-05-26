@@ -8,11 +8,6 @@ const config = require('config')
 const isDev = (process.env.NODE_ENV === 'development')
 const appEntry = './client/app'
 
-const definePlugin = new webpack.DefinePlugin({
-  __PROD__: production,
-  __STAGING__: staging
-})
-
 const defineEnvPlugin = new webpack.DefinePlugin({
   __DEV__: isDev
 })
@@ -28,7 +23,7 @@ const plugins = [
   new ExtractTextPlugin('styles.css'),
   new webpack.NoErrorsPlugin(),
   new HtmlWebpackPlugin({
-    template: './src/index.tpl.html'
+    template: './universal/index.tpl.html'
   })
 ]
 

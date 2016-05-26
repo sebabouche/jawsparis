@@ -1,5 +1,5 @@
 import expect from 'expect'
-import cart from '../../src/reducers/cart'
+import cart from '../../universal/reducers/cart'
 
 describe('reducers', () => {
   describe('cart', () => {

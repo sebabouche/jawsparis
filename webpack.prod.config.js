@@ -17,7 +17,7 @@ const buildDirectory = './dist/';
 
 module.exports = {
   entry: [
-    './src/index.jsx'
+    './universal/index.jsx'
   ],
   resolve: {
     extensions: ['', '.js', '.jsx', '.json']
@@ -67,7 +67,7 @@ module.exports = {
     definePlugin,
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
-      template: 'src/index.tpl.html'
+      template: 'universal/index.tpl.html'
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({

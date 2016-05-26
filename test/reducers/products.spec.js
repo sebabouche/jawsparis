@@ -1,5 +1,5 @@
 import expect from 'expect'
-import products from '../../src/reducers/products'
+import products from '../../universal/reducers/products'
 
 describe('reducers', () => {
   describe('products', () => {

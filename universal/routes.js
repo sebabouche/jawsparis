@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
-import JawsApp from './containers/AppContainer'
+import JawsApp from './containers/JawsAppContainer'
 import Landing from './containers/LandingContainer'
 
 import OtherEvents from './containers/OtherEvents'
