@@ -3,11 +3,14 @@
 // your custom code goes here, e.g. mixins, variables
 $icon-font-path: "../node_modules/uikit/dist/fonts";
 
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display:900|Lato:300,700|Lobster+Two:700italic);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:700|Lato:300,700|Lobster+Two:700italic);
 
 $base-body-font-family: "Lato", Helvetica, Arial, sans-serif;
 $base-body-font-weight: 300;
 $base-body-line-height: 22px;
+
+$base-heading-font-family: "Playfair Display", serif;
+$base-heading-font-weight: 700;
 
 $button-success-color: #FFFFFF;
 $button-success-background: #000000;
@@ -40,10 +43,6 @@ $navbar-toggle-color:                            #444;
 $navbar-toggle-hover-color:                      #444;
 $navbar-toggle-icon:                             "\f0c9";
 $navbar-toggle-icon-alt:                         "\f002";
-
-
-$base-heading-font-family: "Playfair Display", serif;
-$base-heading-font-weight: 400;
 
 @import "../node_modules/uikit/dist/scss/uikit";
 @import "../node_modules/uikit/dist/scss/components/slideshow";

@@ -41,12 +41,7 @@ class NavbarContainer extends React.Component {
               <li className="uk-visible-large"><a href="#">Mon Compte</a></li>
               <li className="uk-visible-large">
                 <a href="#rightMenu" data-uk-offcanvas>
-                  <AnimateOnChange
-                    baseClassName="Score"
-                    animationClassName="Score--bounce"
-                    animate={getCartProductsQuantity !== 0}>
-                      Mon Panier
-                  </AnimateOnChange>
+                  <i className="uk-icon-shopping-bag"></i>
                 </a>
               </li>
             </ul>
