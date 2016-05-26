@@ -44,7 +44,7 @@ export default class ProductItem extends Component {
 
          <div className="uk-panel-teaser">
            <a data-uk-toggle={productTargetTag}>
-               <div className="uk-panel-badge uk-icon-info-circle uk-text-contrast"></div>
+               <div className="uk-panel-badge uk-icon-commenting uk-text-contrast"></div>
              <figure className="uk-overlay">
                <img src={product.img} alt={product.title}/>
                <figcaption id={productTag} className="uk-overlay-panel uk-overlay-background uk-hidden uk-scrollable-text" aria-hidden="true" >
