@@ -1,3 +1,5 @@
+// NOT USED ANYMORE - KEPT FOR CULTURAL MATTERS
+
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
