@@ -77,7 +77,8 @@ class NavbarContainer extends React.Component {
         </div>
         <div className={styles.dateContainer}>
           <div className={styles.leftArrow}></div>
-          <div className={styles.dateText}>Sélection du {today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()}</div>
+          <div className={styles.dateText}>Sélection du lundi 23 mai</div>
+          <div className={styles.rightArrow}></div>
         </div>
       </div>
     )

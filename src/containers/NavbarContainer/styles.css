@@ -1,50 +1,81 @@
 .offcanvasContainer {
   background-color: white;
-  height: 500px;
+  height: 100%;
 }
 
 .dateContainer{
   position: relative;
-  background-color: blue;
+  background-image: url("./images/date-background.jpg");
+  background-repeat: repeat repeat;
   text-align: center;
-  vertical-align: middle;
-  margin:auto;
-  padding:0;
-  height: 32px;
 }
 
 .dateText{
+  position: relative;
   display: inline-block;
-  line-height: 32px;
-  font-size: 16px;
-  padding: 0 15px;
+  color: #000000;
+  font-family: "Playfair Display", serif;
+  padding: 0px 10px;
   background: white;
 }
 
 .leftArrow{
+  position: relative;
     content: "";
     display: inline-block;;
-    border-top: 16px solid transparent;
-    border-bottom: 16px solid transparent;
-    border-right: 16px solid red;
-}
 
-.dateText::after{
+}
+.rightArrow{
+  position: relative;
     content: "";
-    position: absolute;
-    border-top: 16px solid transparent;
-    border-bottom: 16px solid transparent;
-    border-left: 16px solid red;
-    left: -16px;
+    display: inline-block;;
+
 }
 
-.leftlosange{
-  color: white;
-  background-color: white;
-  font-size: 25px;
-  -webkit-clip-path: polygon(0% 0%, 25% 0, 50% 50%, 25% 100%, 0% 100%);
-  clip-path: polygon(0% 0%, 25% 0, 50% 50%, 25% 100%, 0% 100%);
+@media (max-width: 767px) {
+  .dateContainer {
+    height: 64px;
+  }
+  .dateText{
+    top: 8px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .leftArrow{
+      top: 16px;
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
+      border-right: 16px solid white;
+  }
+  .rightArrow{
+    top:16px;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid white;
+  }
 }
+
+@media (min-width: 768px) {
+  .dateContainer {
+    height: 52px;
+  }
+  .dateText{
+    top: -16px;
+    line-height: 52px;
+    font-size: 26px;
+  }
+  .leftArrow{
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-right: 26px solid white;
+  }
+  .rightArrow{
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+    border-left: 26px solid white;
+  }
+}
+
 
 
 .Score--bounce{
