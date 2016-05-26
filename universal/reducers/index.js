@@ -1,13 +1,12 @@
 import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
 
 import cart, * as fromCart from './cart'
 import products, * as fromProducts from './products'
 
+// imported in ./store/ as "jawsApp" 
 export default combineReducers({
   cart,
-  products,
-  routing: routerReducer
+  products
 })
 
 export function getAddedIds(state) {
