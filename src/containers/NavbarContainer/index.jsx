@@ -62,7 +62,7 @@ class NavbarContainer extends React.Component {
         </div>
         <div id="rightMenu" className="uk-offcanvas">
           <div className="uk-offcanvas-bar uk-offcanvas-bar-flip">
-            <div className={styles.container}>
+            <div className={styles.offcanvasContainer}>
               <div className="uk-block uk-padding-remove">
                 <div className="uk-panel">
                   <a className="uk-panel-badge" href="#rightMenu" data-uk-offcanvas>
@@ -75,7 +75,10 @@ class NavbarContainer extends React.Component {
             </div>
           </div>
         </div>
-        <div className={styles.bloc}><span className={styles.rightlosange}>EEE</span><span className={styles.losange}>Sélection du {today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()}</span><span className={styles.leftlosange}>EEE</span></div>
+        <div className={styles.dateContainer}>
+          <div className={styles.leftArrow}></div>
+          <div className={styles.dateText}>Sélection du {today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()}</div>
+        </div>
       </div>
     )
   }

@@ -1,33 +1,41 @@
-.container {
+.offcanvasContainer {
   background-color: white;
-  height: 100%;
+  height: 500px;
 }
 
-.bloc{
-
+.dateContainer{
+  position: relative;
   background-color: blue;
   text-align: center;
   vertical-align: middle;
   margin:auto;
   padding:0;
+  height: 32px;
 }
 
-.losange{
-  height: 100%;
-  margin-top :20px;
-  font-size: 25px;
-  background-color: white;
-  margin:auto;
-
-
-
+.dateText{
+  display: inline-block;
+  line-height: 32px;
+  font-size: 16px;
+  padding: 0 15px;
+  background: white;
 }
-.rightlosange{
-  color: white;
-  background-color: white;
-  font-size: 25px;
-  -webkit-clip-path: polygon(75% 0, 100% 0, 100% 100%, 75% 100%, 50% 50%);
-  clip-path: polygon(75% 0, 100% 0, 100% 100%, 75% 100%, 50% 50%);
+
+.leftArrow{
+    content: "";
+    display: inline-block;;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 16px solid red;
+}
+
+.dateText::after{
+    content: "";
+    position: absolute;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid red;
+    left: -16px;
 }
 
 .leftlosange{
