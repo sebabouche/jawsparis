@@ -111,6 +111,7 @@
     "bluebird": "3.1.x",
     "body-parser": "1.14.x",
     "classnames": "^2.2.3",
+    "config": "1.19.x",
     "css-modules-require-hook": "^4.0.0",
     "ejs": "2.3.x",
     "express": "^4.13.4",
