@@ -9,6 +9,7 @@ import CartContainer from '../../containers/CartContainer'
 
 class NavbarContainer extends React.Component {
   render () {
+    const today = new Date()
     const { getCartProductQuantity } = this.props
 
     return (
@@ -79,6 +80,7 @@ class NavbarContainer extends React.Component {
             </div>
           </div>
         </div>
+        <div className={styles.bloc}><span className={styles.rightlosange}>EEE</span><span className={styles.losange}>Sélection du {today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()}</span><span className={styles.leftlosange}>EEE</span></div>
       </div>
     )
   }
