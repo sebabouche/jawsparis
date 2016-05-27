@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin')
 
 const config = require('config')
 
@@ -18,13 +19,22 @@ let output = {
   filename: 'bundle.js'
 }
 
+let webpack_isomorphic_tools_plugin = ""
+if (isDev) {
+  webpack_isomorphic_tools_plugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools-configuration')).development()
+} else {
+  webpack_isomorphic_tools_plugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools-configuration'))
+}
+
+
 const plugins = [
   defineEnvPlugin,
+  webpack_isomorphic_tools_plugin,
   new ExtractTextPlugin('styles.css'),
   new webpack.NoErrorsPlugin(),
   new HtmlWebpackPlugin({
     template: './universal/index.tpl.html'
-  })
+  }),
 ]
 
 let moduleLoaders = [
@@ -46,15 +56,9 @@ let moduleLoaders = [
     loader: ExtractTextPlugin.extract(['css','sass'])
   },
   {
-    test: /\.(ico|jpe?g|png|gif)$/,
-    loaders: [
-      'file?name=[path][name].[ext]',
-      'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-    ]
-  },
-  {
-      test: /\.svg$/,
-      loader: 'file?name=[path][name].[ext]'
+    test: webpack_isomorphic_tools_plugin.regular_expression('images'),
+    //test: /\.(ico|jpe?g|png|gif)$/,
+    loader: 'url-loader?limit=10240' // any image below or equal to 10K will be converted to inline base64 instead
   },
   {
     test: /\.(woff|woff2|ttf|otf|eot\?#.+|svg#.+)$/,
@@ -94,15 +98,9 @@ if (isDev) {
       loader: ExtractTextPlugin.extract(['css','sass'])
     },
     {
-      test: /\.(ico|jpe?g|png|gif)$/,
-      loaders: [
-        'file?name=[path][name].[ext]',
-        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-      ]
-    },
-    {
-        test: /\.svg$/,
-        loader: 'file?name=[path][name].[ext]'
+      test: webpack_isomorphic_tools_plugin.regular_expression('images'),
+      //test: /\.(ico|jpe?g|png|gif)$/,
+      loader: 'url-loader?limit=10240', // any image below or equal to 10K will be converted to inline base64 instead
     },
     {
        test: /\.(woff|woff2|ttf|otf|eot\?#.+|svg#.+)$/,
@@ -112,6 +110,7 @@ if (isDev) {
 }
 
 module.exports = {
+  // context: './universal',
   resolve: {
     extensions: ['', '.js', '.jsx', '.json']
   },

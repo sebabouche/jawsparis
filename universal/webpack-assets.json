@@ -1,0 +1,7 @@
+{
+  "javascript": {
+    "main": "http://localhost:3001/bundle.js"
+  },
+  "styles": {},
+  "assets": {}
+}
