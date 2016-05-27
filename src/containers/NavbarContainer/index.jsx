@@ -3,14 +3,27 @@ import { connect } from 'react-redux'
 import { getCartProductsQuantity } from '../../reducers'
 
 import styles from './styles.css'
+import classNames from 'classnames'
 
 import CartContainer from '../../containers/CartContainer'
 
 class NavbarContainer extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      bounce: false
+    }
+  }
+  componentWillReceiveProps(){
+    this.setState({bounce:true})
+    setTimeout(()=>{
+      this.setState({bounce:false})
+    }, 200)
+  }
   render () {
     const today = new Date()
     const {cartProductsQuantity} = this.props
-    console.log("cartProductsQuantity:",cartProductsQuantity)
 
     return (
       <div>
@@ -30,7 +43,7 @@ class NavbarContainer extends React.Component {
             <ul className="uk-navbar-nav">
               <li>
                 <a href="#rightMenu" data-uk-offcanvas>
-                  <i className="uk-icon-shopping-bag"></i>
+                  <i className={classNames("uk-icon-shopping-bag",{'uk-animation-shake':this.state.bounce})}></i>
                 </a>
               </li>
             </ul>
@@ -41,7 +54,7 @@ class NavbarContainer extends React.Component {
               <li className="uk-visible-large"><a href="#">Mon Compte</a></li>
               <li className="uk-visible-large">
                 <a href="#rightMenu" data-uk-offcanvas>
-                  <i className="uk-icon-shopping-bag"></i>
+                  <i className={classNames("uk-icon-shopping-bag",{'uk-animation-shake':this.state.bounce})}></i>
                 </a>
               </li>
             </ul>
