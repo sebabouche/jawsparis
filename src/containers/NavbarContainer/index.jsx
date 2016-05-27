@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import AnimateOnChange from 'react-animate-on-change'
 import { getCartProductsQuantity } from '../../reducers'
 
 import styles from './styles.css'
@@ -10,7 +9,8 @@ import CartContainer from '../../containers/CartContainer'
 class NavbarContainer extends React.Component {
   render () {
     const today = new Date()
-    const { getCartProductQuantity } = this.props
+    const {cartProductsQuantity} = this.props
+    console.log("cartProductsQuantity:",cartProductsQuantity)
 
     return (
       <div>

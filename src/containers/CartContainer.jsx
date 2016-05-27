@@ -8,6 +8,7 @@ import CartProduct from '../components/CartProduct'
 
 class CartContainer extends Component {
   render() {
+
     const { addedIds, products, cartProductsQuantity, total, addToCart, removeFromCart, checkout } = this.props
 
     return (
