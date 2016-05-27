@@ -12,8 +12,8 @@ const defineEnvPlugin = new webpack.DefinePlugin({
   __DEV__: isDev
 })
 
-const entryScripts = [ appEntry ]
-const output = {
+let entryScripts = [ appEntry ]
+let output = {
   path: path.join(__dirname, [ '/', config.get('buildDirectory') ].join('')),
   filename: 'bundle.js'
 }
@@ -27,7 +27,7 @@ const plugins = [
   })
 ]
 
-const moduleLoaders = [
+let moduleLoaders = [
   {
     test: /\.jsx?$/,
     exclude: /node_modules/,
@@ -75,10 +75,11 @@ if (isDev) {
     {
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'react-hot!babel',
-      query: { // enzyme karma conf
-        presets: ['aibnb']
-      }
+      loader: 'react-hot!babel' //,
+      // doesn't work Cannot define 'query' and multiple loaders in loaders list
+      // query: { // enzyme karma conf
+      //  presets: ['aibnb']
+      //}
     },
     {
       test: /\.json$/,
