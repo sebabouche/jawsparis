@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 
+import styles from './styles.css'
+
 export default class QuantitySelector extends Component {
   render() {
     const {
@@ -9,7 +11,7 @@ export default class QuantitySelector extends Component {
       onRemoveFromCartClicked } = this.props
 
     return (
-      <div className= "uk-grid uk-grid-collapse">
+      <div className="uk-grid uk-grid-collapse uk-margin-top-remove">
           <div className="uk-width-1-3">
             <button
               className="uk-button uk-button-success uk-width-1-1"
@@ -20,7 +22,7 @@ export default class QuantitySelector extends Component {
           </div>
 
           <div className="uk-width-1-3">
-            <p className="uk-text-center cartProductQuantity">
+            <p className="uk-text-center">
               {cartProductsQuantity[productId]}
             </p>
           </div>
