@@ -12,14 +12,14 @@ export default class QuantitySelector extends Component {
 
     return (
       <div className="uk-grid uk-grid-collapse uk-margin-top-remove">
-          <div className="uk-width-1-3">
-            <button
-              className="uk-button uk-button-success uk-width-1-1"
-              onClick={onAddToCartClicked}
-              type="button">
-                <i className="uk-icon-plus"></i>
-            </button>
-          </div>
+      <div className="uk-width-1-3">
+        <button
+          className="uk-button uk-button-success uk-width-1-1"
+          onClick={onRemoveFromCartClicked}
+          type="button">
+            <i className="uk-icon-minus"></i>
+        </button>
+      </div>
 
           <div className="uk-width-1-3">
             <p className="uk-text-center">
@@ -30,9 +30,9 @@ export default class QuantitySelector extends Component {
           <div className="uk-width-1-3">
             <button
               className="uk-button uk-button-success uk-width-1-1"
-              onClick={onRemoveFromCartClicked}
+              onClick={onAddToCartClicked}
               type="button">
-                <i className="uk-icon-minus"></i>
+                <i className="uk-icon-plus"></i>
             </button>
           </div>
       </div>
