@@ -7,7 +7,15 @@ export default class CartProduct extends Component {
     const {
       productId, price, quantity, title,
       addedIds, cartProductsQuantity,
-      onAddToCartClicked, onRemoveFromCartClicked } = this.props
+      onAddToCartClicked, onRemoveFromCartClicked, edit } = this.props
+    let buttonQuantity= ""
+    if (!edit){
+      buttonQuantity = <QuantitySelector
+        productId={productId}
+        cartProductsQuantity={cartProductsQuantity}
+        onAddToCartClicked={onAddToCartClicked}
+        onRemoveFromCartClicked={onRemoveFromCartClicked} />
+    }
 
     return (
       <div className="uk-grid uk-grid-small">
@@ -16,11 +24,7 @@ export default class CartProduct extends Component {
           {price/100}€
         </div>
         <div className="uk-width-1-2">
-          <QuantitySelector
-            productId={productId}
-            cartProductsQuantity={cartProductsQuantity}
-            onAddToCartClicked={onAddToCartClicked}
-            onRemoveFromCartClicked={onRemoveFromCartClicked} />
+        {buttonQuantity}
         </div>
       </div>
     )

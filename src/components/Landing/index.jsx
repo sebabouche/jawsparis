@@ -4,7 +4,6 @@ import { Experiment, Variant } from 'react-ab';
 import './index.css';
 
 import Header from '../Header';
-import Navbar from '../Navbar';
 import Problem from '../Problem';
 import Solution from '../Solution';
 import SignUp from '../SignUp';
