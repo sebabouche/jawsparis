@@ -7,14 +7,24 @@ import Cart from '../components/Cart'
 import CartProduct from '../components/CartProduct'
 
 class CartContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      edit: this.props.edit
+    }
+  }
+  toggleEditCart(){
+    this.setState({edit: !this.state.edit})
+  }
   render() {
 
-    const { addedIds, products, cartProductsQuantity, total, addToCart, removeFromCart, checkout } = this.props
+    const { addedIds, products, cartProductsQuantity, total, addToCart, removeFromCart, checkout, edit, checkoutPage } = this.props
 
     return (
-      <Cart total={total} products={products} >
+      <Cart edit={this.state.edit} onToggleEditCartClicked={() => this.toggleEditCart()} checkoutPage={checkoutPage} total={total} products={products} >
         {products.map(product =>
           <CartProduct
+            edit={this.state.edit}
             key={product.id}
             productId={product.id}
             title={product.title}
