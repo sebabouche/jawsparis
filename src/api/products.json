@@ -121,7 +121,7 @@
     "expiry":"2 à 3 jours",
     "price": 250,
     "category": "bread_cheese",
-    "merchantName":"Terroirs d'avenir",
+    "merchantName":"Boucherie Sanzot",
     "merchantImg":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg",
     "people":3,
     "portion":"A la pièce (1/2 miche) env. 230g"
@@ -135,7 +135,7 @@
     "price": 120,
     "expiry":"2 à 3 jours",
     "category": "bread_cheese",
-    "merchantName":"Terroirs d'avenir",
+    "merchantName":"Boucherie Sanzot",
     "merchantImg":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg",
     "people":3,
     "portion":"A la pièce"
@@ -149,7 +149,7 @@
     "price": 200,
     "expiry":"2 à 3 jours",
     "category": "desert",
-    "merchantName":"Terroirs d'avenir",
+    "merchantName":"Boucherie Sanzot",
     "merchantImg":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg",
     "people":4,
     "portion":"4 pommes, portion de 650g"
