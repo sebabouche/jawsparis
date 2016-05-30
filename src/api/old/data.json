@@ -18,7 +18,7 @@
             "conservation":"2 à 3 jours",
             "prix": 150,
             "commercant":{
-              "name":"Terroir d'Avenir",
+              "name":"Boucherie Sanzot",
               "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
             },
             "people":1,
@@ -33,7 +33,7 @@
             "conservation":"2 à 3 jours",
             "prix": 100,
             "commercant":{
-              "name":"Terroir d'Avenir",
+              "name":"Boucherie Sanzot",
               "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
             },
             "people":1,
@@ -48,7 +48,7 @@
             "conservation":"2 à 3 jours",
             "prix": 100,
             "commercant":{
-              "name":"Terroir d'Avenir",
+              "name":"Boucherie Sanzot",
               "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
             },
             "people":1,
@@ -69,7 +69,7 @@
             "conservation":"2 à 3 jours",
             "prix": 180,
             "commercant":{
-              "name":"Terroir d'Avenir",
+              "name":"Boucherie Sanzot",
               "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
             },
             "people":1,
@@ -84,7 +84,7 @@
             "conservation":"2 à 3 jours",
             "prix": 720,
             "commercant":{
-              "name":"Terroir d'Avenir",
+              "name":"Boucherie Sanzot",
               "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
             },
             "people":1,
@@ -99,7 +99,7 @@
             "conservation":"2 à 3 jours",
             "prix": 280,
             "commercant":{
-              "name":"Terroir d'Avenir",
+              "name":"Boucherie Sanzot",
               "img":"https://s3-eu-west-1.amazonaws.com/jaws-dev/merchants/michel.jpg"
             },
             "people":1,
