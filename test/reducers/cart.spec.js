@@ -85,7 +85,6 @@ describe('reducers', () => {
           quantityById: Map({1: 1, 2: 2, 3: 1})
         })
         const nextState = cart(state, { type: 'REMOVE_FROM_CART', productId: 2})
-        console.log("nextState", nextState)
 
         expect(nextState).toEqual(Map({
           addedIds: List.of(1, 2, 3),

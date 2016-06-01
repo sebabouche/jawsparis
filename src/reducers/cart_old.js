@@ -13,38 +13,40 @@ const initialState = Map({
 })
 
 function superCart(state = Map({}), action) {
-  const { type, productId } = action
-  switch (type) {
+  let newState = Object.assign({}, state)
+  const productId = action.productId
+  switch (action.type) {
     case ADD_TO_CART:
       // if already added
-      if (state.get('addedIds').includes(productId)) {
+      if (state.addedIds.indexOf(productId) !== -1) {
         // do nothing in addedIds
         // but increment quantityById
-        return state.updateIn(['quantityById', productId.toString()], quantity => quantity + 1)
+        newState.quantityById[productId] += 1
+        return newState
       // if never added
       } else {
-        return state
-          // add id in addedIds
-          .update('addedIds', list => list.push(productId))
-          // create quantityById attribute
-          .setIn(['quantityById', productId.toString()], 1)
+        // add id in addedIds
+        newState.addedIds.push(productId)
+        // create quantityById attribute
+        newState.quantityById[productId] = 1
       }
+      return newState
 
     case REMOVE_FROM_CART:
       // if added more than once
-      if (state.getIn(['quantityById', productId.toString()]) > 1) {
+      if (state.quantityById[productId] > 1) {
         // do nothing in addedIds
         // but decrement quantityById
-        return state
-          .updateIn(['quantityById', productId.toString()], quantity => quantity - 1)
-        // if added once
-      } else if (state.getIn(['quantityById', productId.toString()]) == 1)  {
-        const productIndex = state.get('addedIds').indexOf(productId)
-        return state
+        newState.quantityById[productId] = state.quantityById[productId] - 1
+        return newState
+      // if added once
+      } else if (state.quantityById[productId] == 1)  {
         // remove from addedIds
-          .update('addedIds', list => list.splice(productIndex, 1))
+        const index = state.addedIds.indexOf(productId)
+        newState.addedIds.splice(index, 1)
         // remove from quantityById
-          .deleteIn(['quantityById', productId.toString()])
+        delete newState.quantityById[productId]
+        return newState
       }
 
     default:
