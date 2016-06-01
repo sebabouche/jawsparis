@@ -1,5 +1,9 @@
 import expect from 'expect'
+import { expect as expectChai} from 'chai'
+
 import products from '../../src/reducers/products'
+
+import {Map, List} from 'immutable'
 
 describe('reducers', () => {
   describe('products', () => {
@@ -17,41 +21,24 @@ describe('reducers', () => {
           }
         ]
       }
+      const initialState = Map({})
+      const nextState = products(initialState, action)
 
-      expect(products({}, action)).toEqual({
-        byId: {
-          1: {
-            id: 1,
-            title: 'Product 1'
-          },
-          2: {
-            id: 2,
-            title: 'Product 2'
-          }
-        },
-        visibleIds: [ 1, 2 ]
-      })
-    })
-
-    it('should handle ADD_TO_CART action', () => {
-      const state = {
-        byId: {
-          1: {
-            id: 1,
-            title: 'Product 1'
-          }
-        }
-      }
-
-      expect(products(state, { type: 'ADD_TO_CART', productId: 1 })).toEqual({
-        byId: {
-          1: {
-            id: 1,
-            title: 'Product 1'
-          }
-        },
-        visibleIds: []
-      })
+      expect(nextState).toEqualImmutable(
+        Map({
+          byId: Map({
+            1: Map({
+              id: 1,
+              title: 'Product 1'
+            }),
+            2: Map({
+              id: 2,
+              title: 'Product 2'
+            })
+          }),
+          visibleIds: List.of( 1, 2 )
+        })
+      )
     })
   })
 })

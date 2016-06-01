@@ -1,31 +1,25 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux-immutable'
 import { RECEIVE_PRODUCTS, ADD_TO_CART } from '../constants/ActionTypes'
+import { Map, List } from 'immutable'
 
-function byId(state = {}, action) {
+function byId(state = Map({}), action) {
   switch (action.type) {
     case RECEIVE_PRODUCTS:
-      return Object.assign({},
-        state,
+      return state.merge(
         action.products.reduce((obj, product) => {
           obj[product.id] = product
           return obj
         }, {})
       )
     default:
-      const { productId } = action
-      if (productId) {
-        return Object.assign({}, state, {
-          [productId]: state[productId]
-        })
-      }
       return state
   }
 }
 
-function visibleIds(state = [], action) {
+function visibleIds(state = List(), action) {
   switch (action.type) {
     case RECEIVE_PRODUCTS:
-      return action.products.map(product => product.id)
+      return state.merge(action.products.map(product => product.id))
     default:
       return state
   }

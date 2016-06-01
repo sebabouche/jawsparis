@@ -1,3 +1,5 @@
+import {Map, List} from 'immutable'
+
 import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
@@ -5,12 +7,12 @@ import {
   CHECKOUT_FAILURE
 } from '../constants/ActionTypes'
 
-const initialState = {
-  addedIds: [],
-  quantityById: {}
-}
+const initialState = Map({
+  addedIds: List(),
+  quantityById: Map({})
+})
 
-function superCart(state = {}, action) {
+function superCart(state = Map({}), action) {
   let newState = Object.assign({}, state)
   const productId = action.productId
   switch (action.type) {

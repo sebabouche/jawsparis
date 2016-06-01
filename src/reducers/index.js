@@ -1,13 +1,14 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux-immutable'
 import { routerReducer } from 'react-router-redux'
 
 import cart, * as fromCart from './cart'
 import products, * as fromProducts from './products'
+import routing from './routing'
 
 export default combineReducers({
   cart,
   products,
-  routing: routerReducer
+  routing
 })
 
 export function getAddedIds(state) {

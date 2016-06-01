@@ -1,12 +1,13 @@
+import {Map, List} from 'immutable'
 import expect from 'expect'
 import cart from '../../src/reducers/cart'
 
 describe('reducers', () => {
   describe('cart', () => {
-    const initialState = {
-      addedIds: [],
-      quantityById: {}
-    }
+    const initialState = Map({
+      addedIds: List(),
+      quantityById: Map({})
+    })
 
     it('provides the initial state', () => {
       expect(cart(undefined, {})).toEqual(initialState)

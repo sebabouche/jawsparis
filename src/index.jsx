@@ -4,6 +4,7 @@ import {render} from 'react-dom';
 
 import { browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+import { toJS } from 'immutable'
 
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
@@ -36,6 +37,10 @@ const store = createStore(
   applyMiddleware(...middleware))
 store.dispatch(getAllProducts())
 
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store, {
+  selectLocationState (state) {
+    return state.get('routing').toJS()
+  }
+})
 
 render(<App store={store} history={history} />, document.getElementById("app"))
