@@ -1,3 +1,4 @@
+import { toList, toJS } from 'immutable'
 import { combineReducers } from 'redux-immutable'
 import { routerReducer } from 'react-router-redux'
 
@@ -11,29 +12,38 @@ export default combineReducers({
   routing
 })
 
+export function getProducts(state) {
+  return state.get('products').toList().toJS()
+}
+
+
+export function getQuantity(state, id) {
+  return fromCart.getQuantity(state.get('cart'), id)
+}
+
+export function getProduct(state, id) {
+  return fromProducts.getProduct(state.get('products'), id)
+}
+
+export function getPrice(state, id) {
+  return fromProducts.getPrice(state.get('products'), id)
+}
+
 export function getAddedIds(state) {
-  return fromCart.getAddedIds(state.cart)
-}
-
-function getQuantity(state, id) {
-  return fromCart.getQuantity(state.cart, id)
-}
-
-function getProduct(state, id) {
-  return fromProducts.getProduct(state.products, id)
+  return fromCart.getAddedIds(state.get('cart')).toJS()
 }
 
 export function getTotal(state) {
   return getAddedIds(state).reduce((total, id) =>
-    total + getProduct(state, id).price * getQuantity(state, id),
+    total + getPrice(state, id) * getQuantity(state, id),
     0
-  ).toFixed(2)
+  )
 }
 
 export function getCartProducts(state) {
   return getAddedIds(state).map(id => Object.assign(
     {},
-    getProduct(state, id),
+    getProduct(state, id).toJS(),
     {
       quantity: getQuantity(state, id)
     }
@@ -41,7 +51,7 @@ export function getCartProducts(state) {
 }
 
 export function getCartProductsQuantity(state) {
-  let quantityObj = {}
+  const quantityObj = {}
   getAddedIds(state).map(id => quantityObj[id] = getQuantity(state, id))
   return quantityObj
 }

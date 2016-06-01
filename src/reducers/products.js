@@ -2,7 +2,7 @@ import { combineReducers } from 'redux-immutable'
 import { RECEIVE_PRODUCTS, ADD_TO_CART } from '../constants/ActionTypes'
 import { Map, List } from 'immutable'
 
-function byId(state = Map({}), action) {
+export default (state = Map({}), action) => {
   switch (action.type) {
     case RECEIVE_PRODUCTS:
       return state.merge(
@@ -16,24 +16,10 @@ function byId(state = Map({}), action) {
   }
 }
 
-function visibleIds(state = List(), action) {
-  switch (action.type) {
-    case RECEIVE_PRODUCTS:
-      return state.merge(action.products.map(product => product.id))
-    default:
-      return state
-  }
-}
-
-export default combineReducers({
-  byId,
-  visibleIds
-})
-
 export function getProduct(state, id) {
-  return state.byId[id]
+  return state.get(id)
 }
 
-export function getVisibleProducts(state) {
-  return state.visibleIds.map(id => getProduct(state, id))
+export function getPrice(state, id) {
+  return state.getIn([id, 'price'])
 }

@@ -35,6 +35,6 @@ export default class Cart extends Component {
 
 Cart.propTypes = {
   products: PropTypes.array,
-  total: PropTypes.string,
+  total: PropTypes.number,
   children: PropTypes.node,
 }

@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addToCart, removeFromCart } from '../actions'
-import { getVisibleProducts } from '../reducers/products'
-import { getAddedIds, getCartProductsQuantity } from '../reducers'
+import { getProducts, getAddedIds, getCartProductsQuantity } from '../reducers'
 
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
@@ -33,10 +32,11 @@ class ProductsContainer extends Component {
 
 ProductsContainer.propTypes = {
   addedIds: PropTypes.array.isRequired,
-  products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired
   })).isRequired,
   cartProductsQuantity: PropTypes.object.isRequired,
   addToCart: PropTypes.func.isRequired,
@@ -46,7 +46,7 @@ ProductsContainer.propTypes = {
 function mapStateToProps(state) {
   return {
     addedIds: getAddedIds(state),
-    products: getVisibleProducts(state.products),
+    products: getProducts(state),
     cartProductsQuantity: getCartProductsQuantity(state)
   }
 }

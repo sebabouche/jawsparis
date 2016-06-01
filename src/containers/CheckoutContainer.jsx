@@ -24,7 +24,7 @@ CheckoutContainer.propTypes = {
     price: PropTypes.number.isRequired,
     quantity: PropTypes.number.isRequired
   })).isRequired,
-  total: PropTypes.string,
+  total: PropTypes.number,
   addToCart: PropTypes.func.isRequired,
   removeFromCart: PropTypes.func.isRequired
 }

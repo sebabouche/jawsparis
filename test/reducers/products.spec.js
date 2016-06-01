@@ -12,12 +12,14 @@ describe('reducers', () => {
         type: 'RECEIVE_PRODUCTS',
         products: [
           {
-            id: 1,
-            title: 'Product 1'
+            id: 'A',
+            title: 'Product 1',
+            available: true
           },
           {
-            id: 2,
-            title: 'Product 2'
+            id: 'B',
+            title: 'Product 2',
+            available: false
           }
         ]
       }
@@ -26,17 +28,16 @@ describe('reducers', () => {
 
       expect(nextState).toEqualImmutable(
         Map({
-          byId: Map({
-            1: Map({
-              id: 1,
-              title: 'Product 1'
-            }),
-            2: Map({
-              id: 2,
-              title: 'Product 2'
-            })
+          'A': Map({
+            id: 'A',
+            title: 'Product 1',
+            available: true
           }),
-          visibleIds: List.of( 1, 2 )
+          'B': Map({
+            id: 'B',
+            title: 'Product 2',
+            available: false
+          })
         })
       )
     })
