@@ -81,7 +81,7 @@ export default class ProductItem extends Component {
 
          <div className="uk-grid uk-margin" >
            <div className="uk-width-1-5">
-             <img className="uk-border-circle" src={product.getIn(['merchant', 'name'])} alt={product.getIn(['merchant', 'name'])}/>
+             <img className="uk-border-circle" src={product.getIn(['merchant', 'img'])} alt={product.getIn(['merchant', 'name'])}/>
            </div>
            <div className="uk-width-4-5">
              <h4 className="uk-margin-remove">{product.getIn(['merchant', 'name'])}</h4>
