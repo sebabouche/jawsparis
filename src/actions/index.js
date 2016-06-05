@@ -1,11 +1,45 @@
-import shop from '../api/shop'
+import requestsManager from '../api/requestsManager'
 import * as types from '../constants/ActionTypes'
 
-function receiveProducts(products) {
+// import shop from '../api/shop'
+
+export function setIsFetching() {
   return {
-    type: types.RECEIVE_PRODUCTS,
-    products: products
+    type: types.SET_IS_FETCHING,
   }
+}
+
+export function fetchProductsSuccess(data) {
+  return {
+    type: types.FETCH_PRODUCTS_SUCCESS,
+    products: data,
+  }
+}
+
+export function fetchProductsFailure(error) {
+  return {
+    type: types.FETCH_PRODUCTS_FAILURE,
+    error,
+  }
+}
+
+export function fetchProducts() {
+  return dispatch => {
+    dispatch(setIsFetching())
+    return (
+      requestsManager
+        .fetchEntities()
+        .then(res => dispatch(fetchProductsSuccess(res.data)))
+        .catch(res => {
+          dispatch(fetchProductsFailure(
+            {
+              status: res.status,
+              statusText: res.statusText
+            }
+          ))
+        })
+    );
+  };
 }
 
 export function getAllProducts() {

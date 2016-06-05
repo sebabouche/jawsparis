@@ -32,7 +32,7 @@ export default class CartProduct extends Component {
 }
 
 CartProduct.propTypes = {
-  price: PropTypes.number.isRequired,
+  price_cents: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   addedIds: PropTypes.array.isRequired,

@@ -15,13 +15,13 @@ function setup(props) {
 
 describe('Product component', () => {
   it('should render title and price', () => {
-    const { component } = setup({ title: 'Test Product', price: 9.99 })
+    const { component } = setup({ title: 'Test Product', price_cents: 9.99 })
     expect(component.text()).toMatch(/^ Test Product - \$9.99 {2}$/)
   })
 
   describe('when given quantity', () => {
     it('should render title, price, and quantity', () => {
-      const { component } = setup({ title: 'Test Product', price: 9.99, quantity: 6 })
+      const { component } = setup({ title: 'Test Product', price_cents: 9.99, quantity: 6 })
       expect(component.text()).toMatch(/^ Test Product - \$9.99 x 6 $/)
     })
   })

@@ -21,7 +21,7 @@ CheckoutContainer.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price_cents: PropTypes.number.isRequired,
     quantity: PropTypes.number.isRequired
   })).isRequired,
   total: PropTypes.number,

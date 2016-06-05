@@ -28,7 +28,7 @@ class CartContainer extends Component {
             key={product.id}
             productId={product.id}
             title={product.title}
-            price={product.price}
+            price={product.price_cents}
             quantity={product.quantity}
             addedIds={addedIds}
             cartProductsQuantity={cartProductsQuantity}
@@ -44,7 +44,7 @@ CartContainer.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price_cents: PropTypes.number.isRequired,
     quantity: PropTypes.number.isRequired
   })).isRequired,
   total: PropTypes.number,

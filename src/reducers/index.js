@@ -13,16 +13,15 @@ export default combineReducers({
 })
 
 export function getProducts(state) {
-  return state.get('products').toList().toJS()
-}
-
-
-export function getQuantity(state, id) {
-  return fromCart.getQuantity(state.get('cart'), id)
+  return fromProducts.getProducts(state.get('products'))
 }
 
 export function getProduct(state, id) {
   return fromProducts.getProduct(state.get('products'), id)
+}
+
+export function getQuantity(state, id) {
+  return fromCart.getQuantity(state.get('cart'), id)
 }
 
 export function getPrice(state, id) {

@@ -29,18 +29,18 @@ describe('ProductItem component', () => {
     productProps = {
       id: 1,
       title: 'Product 1',
-      price: 9.99,
+      price_cents: 9.99,
     },
     addedToCartProductProps = {
       id: 2,
       title: 'Product 1',
-      price: 9.99,
+      price_cents: 9.99,
     }
   })
 
   it('should render product', () => {
     const { product } = setup(productProps)
-    expect(product.props()).toEqual({ title: 'Product 1', price: 9.99 })
+    expect(product.props()).toEqual({ title: 'Product 1', price_cents: 9.99 })
   })
 
   it('should render Add To Cart message', () => {

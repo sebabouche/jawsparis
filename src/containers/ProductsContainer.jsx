@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { addToCart, removeFromCart } from '../actions'
 import { getProducts, getAddedIds, getCartProductsQuantity } from '../reducers'
 
+import { toJS } from 'immutable'
+
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
 
@@ -18,12 +20,12 @@ class ProductsContainer extends Component {
       <ProductsList title="Products" addedIds={addedIds.length > 0}>
         {products.map(product =>
           <ProductItem
-            key={product.id}
+            key={product.get('id')}
             addedIds={addedIds}
             product={product}
             cartProductsQuantity={cartProductsQuantity}
-            onAddToCartClicked={() => addToCart(product.id)}
-            onRemoveFromCartClicked={() => removeFromCart(product.id)} />
+            onAddToCartClicked={() => addToCart(product.get('id'))}
+            onRemoveFromCartClicked={() => removeFromCart(product.get('id'))} />
         )}
       </ProductsList>
     )
@@ -32,12 +34,12 @@ class ProductsContainer extends Component {
 
 ProductsContainer.propTypes = {
   addedIds: PropTypes.array.isRequired,
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired
-  })).isRequired,
+//  products: PropTypes.arrayOf(
+//    PropTypes.shape({
+//      id: PropTypes.string.isRequired,
+//      title: PropTypes.string.isRequired,
+//      price: PropTypes.number.isRequired
+//  })).isRequired,
   cartProductsQuantity: PropTypes.object.isRequired,
   addToCart: PropTypes.func.isRequired,
   removeFromCart: PropTypes.func.isRequired,

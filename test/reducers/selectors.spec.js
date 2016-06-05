@@ -24,54 +24,63 @@ describe('selectors', () => {
         })
       }),
       products: Map({
-        'A': Map({
-          id: 'A',
-          price: 200,
-          available: true
-        }),
-        'B': Map({
-          id: 'B',
-          price: 150,
-          available: true
-        }),
-        'C': Map({
-          id: 'C',
-          price: 1234,
-          available: true
-        }),
-        'D': Map({
-          id: 'D',
-          price: 400,
-          available: true
-        })
+        fetchProductsError: null,
+        isFetching: false,
+        products: Map({
+          'A': Map({
+            id: 'A',
+            price_cents: 200,
+            available: true
+          }),
+          'B': Map({
+            id: 'B',
+            price_cents: 150,
+            available: true
+          }),
+          'C': Map({
+            id: 'C',
+            price_cents: 1234,
+            available: true
+          }),
+          'D': Map({
+            id: 'D',
+            price_cents: 400,
+            available: true
+          })
+
+        }
+        )
       })
     })
   })
 
   describe('getProducts', () => {
-    it('should return an array of products', () => {
-      expect(getProducts(state)).toEqual([
-        {
-          id: 'A',
-          price: 200,
-          available: true
-        },
-        {
-          id: 'B',
-          price: 150,
-          available: true
-        },
-        {
-          id: 'C',
-          price: 1234,
-          available: true
-        },
-        {
-          id: 'D',
-          price: 400,
-          available: true
-        }
-      ])
+    it('should return a Map of products', () => {
+      console.log('state: ', state)
+      expect(getProducts(state)).toEqual(
+        Map({
+          'A': Map({
+            id: 'A',
+            price_cents: 200,
+            available: true
+          }),
+          'B': Map({
+            id: 'B',
+            price_cents: 150,
+            available: true
+          }),
+          'C': Map({
+            id: 'C',
+            price_cents: 1234,
+            available: true
+          }),
+          'D': Map({
+            id: 'D',
+            price_cents: 400,
+            available: true
+          })
+        })
+      )
     })
   })
 
@@ -79,7 +88,7 @@ describe('selectors', () => {
     it('should return the product for a given id', () => {
       expect(getProduct(state, "C")).toEqual(Map({
         id: 'C',
-        price: 1234,
+        price_cents: 1234,
         available: true
       }))
     })
@@ -118,19 +127,19 @@ describe('selectors', () => {
         [
           {
             id: 'A',
-            price: 200,
+            price_cents: 200,
             quantity: 4,
             available: true
           },
           {
             id: 'B',
-            price: 150,
+            price_cents: 150,
             quantity: 2,
             available: true
           },
           {
             id: 'D',
-            price: 400,
+            price_cents: 400,
             quantity: 1,
             available: true
           }

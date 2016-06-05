@@ -1,14 +1,16 @@
 /**
  * Mocking client-server processing
  */
-import _days from './days.json'
-
-console.log(_days)
+import _products from './products.json'
 
 const TIMEOUT = 100
 
 export default {
-  getDays(cb, timeout) {
-    setTimeout(() => cb(_days), timeout || TIMEOUT)
+  getProducts(cb, timeout) {
+    setTimeout(() => cb(_products), timeout || TIMEOUT)
+  },
+
+  buyProducts(payload, cb, timeout) {
+    setTimeout(() => cb(), timeout || TIMEOUT)
   }
 }

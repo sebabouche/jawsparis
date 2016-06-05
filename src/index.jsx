@@ -11,7 +11,7 @@ import { Provider } from 'react-redux'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import reducer from './reducers'
-import { getAllProducts } from './actions'
+import { fetchProducts, getAllProducts } from './actions'
 
 import App from './containers/App'
 
@@ -35,7 +35,9 @@ const middleware = process.env.NODE_ENV === 'production' ?
 const store = createStore(
   reducer,
   applyMiddleware(...middleware))
-store.dispatch(getAllProducts())
+
+// store.dispatch(getAllProducts())
+store.dispatch(fetchProducts())
 
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState (state) {

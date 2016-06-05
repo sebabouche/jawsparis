@@ -44,7 +44,7 @@ describe('Cart component', () => {
       {
         id: 1,
         title: 'Product 1',
-        price: 9.99,
+        price_cents: 9.99,
         quantity: 1
       }
     ]
@@ -53,7 +53,7 @@ describe('Cart component', () => {
       const { products } = setup('9.99', product)
       const props = {
         title: product[0].title,
-        price: product[0].price,
+        price_cents: product[0].price_cents,
         quantity: product[0].quantity
       }
 
