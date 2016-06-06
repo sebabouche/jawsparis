@@ -50,5 +50,5 @@ export function getProduct(state, id) {
 }
 
 export function getPrice(state, id) {
-  return state.getIn(['products', id, 'price'])
+  return state.getIn(['products', id, 'price_cents'])
 }

@@ -3,12 +3,13 @@ import expect from 'expect'
 import {
   getProducts,
   getProduct,
+  getQuantities,
   getQuantity,
   getPrice,
   getAddedIds,
   getTotal,
-  getCartProducts,
-  getCartProductsQuantity
+  getCartProducts
+  // ,  getCartProductsQuantity
 } from '../../src/reducers'
 
 describe('selectors', () => {
@@ -56,7 +57,6 @@ describe('selectors', () => {
 
   describe('getProducts', () => {
     it('should return a Map of products', () => {
-      console.log('state: ', state)
       expect(getProducts(state)).toEqual(
         Map({
           'A': Map({
@@ -94,6 +94,16 @@ describe('selectors', () => {
     })
   })
 
+  describe('getQuantities', () => {
+    it('should return the cart quantities for cart products', () => {
+      expect(getQuantities(state)).toEqual(Map({
+        'A': 4,
+        'B': 2,
+        'D': 1
+      }))
+    })
+  })
+
   describe('getQuantity', () => {
     it('should return the cart quantity for a given id in cart', () => {
       expect(getQuantity(state, "A")).toEqual(4)
@@ -101,16 +111,16 @@ describe('selectors', () => {
   })
 
   describe('getPrice', () => {
-    it('should return the product price for a given id in cart', () => {
+    it('should return the product price for a given id', () => {
       expect(getPrice(state, "A")).toEqual(200)
     })
   })
 
   describe('getAddedIds', () => {
     it('should return an immutable list of ids added to cart', () => {
-      expect(getAddedIds(state)).toEqual(
-        ["A", "B", "D"]
-      )
+      expect(getAddedIds(state)).toEqual(List.of(
+        "A", "B", "D"
+      ))
     })
   })
 
@@ -123,40 +133,36 @@ describe('selectors', () => {
 
   describe('getCartProducts', () => {
     it('should return products with quantity', () => {
-      expect(getCartProducts(state)).toEqual(
-        [
-          {
-            id: 'A',
-            price_cents: 200,
-            quantity: 4,
-            available: true
-          },
-          {
-            id: 'B',
-            price_cents: 150,
-            quantity: 2,
-            available: true
-          },
-          {
-            id: 'D',
-            price_cents: 400,
-            quantity: 1,
-            available: true
-          }
-        ]
-      )
+      expect(getCartProducts(state)).toEqual(Map({
+        'A': Map({
+          id: 'A',
+          price_cents: 200,
+          //quantity: 4,
+          available: true
+        }),
+        'B': Map({
+          id: 'B',
+          price_cents: 150,
+          //quantity: 2,
+          available: true
+        }),
+        'D': Map({
+          id: 'D',
+          price_cents: 400,
+          //quantity: 1,
+          available: true
+        })
+      }))
     })
   })
 
-  describe('getCartProductsQuantity', () => {
-    it('should return cart product quantities', () => {
-      expect(getCartProductsQuantity(state)).toEqual(
-        {
-          'A': 4,
-          'B': 2,
-          'D': 1
-        }
-      )
-    })
-  })
+//  describe('getCartProductsQuantity', () => {
+//    it('should return cart product quantities', () => {
+//      expect(getCartProductsQuantity(state)).toEqual( Map({
+//        'A': 4,
+//        'B': 2,
+//        'D': 1
+//      }))
+//    })
+//  })
 })

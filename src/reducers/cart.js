@@ -67,6 +67,10 @@ export function getQuantity(state, productId) {
   return state.getIn(['quantityById', productId]) || 0
 }
 
+export function getQuantities(state) {
+  return state.get('quantityById')
+}
+
 export function getAddedIds(state) {
   return state.get('addedIds')
 }

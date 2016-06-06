@@ -42,14 +42,6 @@ export function fetchProducts() {
   };
 }
 
-export function getAllProducts() {
-  return dispatch => {
-    shop.getProducts(products => {
-      dispatch(receiveProducts(products))
-    })
-  }
-}
-
 function addToCartUnsafe(productId) {
   return {
     type: types.ADD_TO_CART,
