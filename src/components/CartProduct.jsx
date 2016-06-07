@@ -15,6 +15,8 @@ export default class CartProduct extends Component {
         cartProductsQuantity={cartProductsQuantity}
         onAddToCartClicked={onAddToCartClicked}
         onRemoveFromCartClicked={onRemoveFromCartClicked} />
+    } else {
+      buttonQuantity = <div>X {quantity}</div>
     }
 
     return (

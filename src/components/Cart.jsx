@@ -12,11 +12,17 @@ export default class Cart extends Component {
       <em>Merci d'ajouter des produits à votre cabas.</em> :
       this.props.children
       let button
+      let recapText
       if (edit && checkoutPage)
-        {button = <button onClick={onToggleEditCartClicked} className="uk-button uk-button-success uk-width-1-1">Modifier la commande</button>}
+        { recapText = <div><p>Livraison: 3€</p>
+        <p>Total: {total/100 + 3}€</p></div>
+          button = <button onClick={onToggleEditCartClicked} className="uk-button uk-button-success uk-width-1-1">Modifier la commande</button>}
       else if (!edit && !checkoutPage){
         button = <LinkToCheckout disabled={hasProducts ? '' : 'disabled'} />
+        recapText = <p>Total: {total/100}€</p>
       }else{
+        recapText = <div><p>Livraison: 3€</p>
+        <p>Total: {total/100 + 3}€</p></div>
         button = <button onClick={onToggleEditCartClicked} className="uk-button uk-button-success uk-width-1-1">Valider</button>
       }
 
@@ -25,8 +31,7 @@ export default class Cart extends Component {
         <div>
         {nodes}
         </div>
-        <p>Livraison: 3€</p>
-        <p>Total: {total/100 + 3}€</p>
+        {recapText}
         {button}
       </div>
     )

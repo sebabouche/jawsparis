@@ -3,13 +3,15 @@ import React, {Component, PropTypes} from 'react'
 import classNames from 'classnames'
 import styles from '../Header/styles.css'
 
-import LinkToCheckout from '../LinkToCheckout'
+
 
 export default class Shop extends Component {
   render() {
     const backgroundStyle = {
       backgroundImage: 'url(https://s3-eu-west-1.amazonaws.com/jaws-dev/landings/recuisiner.jpg)',
     }
+
+  
 
     return (
       <div className='uk-height-1-1'>
@@ -21,11 +23,11 @@ export default class Shop extends Component {
             <h1 className="uk-text-center uk-text-contrast uk-width-4-5">JAWS sélectionne chaque jour des produits différents.</h1>
           </div>
         </div>
-
-        {this.props.children[0]} {/* CartContainer */}
-
-        <div className="uk-container uk-container-center">
-          {this.props.children[1]} {/* ProductContainer */}
+        <div>
+          {this.props.children[0]} {/* CartContainer */}
+            <div className="uk-container uk-container-center">
+              {this.props.children[1]} {/* ProductContainer */}
+            </div>
         </div>
       </div>
     )

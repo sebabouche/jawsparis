@@ -12,7 +12,7 @@ class ProductsContainer extends Component {
     const {
       addedIds, products,
       cartProductsQuantity,
-      addToCart, removeFromCart } = this.props
+      addToCart, removeFromCart, deliveryLocation } = this.props
 
     return (
       <ProductsList title="Products" addedIds={addedIds.length > 0}>
@@ -22,7 +22,7 @@ class ProductsContainer extends Component {
             addedIds={addedIds}
             product={product}
             cartProductsQuantity={cartProductsQuantity}
-            onAddToCartClicked={() => addToCart(product.id)}
+            onAddToCartClicked={() =>{addToCart(product.id)}}
             onRemoveFromCartClicked={() => removeFromCart(product.id)} />
         )}
       </ProductsList>

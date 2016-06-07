@@ -10,9 +10,10 @@ export default class LinkToCheckout extends React.Component {
       return <Link
           to="/checkout"
           className="uk-button uk-button-success uk-width-1-1">
-            Merci, ce sera tout!
+            Je valide ma commande
       </Link>
-    } else {
+    } 
+    else{
       return <button className="uk-button uk-button-success uk-width-1-1" disabled>Votre panier est vide</button>
     }
   }

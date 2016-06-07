@@ -11,30 +11,27 @@ export default class QuantitySelector extends Component {
       onRemoveFromCartClicked } = this.props
 
     return (
-      <div className="uk-grid uk-grid-collapse uk-margin-top-remove">
-      <div className="uk-width-1-3">
+      <div className="uk-width-medium-1-2
+      uk-width-small-1-3 uk-container-center">
+
         <button
-          className="uk-button uk-button-success uk-width-1-1"
+          className="uk-button uk-button-success jaws-button uk-float-left uk-icon-minus"
           onClick={onRemoveFromCartClicked}
           type="button">
-            <i className="uk-icon-minus"></i>
         </button>
-      </div>
 
-          <div className="uk-width-1-3">
-            <p className="uk-text-center">
+
+          <p className="ja-quantity-product uk-float-left">
               {cartProductsQuantity[productId]}
-            </p>
-          </div>
+          </p>
 
-          <div className="uk-width-1-3">
+
             <button
-              className="uk-button uk-button-success uk-width-1-1"
+              className="uk-button uk-float-left uk-button-success jaws-button uk-icon-plus"
               onClick={onAddToCartClicked}
               type="button">
-                <i className="uk-icon-plus"></i>
             </button>
-          </div>
+
       </div>
     )
   }

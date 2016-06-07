@@ -7,6 +7,17 @@ export default class ProductsList extends Component {
   }
 
   render() {
+    let linkToCheckoutBlock = ""
+    if (this.props.addedIds){
+      linkToCheckoutBlock = <div className="uk-panel uk-panel-box uk-margin-large-bottom">
+        <p className="uk-text-center ja-font-special">
+          Vous désirez autre chose ?
+        </p>
+        <div className="uk-width-1-1 uk-width-medium-2-5 uk-container-center">
+        <LinkToCheckout/>
+        </div>
+      </div>
+    }
     return (
       <div className="uk-container uk-container-center">
         <div className="uk-block">
@@ -14,12 +25,7 @@ export default class ProductsList extends Component {
             {this.props.children}
           </div>
         </div>
-        <div className="uk-block uk-margin-large-bottom">
-          <p className="uk-text-center ja-font-special">
-            Vous désirez autre chose ?
-          </p>
-          <LinkToCheckout disabled={!this.props.addedIds}/>
-        </div>
+        {linkToCheckoutBlock}
       </div>
     )
   }

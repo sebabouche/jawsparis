@@ -55,9 +55,54 @@ $panel-box-background:                           rgba(246, 242, 232, 1);
   font-style: italic;
 }
 
+.uk-button{
+  border-radius: 2px;
+}
+
+.jaws-button{
+  border-radius: 50%;
+  box-shadow: 0 0 3px gray;
+}
+
 .ja-font-normal {
   font-family: "Lato";
   font-style: normal;
+}
+
+.ja-image-product {
+  position:relative;
+}
+
+.ja-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.ja-product-text{
+  color: black;
+  position:absolute;
+  top: 20px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.5);
+  text-align: center;
+}
+
+.ja-quantity-product{
+  color:black;
+  background-color: rgba(255,255,255,0.5);
+  text-align: center;
+  width: 50px;
+  margin: 3px;
+}
+
+.ja-product-quantity{
+  position:absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.uk-scrollable-text {
+    margin-bottom: 30px;
 }
 
 .ja-button-special {
