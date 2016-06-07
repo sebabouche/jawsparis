@@ -1,65 +1,48 @@
 import {Map, List} from 'immutable'
 
-import {
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
-  CHECKOUT_REQUEST,
-  CHECKOUT_FAILURE
-} from '../constants/ActionTypes'
+import * as types from '../constants/ActionTypes'
 
-const initialState = Map({
-  addedIds: List(),
-  quantityById: Map({})
-})
-
-function superCart(state = Map({}), action) {
-  const { type, productId } = action
-  switch (type) {
-    case ADD_TO_CART:
-      // if already added
-      if (state.get('addedIds').includes(productId)) {
-        // do nothing in addedIds
-        // but increment quantityById
-        return state.updateIn(['quantityById', productId], quantity => quantity + 1)
-      // if never added
-      } else {
-        return state
-          // add id in addedIds
-          .update('addedIds', list => list.push(productId))
-          // create quantityById attribute
-          .setIn(['quantityById', productId], 1)
-      }
-
-    case REMOVE_FROM_CART:
-      // if added more than once
-      if (state.getIn(['quantityById', productId]) > 1) {
-        // do nothing in addedIds
-        // but decrement quantityById
-        return state
-          .updateIn(['quantityById', productId], quantity => quantity - 1)
-        // if added once
-      } else if (state.getIn(['quantityById', productId]) == 1)  {
-        const productIndex = state.get('addedIds').indexOf(productId)
-        return state
-        // remove from addedIds
-          .update('addedIds', list => list.splice(productIndex, 1))
-        // remove from quantityById
-          .deleteIn(['quantityById', productId])
-      }
-
-    default:
-      return state
-  }
-}
+import initialState from './initialState'
 
 export default function cart(state = initialState, action) {
-  switch (action.type) {
-    case CHECKOUT_REQUEST:
+  const { type, productId } = action
+  switch (type) {
+    case types.ADD_TO_CART:
+      // if already added
+      if (state.getIn(['cartProducts', productId])) {
+        // increment quantityById
+        return state.updateIn(
+          ['cartProducts', productId, 'quantity'],
+          quantity => quantity + 1
+        )
+      // if never added, add and set quantity to 1
+      } else {
+        return state
+          .setIn(
+            ['cartProducts', productId],
+            state.getIn(['products', productId]).merge({quantity: 1})
+          )
+      }
+    case types.REMOVE_FROM_CART:
+      // if added more than once
+      if (state.getIn(['cartProducts', productId, 'quantity']) > 1) {
+        // just decrement quantity
+        return state
+          .updateIn(['cartProducts', productId, 'quantity'], quantity => quantity - 1)
+      // else if added once
+      } else if (state.getIn(['cartProducts', productId, 'quantity']) == 1)  {
+        // remove from cartProducts
+        return state
+          .deleteIn(['cartProducts', productId])
+      } else {
+        return state
+      }
+    case types.CHECKOUT_REQUEST:
       return initialState
-    case CHECKOUT_FAILURE:
+    case types.CHECKOUT_FAILURE:
       return action.cart
     default:
-      return superCart(state, action)
+      return state
   }
 }
 
