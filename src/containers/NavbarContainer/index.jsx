@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getCartProductsQuantity } from '../../reducers'
+import { getQuantities } from '../../reducers'
 
 import styles from './styles.css'
 import classNames from 'classnames'
@@ -23,7 +23,7 @@ class NavbarContainer extends React.Component {
   }
   render () {
     const today = new Date()
-    const {cartProductsQuantity} = this.props
+    const {cartQuantity} = this.props
 
     return (
       <div>
@@ -100,7 +100,7 @@ class NavbarContainer extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    cartProductsQuantity: getCartProductsQuantity(state)
+    cartQuantity: getQuantities(state)
   }
 }
 

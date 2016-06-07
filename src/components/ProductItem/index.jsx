@@ -4,8 +4,12 @@ import QuantitySelector from '../QuantitySelector'
 
 export default class ProductItem extends Component {
   render() {
-    const { addedIds, product, cartProductsQuantity,
-      onAddToCartClicked, onRemoveFromCartClicked } = this.props
+    const {
+      product,
+      getCartProduct,
+      onAddToCartClicked,
+      onRemoveFromCartClicked
+    } = this.props
 
     const productTag = "overlay-prod-" +this.props.category+"-"+ product.get('id')
     const productTargetTag = "{target:'#"+productTag+"'}"
@@ -99,6 +103,7 @@ ProductItem.propTypes = {
 //    title: PropTypes.string.isRequired,
 //    price_cents: PropTypes.number.isRequired
 //  }).isRequired,
+  getCartProduct: PropTypes.func.isRequired,
   onAddToCartClicked: PropTypes.func.isRequired,
   onRemoveFromCartClicked: PropTypes.func.isRequired
 }

@@ -33,8 +33,8 @@ export default class Cart extends Component {
   }
 }
 
-Cart.propTypes = {
-  products: PropTypes.array,
-  total: PropTypes.number,
-  children: PropTypes.node,
-}
+// Cart.propTypes = {
+//   products: PropTypes.array,
+//   total: PropTypes.number,
+//   children: PropTypes.node,
+// }

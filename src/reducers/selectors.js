@@ -16,6 +16,10 @@ export function getPrice(state, id) {
   return state.getIn(['shop', 'products', id, 'price_cents'])
 }
 
+export function isInCart(state, id) {
+  return state.getIn(['shop', 'cartProducts']).has(id)
+}
+
 
 /*
  *  CART SELECTORS
@@ -37,12 +41,12 @@ export function getQuantities(state) {
 }
 
 export function getQuantity(state, id) {
-  return state.getIn(['shop', 'cartProducts', id, 'quantity'])
+  return state.getIn(['shop', 'cartProducts', id, 'quantity']) || 0
 }
 
 export function getSubTotal(state, id) {
   return state.getIn(['shop', 'cartProducts', id, 'price_cents'])
-          * state.getIn(['shop', 'cartProducts', id, 'quantity'])
+          * state.getIn(['shop', 'cartProducts', id, 'quantity']) || 0
 }
 
 export function getTotal(state) {
@@ -62,33 +66,3 @@ export function getAddedIds(state) {
 export function getAddedIds(state) {
   return state.get('addedIds')
 }
-
-// function addCartQuantity(initialValue, value, key, iterator) {
-//   let state = initialValue
-//   console.log('this state: ', state)
-//   let newState = Map({})
-//   let product = value.merge({
-//     quantity: getQuantity(state, value)
-//   })
-//   return newState.set(product.get('id'), product)
-// }
-
-// export function getCartProductsQuantity(state) {
-//   return getCartProducts(state).reduce(addCartQuantity, new Map({}))
-// }
-
-// export function getCartProducts(state) {
-//   return getAddedIds(state).map(id => Object.assign(
-//     {},
-//     getProduct(state, id),
-//     {
-//       quantity: getQuantity(state, id)
-//     }
-//   ))
-// }
-
-// export function getCartProductsQuantity(state) {
-//   const quantityObj = {}
-//   getAddedIds(state).map(id => quantityObj[id] = getQuantity(state, id))
-//   return quantityObj
-// }

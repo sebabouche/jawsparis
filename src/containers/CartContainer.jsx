@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addToCart, removeFromCart, checkout } from '../actions'
-import { getAddedIds, getTotal, getCartProducts, getCartProductsQuantity } from '../reducers'
+import { getCartProducts, getTotal } from '../reducers'
 
 import Cart from '../components/Cart'
 import CartProduct from '../components/CartProduct'
@@ -18,11 +18,16 @@ class CartContainer extends Component {
   }
   render() {
 
-    const { addedIds, products, cartProductsQuantity, total, addToCart, removeFromCart, checkout, edit, checkoutPage } = this.props
+    const { cartProducts, total, addToCart, removeFromCart, checkout, edit, checkoutPage } = this.props
 
     return (
-      <Cart edit={this.state.edit} onToggleEditCartClicked={() => this.toggleEditCart()} checkoutPage={checkoutPage} total={total} products={products} >
-        {products.map(product =>
+      <Cart
+        edit={this.state.edit}
+        onToggleEditCartClicked={() => this.toggleEditCart()}
+        checkoutPage={checkoutPage}
+        total={total}
+        products={cartProducts} >
+        {cartProducts.map(product =>
           <CartProduct
             edit={this.state.edit}
             key={product.id}
@@ -40,23 +45,21 @@ class CartContainer extends Component {
   }
 }
 
-CartContainer.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    price_cents: PropTypes.number.isRequired,
-    quantity: PropTypes.number.isRequired
-  })).isRequired,
-  total: PropTypes.number,
-  addToCart: PropTypes.func.isRequired,
-  removeFromCart: PropTypes.func.isRequired
-}
+// CartContainer.propTypes = {
+//   cartProducts: ImmutablePropTypes.mapOf(PropTypes.shape({
+//     id: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     price_cents: PropTypes.number.isRequired,
+//     quantity: PropTypes.number.isRequired
+//   })).isRequired,
+//   total: PropTypes.number,
+//   addToCart: PropTypes.func.isRequired,
+//   removeFromCart: PropTypes.func.isRequired
+// }
 
 const mapStateToProps = (state) => {
   return {
-    addedIds: getAddedIds(state),
-    products: getCartProducts(state),
-    cartProductsQuantity: getCartProductsQuantity(state),
+    cartProducts: getCartProducts(state),
     total: getTotal(state)
   }
 }

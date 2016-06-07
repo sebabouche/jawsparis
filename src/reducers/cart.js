@@ -9,13 +9,19 @@ export default function cart(state = initialState, action) {
       // if already added
       if (state.getIn(['cartProducts', productId])) {
         // increment quantityById
-        return state.updateIn(
-          ['cartProducts', productId, 'quantity'],
-          quantity => quantity + 1
-        )
+        return state
+          .updateIn(
+            ['products', productId, 'quantity'],
+            quantity => quantity + 1
+          )
+          .updateIn(
+            ['cartProducts', productId, 'quantity'],
+            quantity => quantity + 1
+          )
       // if never added, add and set quantity to 1
       } else {
         return state
+          .mergeIn(['products', productId], {quantity: 1})
           .setIn(
             ['cartProducts', productId],
             state.getIn(['products', productId]).merge({quantity: 1})
@@ -26,11 +32,13 @@ export default function cart(state = initialState, action) {
       if (state.getIn(['cartProducts', productId, 'quantity']) > 1) {
         // just decrement quantity
         return state
+          .updateIn(['products', productId, 'quantity'], quantity => quantity - 1)
           .updateIn(['cartProducts', productId, 'quantity'], quantity => quantity - 1)
       // else if added once
       } else if (state.getIn(['cartProducts', productId, 'quantity']) == 1)  {
         // remove from cartProducts
         return state
+          .deleteIn(['products', productId, 'quantity'])
           .deleteIn(['cartProducts', productId])
       } else {
         return state

@@ -38,6 +38,7 @@ import * as selectors from './selectors'
 export const {
   getProducts,
   getProduct,
+  isInCart,
   getPrice,
   getCartProducts,
   getCartProduct,

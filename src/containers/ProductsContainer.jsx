@@ -1,9 +1,13 @@
 import React, { Component, PropTypes } from 'react'
+import ImmutablePropTypes from 'react-immutable-proptypes'
 import { connect } from 'react-redux'
 import { addToCart, removeFromCart } from '../actions'
-import { getProducts, getAddedIds, getCartProductsQuantity } from '../reducers'
 
-import { toJS } from 'immutable'
+import {
+  getProducts,
+  getCartProducts,
+  getCartProduct
+} from '../reducers'
 
 import ProductsList from '../components/ProductsList'
 import ProductItem from '../components/ProductItem'
@@ -12,18 +16,17 @@ import ProductItem from '../components/ProductItem'
 class ProductsContainer extends Component {
   render() {
     const {
-      addedIds, products,
-      cartProductsQuantity,
+      products, cartProducts,
+      getCartProduct,
       addToCart, removeFromCart } = this.props
 
     return (
-      <ProductsList title="Products" addedIds={addedIds.length > 0}>
+      <ProductsList title="Products" addedIds={cartProducts.size > 0}>
         {products.map(product =>
           <ProductItem
             key={product.get('id')}
-            addedIds={addedIds}
             product={product}
-            cartProductsQuantity={cartProductsQuantity}
+            getCartProduct={getCartProduct}
             onAddToCartClicked={() => addToCart(product.get('id'))}
             onRemoveFromCartClicked={() => removeFromCart(product.get('id'))} />
         )}
@@ -32,28 +35,21 @@ class ProductsContainer extends Component {
   }
 }
 
-ProductsContainer.propTypes = {
-  addedIds: PropTypes.array.isRequired,
-//  products: PropTypes.arrayOf(
-//    PropTypes.shape({
-//      id: PropTypes.string.isRequired,
-//      title: PropTypes.string.isRequired,
-//      price: PropTypes.number.isRequired
-//  })).isRequired,
-  cartProductsQuantity: PropTypes.object.isRequired,
-  addToCart: PropTypes.func.isRequired,
-  removeFromCart: PropTypes.func.isRequired,
-}
+// ProductsContainer.propTypes = {
+//   products: ImmutablePropTypes.list.isRequired,
+//   cartProducts: ImmutablePropTypes.map.isRequired,
+//   addToCart: PropTypes.func.isRequired,
+//   removeFromCart: PropTypes.func.isRequired,
+// }
 
 function mapStateToProps(state) {
   return {
-    addedIds: getAddedIds(state),
     products: getProducts(state),
-    cartProductsQuantity: getCartProductsQuantity(state)
+    cartProducts: getCartProducts(state)
   }
 }
 
 export default connect(
   mapStateToProps,
-  { addToCart, removeFromCart }
+  { addToCart, removeFromCart, getCartProduct }
 )(ProductsContainer)

@@ -3,6 +3,7 @@ import expect from 'expect'
 import {
   getProducts,
   getProduct,
+  isInCart,
   getCartProducts,
   getCartProduct,
   getQuantities,
@@ -104,6 +105,16 @@ describe('selectors', () => {
         }))
       })
     })
+
+    describe('isInCart', () => {
+      it('should be true if in cart', () => {
+        expect(isInCart(state, 'A')).toEqual(true)
+      })
+
+      it('should be false if not in cart', () => {
+        expect(isInCart(state, 'C')).toEqual(false)
+      })
+    })
   })
 
   describe('Cart selectors', () => {
@@ -141,6 +152,11 @@ describe('selectors', () => {
           quantity: 4
         }))
       })
+
+      it('should return undefined if not in cart', () => {
+        expect(getCartProduct(state, 'C')).toEqual(undefined)
+      })
+
     })
 
     describe('getQuantities', () => {
@@ -153,6 +169,10 @@ describe('selectors', () => {
       it('should return the cart quantity for a given id in cart', () => {
         expect(getQuantity(state, "A")).toEqual(4)
       })
+
+      it('should return 0 if the product is not in cart', () => {
+        expect(getQuantity(state, "C")).toEqual(0)
+      })
     })
 
     describe('getPrice', () => {
@@ -163,9 +183,13 @@ describe('selectors', () => {
 
     describe('getSubTotal', () => {
       it('should return price total for a product', () => {
-
         expect(getSubTotal(state, 'A')).toBe(800)
       })
+
+      it('should return 0 if product not in cart', () => {
+        expect(getSubTotal(state, 'C')).toBe(0)
+      })
+
     })
 
     describe('getTotal', () => {

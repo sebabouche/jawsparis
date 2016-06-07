@@ -19,14 +19,15 @@ describe('reducers', () => {
     })
 
     context('when ADD_TO_CART action', () => {
-      it('when product is not in cart, it should add product', () => {
+      it('when not in cart, it should add quantities', () => {
         const state = Map({
           products: Map({
             "A": Map({
               title: "Radis",
+              quantity: 1
             }),
             "B": Map({
-              title: "Courgettes",
+              title: "Courgettes"
             })
           }),
           cartProducts: Map({
@@ -43,9 +44,11 @@ describe('reducers', () => {
             products: Map({
               "A": Map({
                 title: "Radis",
+                quantity: 1
               }),
               "B": Map({
                 title: "Courgettes",
+                quantity: 1
               })
             }),
             cartProducts: Map({
@@ -62,11 +65,12 @@ describe('reducers', () => {
         )
       })
 
-      it('when product is already in cart, it should increment quantitites', () => {
+      it('when in cart (≥1), it should increment quantitites', () => {
         const state = Map({
           products: Map({
             "A": Map({
               title: "Radis",
+              quantity: 1
             }),
             "B": Map({
               title: "Courgettes",
@@ -86,6 +90,7 @@ describe('reducers', () => {
             products: Map({
               "A": Map({
                 title: "Radis",
+                quantity: 2
               }),
               "B": Map({
                 title: "Courgettes",
@@ -108,6 +113,7 @@ describe('reducers', () => {
           products: Map({
             "A": Map({
               title: "Radis",
+              quantity: 1
             }),
             "B": Map({
               title: "Courgettes",
@@ -125,14 +131,15 @@ describe('reducers', () => {
         expect(nextState).toEqual(state)
       })
 
-      it('when product was once in cart, should remove product ', () => {
+      it('when in cart (1), should remove product in cartProducts, quantity in products', () => {
         const state = Map({
           products: Map({
             "A": Map({
               title: "Radis",
+              quantity: 1
             }),
             "B": Map({
-              title: "Courgettes",
+              title: "Courgettes"
             })
           }),
           cartProducts: Map({
@@ -147,10 +154,10 @@ describe('reducers', () => {
         expect(nextState).toEqual(Map({
             products: Map({
               "A": Map({
-                title: "Radis",
+                title: "Radis"
               }),
               "B": Map({
-                title: "Courgettes",
+                title: "Courgettes"
               })
             }),
             cartProducts: Map({})
@@ -158,14 +165,15 @@ describe('reducers', () => {
         )
       })
 
-      it('when product is more than once in cart, should decrement product quantity ', () => {
+      it('when in cart (>1), should decrement quantities', () => {
         const state = Map({
           products: Map({
             "A": Map({
               title: "Radis",
+              quantity: 2
             }),
             "B": Map({
-              title: "Courgettes",
+              title: "Courgettes"
             })
           }),
           cartProducts: Map({
@@ -182,9 +190,10 @@ describe('reducers', () => {
             products: Map({
               "A": Map({
                 title: "Radis",
+                quantity: 1
               }),
               "B": Map({
-                title: "Courgettes",
+                title: "Courgettes"
               })
             }),
             cartProducts: Map({
