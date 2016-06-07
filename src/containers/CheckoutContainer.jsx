@@ -8,7 +8,13 @@ import CartContainer from './CartContainer'
 
 class CheckoutContainer extends Component {
   render() {
-    const { addedIds, products, cartProductsQuantity, total, addToCart, removeFromCart, checkout } = this.props
+    const {
+      products,
+      total,
+      addToCart,
+      removeFromCart,
+      checkout
+    } = this.props
 
     return (
       <Checkout />
@@ -17,13 +23,12 @@ class CheckoutContainer extends Component {
 }
 
 CheckoutContainer.propTypes = {
-  addedIds: PropTypes.array.isRequired,
-  products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    price_cents: PropTypes.number.isRequired,
-    quantity: PropTypes.number.isRequired
-  })).isRequired,
+//  products: PropTypes.arrayOf(PropTypes.shape({
+//    id: PropTypes.string.isRequired,
+//    title: PropTypes.string.isRequired,
+//    price_cents: PropTypes.number.isRequired,
+//    quantity: PropTypes.number.isRequired
+//  })).isRequired,
   total: PropTypes.number,
   addToCart: PropTypes.func.isRequired,
   removeFromCart: PropTypes.func.isRequired
@@ -31,9 +36,7 @@ CheckoutContainer.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    addedIds: getAddedIds(state),
     products: getCartProducts(state),
-    cartProductsQuantity: getCartProductsQuantity(state),
     total: getTotal(state)
   }
 }
