@@ -1,5 +1,3 @@
-import {Map, List} from 'immutable'
-
 import * as types from '../constants/ActionTypes'
 
 import initialState from './initialState'
@@ -44,16 +42,4 @@ export default function cart(state = initialState, action) {
     default:
       return state
   }
-}
-
-export function getQuantity(state, productId) {
-  return state.getIn(['quantityById', productId]) || 0
-}
-
-export function getQuantities(state) {
-  return state.get('quantityById')
-}
-
-export function getAddedIds(state) {
-  return state.get('addedIds')
 }

@@ -33,3 +33,16 @@ export default combineReducers({
   shop,
   routing
 })
+
+import * as selectors from './selectors'
+export const {
+  getProducts,
+  getProduct,
+  getPrice,
+  getCartProducts,
+  getCartProduct,
+  getQuantities,
+  getQuantity,
+  getSubTotal,
+  getTotal
+} = selectors

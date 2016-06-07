@@ -1,55 +1,66 @@
-import * as fromCart from './cart'
-import * as fromProducts from './products'
-
+/*
+ *  PRODUCTS SELECTORS
+ */
 export function getProducts(state) {
   //console.log('state in products: ', state)
   //console.log('products in products: ', state.get('products'))
-  return state.get('products')
+  return state.getIn(['shop', 'products'])
 }
 
 export function getProduct(state, id) {
   //console.log('in products state', state)
-  return state.getIn(['products', id])
+  return state.getIn(['shop', 'products', id])
 }
 
 export function getPrice(state, id) {
-  return state.getIn(['products', id, 'price_cents'])
+  return state.getIn(['shop', 'products', id, 'price_cents'])
 }
 
 
-export function getProducts(state) {
-  return fromProducts.getProducts(state.get('products'))
+/*
+ *  CART SELECTORS
+ */
+export function getCartProducts(state) {
+  return state.getIn(['shop', 'cartProducts'])
 }
 
-export function getProduct(state, id) {
-  return fromProducts.getProduct(state.get('products'), id)
+export function getCartProduct(state, id) {
+  return state.getIn(['shop', 'cartProducts', id])
 }
 
 export function getQuantities(state) {
-  return fromCart.getQuantities(state.get('cart'))
+  return state.getIn(['shop', 'cartProducts']).reduce(
+    (total, product) => {
+      total += product.get('quantity')
+      return total
+    }, 0)
 }
 
 export function getQuantity(state, id) {
-  return fromCart.getQuantity(state.get('cart'), id)
+  return state.getIn(['shop', 'cartProducts', id, 'quantity'])
 }
 
-export function getPrice(state, id) {
-  return fromProducts.getPrice(state.get('products'), id)
+export function getSubTotal(state, id) {
+  return state.getIn(['shop', 'cartProducts', id, 'price_cents'])
+          * state.getIn(['shop', 'cartProducts', id, 'quantity'])
 }
+
+export function getTotal(state) {
+  return state.getIn(['shop', 'cartProducts']).reduce(
+    (total, product) => {
+      total += getPrice(state, product.get('id')) * getQuantity(state, product.get('id'))
+      return total
+    }, 0)
+}
+
 
 export function getAddedIds(state) {
   return fromCart.getAddedIds(state.get('cart'))
 }
 
-export function getTotal(state) {
-  return getAddedIds(state).reduce((total, id) =>
-    total + getPrice(state, id) * getQuantity(state, id),
-    0
-  )
-}
 
-export function getCartProducts(state) {
-  return getProducts(state).filter(product => getAddedIds(state).includes(product.get('id')))
+export function getAddedIds(state) {
+  return state.get('addedIds')
 }
 
 // function addCartQuantity(initialValue, value, key, iterator) {
