@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { addToCart, removeFromCart, checkout } from '../actions'
-import { getCartProducts, getTotal } from '../reducers'
+import { getCartProducts, getTotal, somethingInCart } from '../reducers'
 
 import Cart from '../components/Cart'
 import CartProduct from '../components/CartProduct'
@@ -18,7 +18,15 @@ class CartContainer extends Component {
   }
   render() {
 
-    const { cartProducts, total, addToCart, removeFromCart, checkout, edit, checkoutPage } = this.props
+    const {
+      cartProducts,
+      total,
+      addToCart,
+      removeFromCart,
+      checkout,
+      edit,
+      checkoutPage
+    } = this.props
 
     return (
       <Cart
@@ -26,20 +34,16 @@ class CartContainer extends Component {
         onToggleEditCartClicked={() => this.toggleEditCart()}
         checkoutPage={checkoutPage}
         total={total}
-        products={cartProducts} >
-        {cartProducts.map(product =>
-          <CartProduct
-            edit={this.state.edit}
-            key={product.id}
-            productId={product.id}
-            title={product.title}
-            price={product.price_cents}
-            quantity={product.quantity}
-            addedIds={addedIds}
-            cartProductsQuantity={cartProductsQuantity}
-            onAddToCartClicked={() => addToCart(product.id)}
-            onRemoveFromCartClicked={() => removeFromCart(product.id)} />
-        )}
+        somethingInCart={somethingInCart} >
+
+          {cartProducts.map(product =>
+            <CartProduct
+              edit={this.state.edit}
+              key={product.get('id')}
+              product={product}
+              onAddToCartClicked={() => addToCart(product.id)}
+              onRemoveFromCartClicked={() => removeFromCart(product.id)} />
+          )}
       </Cart>
     )
   }
@@ -60,6 +64,7 @@ class CartContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     cartProducts: getCartProducts(state),
+    somethingInCart: somethingInCart(state),
     total: getTotal(state)
   }
 }

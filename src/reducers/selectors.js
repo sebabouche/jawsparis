@@ -1,3 +1,6 @@
+export function somethingInCart(state) {
+  return (state.getIn(['shop', 'cartProducts']).size > 0)
+}
 /*
  *  PRODUCTS SELECTORS
  */

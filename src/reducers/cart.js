@@ -20,6 +20,7 @@ export default function cart(state = initialState, action) {
           )
       // if never added, add and set quantity to 1
       } else {
+        console.log(state)
         return state
           .mergeIn(['products', productId], {quantity: 1})
           .setIn(

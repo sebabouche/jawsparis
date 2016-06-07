@@ -5,8 +5,7 @@ import styles from './styles.css'
 export default class QuantitySelector extends Component {
   render() {
     const {
-      productId,
-      cartProductsQuantity,
+      quantity,
       onAddToCartClicked,
       onRemoveFromCartClicked } = this.props
 
@@ -23,7 +22,7 @@ export default class QuantitySelector extends Component {
 
           <div className="uk-width-1-3">
             <p className="uk-text-center">
-              {cartProductsQuantity[productId]}
+              {quantity}
             </p>
           </div>
 

@@ -6,7 +6,6 @@ export default class ProductItem extends Component {
   render() {
     const {
       product,
-      getCartProduct,
       onAddToCartClicked,
       onRemoveFromCartClicked
     } = this.props
@@ -15,16 +14,12 @@ export default class ProductItem extends Component {
     const productTargetTag = "{target:'#"+productTag+"'}"
     const productPrice = product.get('price_cents')/100+"€"
 
-    const productQuantity = () => {
-      return <span className="cartProductQuantity">{cartProductsQuantity[product.id]}</span> || ""
-    }
-
     const cartModule = () => {
-      if ((addedIds).indexOf(product.id) !== -1 ) {
+      if (product.get('quantity') > 0 ) {
         return (
           <QuantitySelector
             productId={product.get('id')}
-            cartProductsQuantity={cartProductsQuantity}
+            quantity={product.get('quantity')}
             onAddToCartClicked={onAddToCartClicked}
             onRemoveFromCartClicked={onRemoveFromCartClicked} />
           )
@@ -103,7 +98,6 @@ ProductItem.propTypes = {
 //    title: PropTypes.string.isRequired,
 //    price_cents: PropTypes.number.isRequired
 //  }).isRequired,
-  getCartProduct: PropTypes.func.isRequired,
   onAddToCartClicked: PropTypes.func.isRequired,
   onRemoveFromCartClicked: PropTypes.func.isRequired
 }

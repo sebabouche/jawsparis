@@ -1,7 +1,15 @@
-import { combineReducers } from 'redux-immutable'
+import {Map, fromJS} from 'immutable'
 import * as types from '../constants/ActionTypes'
 
 import initialState from './initialState'
+
+function createProductMap(products, product) {
+  const productMap = fromJS(product)
+  return products.set(
+    product.id,
+    productMap
+  )
+}
 
 export default (state = initialState, action) => {
   // console.log('products reducer was called with state', state, 'and action: ', action)
@@ -14,9 +22,9 @@ export default (state = initialState, action) => {
 
     case types.FETCH_PRODUCTS_SUCCESS: {
       return state.merge({
-        products: action.products,
+        products: action.products.reduce(createProductMap, new Map({})),
         fetchProductsError: null,
-        isFetching: false,
+        isFetching: false
       })
     }
 

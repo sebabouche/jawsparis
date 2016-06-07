@@ -1,18 +1,22 @@
 import React, { Component, PropTypes } from 'react'
+import ImmutablePropTypes from 'react-immutable-proptypes'
 
 import QuantitySelector from './QuantitySelector'
 
 export default class CartProduct extends Component {
   render() {
     const {
-      productId, price, quantity, title,
-      addedIds, cartProductsQuantity,
-      onAddToCartClicked, onRemoveFromCartClicked, edit } = this.props
+      product,
+      onAddToCartClicked,
+      onRemoveFromCartClicked,
+      edit
+    } = this.props
+
     let buttonQuantity= ""
+
     if (!edit){
       buttonQuantity = <QuantitySelector
-        productId={productId}
-        cartProductsQuantity={cartProductsQuantity}
+        productId={product.get('id')}
         onAddToCartClicked={onAddToCartClicked}
         onRemoveFromCartClicked={onRemoveFromCartClicked} />
     }
@@ -20,8 +24,8 @@ export default class CartProduct extends Component {
     return (
       <div className="uk-grid uk-grid-small">
         <div className="uk-width-1-2">
-          <strong>{title}</strong><br />
-          {price/100}€
+          <strong>{product.get('title')}</strong><br />
+          {product.get('price_cents')/100}€
         </div>
         <div className="uk-width-1-2">
         {buttonQuantity}
@@ -32,11 +36,7 @@ export default class CartProduct extends Component {
 }
 
 CartProduct.propTypes = {
-  price_cents: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  addedIds: PropTypes.array.isRequired,
-  cartProductsQuantity: PropTypes.object.isRequired,
+  product: ImmutablePropTypes.map,
   onAddToCartClicked: PropTypes.func.isRequired,
   onRemoveFromCartClicked: PropTypes.func.isRequired
 

@@ -23,16 +23,19 @@ describe('reducers', () => {
         type: 'FETCH_PRODUCTS_SUCCESS',
         products: [
           {
+            "id": "AAA",
             "title":"Concombre",
             "category":{"name":"Plats"},
             "merchant":{"name":"La boucherie Sanzot"}
           },
           {
+            "id": "BBB",
             "title":"Radis",
             "category":{"name":"Entrées"},
             "merchant":{"name":"La boucherie Sanzot"}
           },
           {
+            "id": "CCC",
             "title":"Salade",
             "category":{"name":"Entrées"},
             "merchant":{"name":"La boucherie Sanzot"}
@@ -42,14 +45,14 @@ describe('reducers', () => {
 
       const nextState = products(state, action)
 
-      expect(nextState).toEqualImmutable(Map({
+      expect(nextState).toEqual(Map({
+        products: Map({
+          AAA: Map({ id: 'AAA', title: "Concombre", "category": Map ({ "name": "Plats" }), "merchant": Map ({ "name": "La boucherie Sanzot" }) }),
+          BBB: Map({ id: 'BBB', title: "Radis", "category": Map ({ "name": "Entrées" }), "merchant": Map ({ "name": "La boucherie Sanzot" }) }),
+          CCC: Map({ id: 'CCC', title: "Salade", "category": Map ({ "name": "Entrées" }), "merchant": Map ({ "name": "La boucherie Sanzot" }) })
+        }),
         fetchProductsError: null,
         isFetching: false,
-        products: List.of(
-          Map({ title: "Concombre", "category": Map ({ "name": "Plats" }), "merchant": Map ({ "name": "La boucherie Sanzot" }) }),
-          Map({ title: "Radis", "category": Map ({ "name": "Entrées" }), "merchant": Map ({ "name": "La boucherie Sanzot" }) }),
-          Map({ title: "Salade", "category": Map ({ "name": "Entrées" }), "merchant": Map ({ "name": "La boucherie Sanzot" }) })
-        ),
         cartProducts: Map({})
       }))
     })

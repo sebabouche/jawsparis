@@ -7,18 +7,20 @@ export default class ProductsList extends Component {
   }
 
   render() {
+    const { children, somethingInCart } = this.props
+
     return (
       <div className="uk-container uk-container-center">
         <div className="uk-block">
           <div className="uk-grid" data-uk-grid-margin>
-            {this.props.children}
+            {children}
           </div>
         </div>
         <div className="uk-block uk-margin-large-bottom">
           <p className="uk-text-center ja-font-special">
             Vous désirez autre chose ?
           </p>
-          <LinkToCheckout disabled={!this.props.addedIds}/>
+          <LinkToCheckout disabled={!somethingInCart} />
         </div>
       </div>
     )
@@ -27,5 +29,5 @@ export default class ProductsList extends Component {
 
 ProductsList.propTypes = {
   children: PropTypes.node,
-  title: PropTypes.string.isRequired
+  somethingInCart: PropTypes.bool.isRequired
 }

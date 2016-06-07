@@ -5,8 +5,7 @@ import { addToCart, removeFromCart } from '../actions'
 
 import {
   getProducts,
-  getCartProducts,
-  getCartProduct
+  somethingInCart
 } from '../reducers'
 
 import ProductsList from '../components/ProductsList'
@@ -16,17 +15,17 @@ import ProductItem from '../components/ProductItem'
 class ProductsContainer extends Component {
   render() {
     const {
-      products, cartProducts,
-      getCartProduct,
+      products, somethingInCart,
       addToCart, removeFromCart } = this.props
 
+    console.log("products: ", products)
+
     return (
-      <ProductsList title="Products" addedIds={cartProducts.size > 0}>
+      <ProductsList somethingInCart={somethingInCart}>
         {products.map(product =>
           <ProductItem
             key={product.get('id')}
             product={product}
-            getCartProduct={getCartProduct}
             onAddToCartClicked={() => addToCart(product.get('id'))}
             onRemoveFromCartClicked={() => removeFromCart(product.get('id'))} />
         )}
@@ -45,11 +44,11 @@ class ProductsContainer extends Component {
 function mapStateToProps(state) {
   return {
     products: getProducts(state),
-    cartProducts: getCartProducts(state)
+    somethingInCart: somethingInCart(state)
   }
 }
 
 export default connect(
   mapStateToProps,
-  { addToCart, removeFromCart, getCartProduct }
+  { addToCart, removeFromCart }
 )(ProductsContainer)

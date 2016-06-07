@@ -39,6 +39,7 @@ export const {
   getProducts,
   getProduct,
   isInCart,
+  somethingInCart,
   getPrice,
   getCartProducts,
   getCartProduct,

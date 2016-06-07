@@ -6,16 +6,15 @@ import LinkToCheckout from './LinkToCheckout'
 
 export default class Cart extends Component {
   render() {
-    const { products, total, onCheckoutClicked, onToggleEditCartClicked, edit,checkoutPage} = this.props
-    const hasProducts = products.length > 0
-    const nodes = !hasProducts ?
+    const { somethingInCart, total, onCheckoutClicked, onToggleEditCartClicked, edit,checkoutPage} = this.props
+    const nodes = !somethingInCart ?
       <em>Merci d'ajouter des produits à votre cabas.</em> :
       this.props.children
       let button
       if (edit && checkoutPage)
         {button = <button onClick={onToggleEditCartClicked} className="uk-button uk-button-success uk-width-1-1">Modifier la commande</button>}
       else if (!edit && !checkoutPage){
-        button = <LinkToCheckout disabled={hasProducts ? '' : 'disabled'} />
+        button = <LinkToCheckout disabled={somethingInCart ? '' : 'disabled'} />
       }else{
         button = <button onClick={onToggleEditCartClicked} className="uk-button uk-button-success uk-width-1-1">Valider</button>
       }

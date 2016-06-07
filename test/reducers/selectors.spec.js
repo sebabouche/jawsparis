@@ -4,6 +4,7 @@ import {
   getProducts,
   getProduct,
   isInCart,
+  somethingInCart,
   getCartProducts,
   getCartProduct,
   getQuantities,
@@ -197,6 +198,47 @@ describe('selectors', () => {
 
         expect(getTotal(state)).toBe(1500)
       })
+    })
+  })
+
+  describe('somethingInCart', () => {
+    it('should be true if one or more products are in cart', () => {
+      const stateWithProductsInCart = Map({
+        shop: Map({
+          cartProducts: Map({
+            'A': Map({
+              id: 'A',
+              price_cents: 200,
+              available: true,
+              quantity: 4
+            }),
+            'B': Map({
+              id: 'B',
+              price_cents: 150,
+              available: true,
+              quantity: 2
+            }),
+            'D': Map({
+              id: 'D',
+              price_cents: 400,
+              available: true,
+              quantity: 1
+            })
+          })
+        })
+      })
+
+      expect(somethingInCart(stateWithProductsInCart)).toBe(true)
+    })
+
+    it('should be false if no products are in cart', () => {
+      const stateWithNoProductInCart = Map({
+        shop: Map({
+          cartProducts: Map({})
+        })
+      })
+
+      expect(somethingInCart(stateWithNoProductInCart)).toBe(false)
     })
   })
 })
